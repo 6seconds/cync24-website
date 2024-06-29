@@ -1,10 +1,6 @@
 document.addEventListener("mousemove", parallax);
 
 function parallax(e) {
-    const angle = 45; // Angle in degrees for movement direction
-    const radians = angle * (Math.PI / 180); // Convert angle to radians
-
-
     document.querySelectorAll(".object").forEach(function(move) {
         var moving_value = move.getAttribute("data-value");
         if (moving_value == -3) {
