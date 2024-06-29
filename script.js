@@ -1,28 +1,31 @@
 document.addEventListener("mousemove", parallax);
 
-
 function parallax(e) {
     document.querySelectorAll(".object").forEach(function(move) {
         var moving_value = move.getAttribute("data-value");
         
-        // Calculate translation
-        var x = (e.clientX * moving_value) / 50;
-        var y = (e.clientY * moving_value) / 50;
         
-        // Calculate scaling
-        var scale = 1 + moving_value / 100;
+        var x = (e.clientX * moving_value) / 50 * 0.2; 
+        var y = (e.clientY * moving_value) / 50 * 0.2; 
+        
+        
+        var scale = 1 + moving_value / 100 * 0.2; 
 
-        // Calculate blur
-        var blur = moving_value / 100;
+        
+        var blur = moving_value / 100 * 0.2; 
 
-        // Calculate opacity
-        var opacity = 1 - (moving_value / 200);
+        
+        var opacity = 1 - (moving_value / 200 * 0.2); 
 
+        move.style.transition = "transform 0.8s ease-out, filter 0.8s ease-out, opacity 0.8s ease-out"; // Smooth transition
+
+        
         move.style.transform = `translateX(${x}px) translateY(${y}px) scale(${scale})`;
         move.style.filter = `blur(${blur}px)`;
-        move.style.opacity = opacity;
+        move.style.opacity = opacity.toFixed(2); 
     });
 }
+
 
 var cursor = document.querySelector('.cursor'),
     cursorScale = document.querySelectorAll('.cursor-scale'),

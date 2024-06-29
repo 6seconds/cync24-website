@@ -50,26 +50,20 @@ body {
     margin-left: -20px;
     margin-top: -20px;
     border-radius: 50%;
-    border: 2px solid #16a085;
+    border: 2px solid #fff;
     transition: transform .3s ease;
     transform-origin: center center;
     pointer-events: none;
     z-index: 1000;
 }
-
 .grow, .grow-small{
-    transform: scale(10);
+    transform: scale(4);
     background: #fff;
-    mix-blend-mode: difference;
+    mix-blend-mode:difference;
     border: none;
 }
 .grow-small{
     transform: scale(2.5);
-}
-
-.object {
-    transition: transform 0.1s ease-out, filter 0.1s ease-out, opacity 0.1s ease-out;
-    will-change: transform;
 }
 
 @media (max-width: 800px) {
