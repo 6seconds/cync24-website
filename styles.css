@@ -33,6 +33,7 @@ body {
 }
 
 .header {
+    font-family: "Necosmic";
     z-index: 1;
     position: relative;
     color: #fff;
