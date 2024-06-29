@@ -42,7 +42,9 @@ body {
     letter-spacing: 32px;
     line-height: 60px;
     text-align: center;
+    perspective: 1000px; /* Adds depth to the 3D effect */
 }
+
 .cursor{
     position: fixed;
     width: 40px;
