@@ -14,12 +14,12 @@
   }
   
   &:before {
-      left: -1px;
+      left: -1.5px;
       text-shadow: 1px 0 rgba(red,0.7);
   }
 
   &:after {
-      left: 1px;
+      left: 1.5px;
       text-shadow: -1px 0 rgba(blue,0.7);
   }
 
