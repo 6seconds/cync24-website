@@ -1,55 +1,62 @@
 @import url(https://fonts.googleapis.com/css?family=Abril+Fatface|Roboto:400,400italic,500,500italic);
 
 @-webkit-keyframes wiggle {
-    0% { -webkit-transform: skewX(3deg); }
-    10% { -webkit-transform: skewX(-1deg); }
-    20% { -webkit-transform: skewX(2deg); }
-    30% { -webkit-transform: skewX(-3deg); }
-    40% { -webkit-transform: skewX(1deg); }
-    50% { -webkit-transform: skewX(-3deg); }
-    60% { -webkit-transform: skewX(1deg); }
-    70% { -webkit-transform: skewX(-1deg); }
-    80% { -webkit-transform: skewX(0.5deg); }
-    90% { -webkit-transform: skewX(1deg); }
+    0% { -webkit-transform: skewX(24deg); } 
+    10% { -webkit-transform: skewX(-8deg); }
+    20% { -webkit-transform: skewX(55deg); }
+    30% { -webkit-transform: skewX(-90deg); }
+    40% { -webkit-transform: skewX(29deg); }
+    50% { -webkit-transform: skewX(-90deg); }
+    60% { -webkit-transform: skewX(3deg); }
+    70% { -webkit-transform: skewX(-2deg); }
+    80% { -webkit-transform: skewX(1deg); }
+    90% { -webkit-transform: skewX(10deg); }
     100% { -webkit-transform: skewX(0deg); }
 }
 
-* {
-    padding: 0;
-    margin: 0;
-}
+* {padding:0;margin:0;}
 
-html {
-    width: 100%;
-    height: 100%;
-}
+html {width:100%;height:100%;}
+
 
 header {
-    display: flex;
+  display:flex;
 }
 
-header:hover h1 {
-    -webkit-animation: wiggle 0.5s;
-    animation: none; /* Remove any ongoing animations */
-    transition: transform 0.5s ease; /* Smooth transition back to normal */
+header:hover {
+  -webkit-animation: wiggle 0.1s;
 }
 
 h1 {
-    position: relative;
-    font-family: "DREAMS";
-    font-weight: normal;
-    font-size: 1em;
-    text-align: center;
-    cursor: pointer;
-    color: rgb(255, 255, 255);
-    text-shadow: 1px 1px rgba(255, 255, 255, 0.774),
-                 -1px -1px rgba(255, 255, 255, 0.8),
-                 -1px 0px rgba(255, 255, 255, 0.76);
-    transition: text-shadow 0.5s ease; /* Add transition for text-shadow */
+  position:relative;
+  font-family:"DREAMS";
+  font-weight:normal;
+  font-size:1em;
+  text-align:center;
+  cursor:pointer;
+  color:rgb(255, 255, 255);
+  text-shadow:1px 1px rgba(255, 255, 255, 0.774),
+  
+  
 }
 
 h1:hover {
-    -webkit-animation: wiggle 0.2s 2;
-    animation: none; /* Ensure no additional animation */
-    text-shadow: 30px 13px rgba(255, 255, 255, 0);
+  -webkit-animation: wiggle 0.1s 2;
+  /*transition:all ease-out 0.1s;*/
+  text-shadow:30px 13px rgba(255, 255, 255, 0.8),
+
+
 }
+
+/* http://www.eeemo.net/ */
+/*
+h1:hover:after {
+  content:':̪̺̠̺͗ͨ̋ͩ͗:̛͇̱̥̥̙̎͆̑ͮ̐͢:̷̲ͮ̃́̅ͦ̔͐̆:̴͈͖̮̪̗̈́̆̀:̨̙̗̺̞̥͗̐ͫ:̗̰̜̟̮̦̉̂';
+  z-index:-100;
+  position:absolute;
+  left:1em;
+  top:-1em;
+  transform:rotate(41deg);
+}
+*/
+
