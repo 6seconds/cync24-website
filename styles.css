@@ -6,7 +6,7 @@
 
 body {
     font-family: "Agraham", sans-serif;
-    background-color: #080808;
+    background: radial-gradient(ellipse at bottom, #08121f 0%, #000208 100%);
     background-size: cover;
     height: 100vh;
     overflow: hidden;
@@ -33,7 +33,6 @@ body {
     transform: translate(0, 0) scale(1.5);
 }
 
-
 .header {
     font-family: "DREAMS";
     z-index: 1;
@@ -46,49 +45,4 @@ body {
     line-height: 60px;
     text-align: center;
     perspective: 1000px; /* Adds depth to the 3D effect */
-}
-
-.cursor{
-    position: fixed;
-    width: 40px;
-    height: 40px;
-    margin-left: -20px;
-    margin-top: -20px;
-    border-radius: 50%;
-    border: 2px solid #fff;
-    transition: transform .3s ease;
-    transform-origin: center center;
-    pointer-events: none;
-    z-index: 1000;
-}
-.grow, .grow-small{
-    transform: scale(4);
-    background: #fff;
-    mix-blend-mode:difference;
-    border: none;
-}
-.grow-small{
-    transform: scale(2.5);
-}
-
-@import "compass/css3";
-
-body{
-  background:black;
-  font-family: 'Varela', sans-serif;
-}
-
-
-.flicker {
-    display: inline-block;
-    animation: flickerAnimation 3s infinite;
-}
-
-@keyframes flickerAnimation {
-    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-        opacity: 1;
-    }
-    20%, 24%, 55% {
-        opacity: 0;
-    }
 }
