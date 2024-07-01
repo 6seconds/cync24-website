@@ -2,17 +2,18 @@
     position: fixed;
     top: 1%;
     left: 50%;
-    transform: translateX(-52%);
+    transform: translateX(-50%);
     padding: 10px 20px;
-    background-color: #181823
+    background-color: rgba(24, 24, 35, 0.3); /* Adjust the alpha (transparency) value as needed */
+    backdrop-filter: blur(); /* Adds a blur effect behind the navbar */
     border-radius: 20px;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80%; /* Adjust width as needed */
-    max-width: 1200px; /* Maximum width of the navbar */
-    z-index: 1000; /* Ensure navbar is above other content */
+    width: 80%;
+    max-width: 1200px;
+    z-index: 1000;
 }
 
 .navbar-links {
@@ -23,15 +24,16 @@
 }
 
 .navbar-links li {
-    margin-left: 20px; /* Adjust spacing between navbar items */
+    margin-left: 20px;
 }
 
 .navbar-links a {
     font-family: "Aquire";
+    position: relative;
     color: white;
     text-decoration: none;
-    font-size: 1.5em; /* Adjust font size as needed */
-    padding: 25px; /* Adjust padding around the text */
+    font-size: 1.5em;
+    padding: 40px;
 }
 
 .navbar-toggle {
@@ -47,6 +49,74 @@
     margin: 4px 0;
 }
 
+/* Dropdown styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: transparent; /* Adjust the alpha (transparency) value as needed */
+    min-width: 120px; /* Smaller width */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown-content li {
+    padding: 8px 20px; /* Smaller padding */
+    text-align: center;
+    left: 50%;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: dropDown 0.5s forwards;
+    animation-delay: var(--delay);
+    margin: 3px; /* Smaller margin */
+    background-color: rgba(24, 24, 35, 0.3); /* Adjust the alpha (transparency) value as needed */
+    backdrop-filter: blur(); /* Adds a blur effect behind the navbar */
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 8px; /* Smaller padding */
+    font-size: 1.25em; /* Decreased font size */
+}
+
+.dropdown-content li a:hover {
+    background-color:transparent;
+    border-radius: 8px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dropdown:hover .dropdown-content li {
+    animation: dropDown 0.5s forwards;
+}
+
+@keyframes dropDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .navbar {
@@ -56,7 +126,7 @@
         width: 100%;
         top: 0;
         left: 0;
-        background-color: rgba(51, 51, 51, 0.9); /* Darker translucent background */
+        background-color: rgba(51, 51, 51, 0.9);
         border-radius: 0;
     }
     .navbar-brand {

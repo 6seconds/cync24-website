@@ -4,9 +4,9 @@
     0% { -webkit-transform: skewX(24deg); } 
     10% { -webkit-transform: skewX(-8deg); }
     20% { -webkit-transform: skewX(55deg); }
-    30% { -webkit-transform: skewX(-90deg); }
+ 
     40% { -webkit-transform: skewX(29deg); }
-    50% { -webkit-transform: skewX(-90deg); }
+
     60% { -webkit-transform: skewX(3deg); }
     70% { -webkit-transform: skewX(-2deg); }
     80% { -webkit-transform: skewX(1deg); }
