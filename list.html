@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(c)ync List</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+background-color:black;
+        }
+
+        h1 {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 80%;
+            padding-top: 10px; /* Adjust padding as needed */
+            border-top: 1px solid #ffffff; /* White line at the top */
+        }
+
+        .item {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin: 5px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .item-number {
+            width: 5%;
+            font-size: 18px;
+            text-align: right;
+        }
+
+        .item span {
+            width: 25%;
+            transition: color 0.5s;
+            display: inline-block;
+            position: relative;
+            font-size: 18px;
+        }
+
+        .item span:first-child {
+            text-align: left;
+        }
+
+        .item span:nth-child(2) {
+            text-align: left;
+        }
+
+        .item span:last-child {
+            text-align: right;
+        }
+
+        .item:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            transition: left 0.5s;
+            z-index: -1;
+        }
+
+        .item:hover:before {
+            left: 0;
+        }
+
+        .item:hover span {
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+    <h1>(c)ync</h1>
+    <div class="container">
+        <div class="item">
+            <span class="item-number">1.</span>
+            <span class="scramble">John Doe</span>
+            <span class="scramble">Planet Thalassa</span>
+            <span class="scramble">123-456-7890</span>
+        </div>
+        <div class="item">
+            <span class="item-number">2.</span>
+            <span class="scramble">Jane Smith</span>
+            <span class="scramble">Exo-Planet Zyra</span>
+            <span class="scramble">987-654-3210</span>
+        </div>
+        <div class="item">
+            <span class="item-number">3.</span>
+            <span class="scramble">Emily Johnson</span>
+            <span class="scramble">Planet Elara</span>
+            <span class="scramble">555-123-4567</span>
+        </div>
+        <div class="item">
+            <span class="item-number">4.</span>
+            <span class="scramble">Michael Brown</span>
+            <span class="scramble">Moon Xanthe</span>
+            <span class="scramble">111-222-3333</span>
+        </div>
+        <div class="item">
+            <span class="item-number">5.</span>
+            <span class="scramble">Linda Davis</span>
+            <span class="scramble">Asteroid B-612</span>
+            <span class="scramble">999-888-7777</span>
+        </div>
+        <div class="item">
+            <span class="item-number">6.</span>
+            <span class="scramble">David Wilson</span>
+            <span class="scramble">Planet Drakonis</span>
+            <span class="scramble">444-555-6666</span>
+        </div>
+        <div class="item">
+            <span class="item-number">7.</span>
+            <span class="scramble">Emma Martinez</span>
+            <span class="scramble">Planet Ganymede</span>
+            <span class="scramble">123-987-6543</span>
+        </div>
+        <div class="item">
+            <span class="item-number">8.</span>
+            <span class="scramble">James Anderson</span>
+            <span class="scramble">Planet Lumina</span>
+            <span class="scramble">555-999-8888</span>
+        </div>
+        <div class="item">
+            <span class="item-number">9.</span>
+            <span class="scramble">Olivia Thomas</span>
+            <span class="scramble">Moon Rhea</span>
+            <span class="scramble">777-333-1111</span>
+        </div>
+    </div>
+
+    <!-- Include GSAP library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/TextPlugin.min.js"></script>
+    <script>
+        gsap.registerPlugin(TextPlugin);
+
+        document.querySelectorAll('.item').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                gsap.to(item.querySelectorAll('.scramble'), {
+                    text: function(i, element) {
+                        return element.textContent.split('').sort(() => 0.5 - Math.random()).join('');
+                    },
+                    duration: 0.5,
+                    ease: "power1.inOut",
+                    repeat: 1,
+                    yoyo: true,
+                    onComplete: () => {
+                        gsap.to(item.querySelectorAll('.scramble'), {
+                            text: function(i, element) {
+                                return element._originalText;
+                            },
+                            duration: 0.5,
+                            ease: "power1.inOut"
+                        });
+                    }
+                });
+            });
+
+            item.querySelectorAll('.scramble').forEach(el => {
+                el._originalText = el.textContent;
+            });
+        });
+    </script>
+</body>
+</html>
