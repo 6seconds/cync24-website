@@ -1,0 +1,89 @@
+body, * {
+    cursor: none;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    background: black;
+    background-size: cover;
+}
+h1 {
+    margin-top:120px;
+    margin-bottom: 20px;
+    font-family: 'DREAMS';
+    font-size: 14px;
+    padding-bottom: 30px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 80%;
+    cursor: none;
+    padding-top: 10px; 
+    border-top: 1px solid #ffffff; 
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 5px 0;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.item-number {
+    width: 5%;
+    font-size: 18px;
+    text-align: right;
+}
+
+.item span {
+    width: 25%;
+    transition: color 0.5s;
+    display: inline-block;
+    position: relative;
+    font-size: 18px;
+}
+
+.item span:first-child {
+    text-align: left;
+}
+
+.item span:nth-child(2) {
+    text-align: left;
+}
+
+.item span:last-child {
+    text-align: right;
+}
+
+.item:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    transition: left 0.5s;
+    z-index: -1;
+}
+
+.item:hover:before {
+    left: 0;
+}
+
+.item:hover span {
+    color: #000000;
+}

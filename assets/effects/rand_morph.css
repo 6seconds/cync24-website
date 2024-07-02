@@ -1,7 +1,7 @@
 h2 {
-    font-family: 'DREAMS', monospace;
-    font-size: 6px;
-    color: white;
+    font-family: 'NEXTSTEP', monospace;
+    font-size: 30px;
+    color: rgb(124, 221, 189);
     padding: 1rem clamp(1rem, 2vw, 3rem);
     border-radius: clamp(0.4rem, 0.75vw, 1rem);
   }
