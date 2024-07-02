@@ -1,7 +1,7 @@
 
 .flicker {
     display: inline-block;
-    animation: flickerAnimation 3s infinite;
+    animation: flickerAnimation 5s infinite;
 }
 
 @keyframes flickerAnimation {

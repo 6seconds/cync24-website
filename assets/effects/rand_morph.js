@@ -1,28 +1,37 @@
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
 let interval = null;
+const h2Element = document.querySelector("h2");
+const words = ["ᓚᘏᗢDOINGᓚᘏᗢ", ".ᓚᘏᗢTHEᓚᘏᗢ.", "IMPOSSIBLE"];
+let currentWordIndex = 0;
 
-document.querySelector("h2").onmouseover = event => {  
+function startAnimation() {
   let iteration = 0;
-  
+  const originalText = words[currentWordIndex];
+
   clearInterval(interval);
-  
+
   interval = setInterval(() => {
-    event.target.innerText = event.target.innerText
+    h2Element.innerText = originalText
       .split("")
       .map((letter, index) => {
-        if(index < iteration) {
-          return event.target.dataset.value[index];
+        if (index < iteration) {
+          return originalText[index];
         }
-      
-        return letters[Math.floor(Math.random() * 26)]
+
+        return letters[Math.floor(Math.random() * 26)];
       })
       .join("");
-    
-    if(iteration >= event.target.dataset.value.length){ 
+
+    iteration++;
+
+    if (iteration > originalText.length) {
       clearInterval(interval);
+      iteration = 0;
+      currentWordIndex = (currentWordIndex + 1) % words.length;
+      setTimeout(startAnimation, 800); // Delay before starting animation for next word
     }
-    
-    iteration += 1 / 3;
-  }, 100);
+  }, 125);
 }
+
+// Start the animation initially
+startAnimation();

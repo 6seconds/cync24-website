@@ -19,13 +19,6 @@
 html {width:100%;height:100%;}
 
 
-header {
-  display:flex;
-}
-
-header:hover {
-  -webkit-animation: wiggle 0.1s;
-}
 
 h1 {
   position:relative;

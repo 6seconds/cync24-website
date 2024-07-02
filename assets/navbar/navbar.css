@@ -1,7 +1,7 @@
 .navbar {
     position: fixed;
-    top: 1%;
-    left: 50%;
+    top: 3%;
+    left: 63%;
     transform: translateX(-50%);
     padding: 10px 20px;
     background-color: rgba(24, 24, 35, 0.3); /* Adjust the alpha (transparency) value as needed */
@@ -15,7 +15,11 @@
     max-width: 1200px;
     z-index: 1000;
 }
-
+.navbar-logo {
+    height: 50px;
+    top: 0%;
+    left: 0%;
+}
 .navbar-links {
     list-style: none;
     margin: 0;
@@ -24,16 +28,16 @@
 }
 
 .navbar-links li {
-    margin-left: 20px;
+    margin-left: 30px;
 }
 
 .navbar-links a {
-    font-family: "Aquire";
+    font-family: "DREAMS";
     position: relative;
     color: white;
     text-decoration: none;
-    font-size: 1.5em;
-    padding: 40px;
+    font-size: 5px;
+    padding: 30px;
     cursor: none!important;
 }
 
@@ -50,17 +54,28 @@
     margin: 4px 0;
 }
 
+
+
+
+
+
+
+
+
+
+
 /* Dropdown styles */
 .dropdown {
     position: relative;
 }
 
 .dropdown-content {
+    list-style-type: none;
     display: none;
     position: absolute;
     background-color: transparent; /* Adjust the alpha (transparency) value as needed */
     min-width: 120px; /* Smaller width */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px transparent;
     z-index: 1;
     border-radius: 8px;
     overflow: hidden;
@@ -70,6 +85,7 @@
 }
 
 .dropdown-content li {
+    font-size: 3.696969px;
     padding: 8px 20px; /* Smaller padding */
     text-align: center;
     left: 50%;
@@ -77,10 +93,10 @@
     transform: translateY(-20px);
     animation: dropDown 0.5s forwards;
     animation-delay: var(--delay);
-    margin: 3px; /* Smaller margin */
-    background-color: rgba(24, 24, 35, 0.3); /* Adjust the alpha (transparency) value as needed */
+    margin: 25px; /* Smaller margin */
+    background-color:rgba(24, 24, 35, 0.2); /* Adjust the alpha (transparency) value as needed */
     backdrop-filter: blur(); /* Adds a blur effect behind the navbar */
-    border-radius: 8px;
+    border-radius: 100px;
     transition: background-color 0.3s ease;
 }
 
@@ -93,7 +109,8 @@
 }
 
 .dropdown-content li a:hover {
-    background-color:transparent;
+    color:rgb(45, 190, 226);
+    transition: 0.69s ease;
     border-radius: 8px;
 }
 
