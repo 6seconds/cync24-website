@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "DREAMS";
+    src: url("fonts/DREAMS.ttf") format("opentype")
+  }
+
 * {
     margin: 0;
     padding: 0;
@@ -5,7 +10,6 @@
 }
 
 body {
-    font-family: "Agraham", sans-serif;
     background: radial-gradient(circle, rgba(2,0,36,1) 0%, #000044 40%, rgb(1, 6, 17) 100%);
     background-size: cover;
     height: 100vh;

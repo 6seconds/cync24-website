@@ -1,9 +1,13 @@
+@font-face {
+    font-family: "DREAMS";
+    src: url("fonts/DREAMS.ttf") format("opentype")
+  }
+
 body, * {
     cursor: none;
 }
 
 body {
-    font-family: 'Courier New', Courier, monospace;
     margin: 0;
     padding: 250px;
     display: flex;
