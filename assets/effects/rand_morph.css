@@ -6,7 +6,7 @@
   padding: 40px;
   border-radius: 10px;
   perspective: 1000px; /* 3D perspective for container */
-  background-color: rgba(0, 0, 0, 0.1); /* Adjust the alpha value for translucency */
+  background-color: transparent; /* Adjust the alpha value for translucency */
 }
 
 /* Text styling */
