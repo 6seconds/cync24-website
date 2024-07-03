@@ -4,6 +4,8 @@ const h2Element = document.querySelector("h2");
 const targetWord = "DOING THE IMPOSSIBLE";
 let isScrambling = false; // Flag to track if currently scrambling
 let hasScrambled = false; // Flag to track if already fully scrambled
+let lastMouseMoveTime = 0;
+const throttleDelay = 100; // Throttle delay in milliseconds
 
 function scrambleText(element, targetText) {
   let iteration = 0;
@@ -48,7 +50,13 @@ function startContinuousScrambling() {
   }, 150); // Adjust the interval for continuous scrambling with a slower rate
 }
 
-document.addEventListener("mousemove", (event) => {
+function handleMouseMove(event) {
+  const currentTime = new Date().getTime();
+  if (currentTime - lastMouseMoveTime < throttleDelay) {
+    return;
+  }
+  lastMouseMoveTime = currentTime;
+
   const cursorOutline = document.querySelector(".cursor-outline");
   const h2Rect = h2Element.getBoundingClientRect();
   const cursorRect = cursorOutline.getBoundingClientRect();
@@ -65,7 +73,9 @@ document.addEventListener("mousemove", (event) => {
       scrambleText(h2Element, targetWord);
     }
   }
-});
+}
+
+document.addEventListener("mousemove", handleMouseMove);
 
 // Initialize with scrambled text
 startContinuousScrambling();
