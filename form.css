@@ -1,0 +1,96 @@
+
+
+body {
+    font-family: "Agraham", sans-serif;
+    background: radial-gradient(ellipse at bottom, #08121f 0%, #08121f 100%);
+    background-size: cover;
+    height: 100vh;
+    overflow: scroll;
+    cursor: none;
+}
+/*<----Form---->*/
+
+#form_body {
+    padding-left: 30px;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: white;
+    align-items: center;
+}
+
+.container2 {
+    background-color: transparent;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    width: 100%;
+    backdrop-filter: blur(10px);
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #ffffff;
+    outline: none;
+    background: transparent;
+    transition: background-color 0.3s;
+    border-width: 0px;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    outline: none;
+}
+
+
+input[type="text"]:focus,
+select:focus {
+background-color: #687ca04d;
+border-radius: 2px;
+}
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: #E6EBE0;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #5F7470;
+    color: white;
+}
+#bg_container {
+    width: 1450px;
+    height: 800px;
+    box-shadow: inset 0px 50px 100px #08121f,
+                inset 0px -50px 100px #08121f;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

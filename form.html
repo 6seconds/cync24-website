@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>(c)ync</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/effects/glitch.css">
+    <link rel="stylesheet" href="assets/effects/flicker.css">
+    <link rel="stylesheet" href="assets/cursor/cursor.css">
+    <link rel="stylesheet" href="assets/navbar/navbar.css">
+    <link rel="stylesheet" href="assets/effects/stars.css">
+    <link rel="stylesheet" href="assets/navbar/dropdown.css">
+
+</head>
+
+<body>
+
+    <div>
+       <div id="bg_container">
+        <div id="form_body">
+            <div class="container2">
+
+                <h2>(c)ync Registration Form</h2>
+                <form action="https://formspree.io/f/mrbzgeza" method="POST">
+                    <div class="form-group">
+                        <label for="school_name">Name of School:</label>
+                        <input type="text" id="school_name" name="school_name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address:<label>
+                        <input type="text" id="email_address" name="email_address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="name_teacher">Name of Teacher:</label>
+                        <input type="text" id="name_teacher" name="name_teacher" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact">Contact Number:</label>
+                        <input type="text" id="name_teacher" name="name_teacher" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="event_selection">Select Event:</label>
+                        <select id="event_selection" name="event_selection" required onchange="updateNameFields()">
+                            <option value="select_event">Select Event</option>
+                            <option value="content_creation">Content Creation</option>
+                            <option value="photography">Photography</option>
+                            <option value="videography">Videography + Video Editing</option>
+                            <option value="chatbot_creation">Chatbot Creation</option>
+                            <option value="comic_design">Comic Design</option>
+                            <option value="valorant_tournament">Valorant Tournament</option>
+                        </select>
+                    </div>
+                    <br>
+                    
+                    <div id="name-fields-container"></div>
+                    <div class="form-group">
+                        <button type="submit">Submit</button>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="parallax.js"></script>
+    <script src="form.js"></script>
+
+    <script src="assets/navbar/navbar.js"></script>
+
+</body>
+
+</html>
