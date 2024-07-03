@@ -24,12 +24,12 @@ body {
     align-items: center;
     overflow: hidden;
     color: transparent;
-    pointer-events: none;
 }
 
 .header {
     font-family: "DREAMS";
     z-index: 1;
+    pointer-events: none;
     position: relative;
     color: #fff;
     font-size: 20px;
