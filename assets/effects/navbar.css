@@ -37,7 +37,7 @@
     /* border: 0px solid #666565; */
     font-weight: 500;
     border-radius: 20px;
-    transition: 1s;
+   
 
 }
 
@@ -52,7 +52,8 @@
 .navbar-links a:hover {
     z-index: 0;
     position: relative;
-    background: #666565;
+    background: transparent;
+    color:#fa6f4f;
     box-shadow: 0 0 25px #666565,
     0 0 100px #666565,
     0 0 150px #666565;
