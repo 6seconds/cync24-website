@@ -1,8 +1,3 @@
-@font-face {
-    font-family: "DREAMS";
-    src: url("fonts/DREAMS.ttf") format("opentype")
-  }
-
 * {
     margin: 0;
     padding: 0;
@@ -10,7 +5,7 @@
 }
 
 body {
-    background: radial-gradient(circle, rgba(2,0,36,1) 0%, #000044 40%, rgb(1, 6, 17) 100%);
+    background: radial-gradient(circle,  #475A88 0%,#323332  40%, #070D16 100%);
     background-size: cover;
     height: 100vh;
     overflow: hidden;

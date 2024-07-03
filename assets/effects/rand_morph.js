@@ -4,11 +4,6 @@ const h2Element = document.querySelector("h2");
 const targetWord = "DOING THE IMPOSSIBLE";
 let isScrambling = false; // Flag to track if currently scrambling
 let hasScrambled = false; // Flag to track if already fully scrambled
-let lastMouseMoveTime = 0;
-const throttleDelay = 100; // Throttle delay in milliseconds
-let mouseX = 0;
-let mouseY = 0;
-let ticking = false;
 
 function scrambleText(element, targetText) {
   let iteration = 0;
@@ -53,30 +48,10 @@ function startContinuousScrambling() {
   }, 150); // Adjust the interval for continuous scrambling with a slower rate
 }
 
-function handleMouseMove(event) {
-  mouseX = event.clientX;
-  mouseY = event.clientY;
-  requestTick();
-}
-
-function requestTick() {
-  if (!ticking) {
-    requestAnimationFrame(update);
-    ticking = true;
-  }
-}
-
-function update() {
-  ticking = false;
-
+document.addEventListener("mousemove", (event) => {
   const cursorOutline = document.querySelector(".cursor-outline");
   const h2Rect = h2Element.getBoundingClientRect();
-  const cursorRect = {
-    left: mouseX - cursorOutline.offsetWidth / 2,
-    right: mouseX + cursorOutline.offsetWidth / 2,
-    top: mouseY - cursorOutline.offsetHeight / 2,
-    bottom: mouseY + cursorOutline.offsetHeight / 2
-  };
+  const cursorRect = cursorOutline.getBoundingClientRect();
 
   // Check if cursor is over the h2 element
   if (
@@ -90,9 +65,7 @@ function update() {
       scrambleText(h2Element, targetWord);
     }
   }
-}
-
-document.addEventListener("mousemove", handleMouseMove);
+});
 
 // Initialize with scrambled text
 startContinuousScrambling();

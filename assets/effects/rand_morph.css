@@ -1,8 +1,4 @@
-@font-face {
-  font-family: "DREAMS";
-  src: url("fonts/DREAMS.ttf") format("opentype")
-}
-
+/* Container styling */
 .h2-container {
   position: relative;
   overflow: hidden;
@@ -10,11 +6,10 @@
   padding: 40px;
   border-radius: 10px;
   perspective: 1000px; /* 3D perspective for container */
-  background-color: transparent; /* Adjust the alpha value for translucency */
+  background-color: rgba(0, 0, 0, 0.1); /* Adjust the alpha value for translucency */
 }
 
-
-
+/* Text styling */
 h2 {
   font-family: 'Spacetron', monospace;
   font-size: 30px;
