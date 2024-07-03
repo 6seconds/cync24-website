@@ -24,7 +24,7 @@ body {
     align-items: center;
     overflow: hidden;
     color: transparent;
-    pointer-events:none;
+    pointer-events: none;
 }
 
 .header {
