@@ -6,7 +6,7 @@
 
 body {
     font-family: "Agraham", sans-serif;
-    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(19,19,124,1) 40%, rgb(1, 6, 17) 100%);
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, #000044 40%, rgb(1, 6, 17) 100%);
     background-size: cover;
     height: 100vh;
     overflow: hidden;

@@ -11,7 +11,7 @@ body {
     justify-content: center;
     align-items: center;
     color: #ffffff;
-    background: black;
+    background: radial-gradient(ellipse at bottom, #225E55ff, #134544ff, #033038ff, #002327ff, #02151Eff, #021014ff, #000D16ff);
     background-size: cover;
 }
 h1 {
@@ -90,31 +90,3 @@ h1 {
 
 
 
-@keyframes rotate {
-    from {
-      rotate: 0deg;
-    }
-    
-    50% {
-      scale: 1 1.5;
-    }
-    
-    to {
-      rotate: 360deg;
-    }
-  }
-  
-  #blob {
-    height: 34vmax;
-    aspect-ratio: 1;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    translate: -50% -50%;
-    /* border-radius: 50%; */
-    background: linear-gradient(to right, rgb(0, 0, 0), rgb(65, 63, 63));
-    animation: rotate 20s infinite;
-    opacity: 0.4;
-    filter: blur(12vmax);
-    pointer-events: none;
-  }
