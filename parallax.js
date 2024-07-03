@@ -54,12 +54,5 @@ function parallax(e) {
 }
 
 
-const logo = document.getElementById('logo');
 
-logo.addEventListener('mouseenter', () => {
-    logo.classList.add('glitch');
-});
 
-logo.addEventListener('mouseleave', () => {
-    logo.classList.remove('glitch');
-});

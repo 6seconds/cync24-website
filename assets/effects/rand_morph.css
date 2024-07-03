@@ -1,7 +1,118 @@
+/* Container styling */
+.h2-container {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  padding: 40px;
+  border-radius: 10px;
+  perspective: 1000px; /* 3D perspective for container */
+  background-color: rgba(0, 0, 0, 0.1); /* Adjust the alpha value for translucency */
+}
+
+/* Text styling */
 h2 {
-    font-family: 'Spacetron', monospace;
-    font-size: 30px;
-    color: rgb(124, 221, 189);
-    padding: 1rem clamp(1rem, 2vw, 3rem);
-    border-radius: clamp(0.4rem, 0.75vw, 1rem);
+  font-family: 'Spacetron', monospace;
+  font-size: 30px;
+  color: rgb(124, 221, 189);
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease, text-shadow 0.3s ease; /* Smooth transitions for color and text-shadow */
+  text-shadow: 0 0 10px rgba(0, 196, 255, 0.8), 
+               0 0 20px rgba(0, 196, 255, 0.8), 
+               0 0 30px rgba(0, 196, 255, 0.8), 
+               0 0 40px rgba(0, 196, 255, 0.8), 
+               0 0 70px rgba(0, 196, 255, 0.8), 
+               0 0 80px rgba(0, 196, 255, 0.8), 
+               0 0 100px rgba(0, 196, 255, 0.8), 
+               0 0 150px rgba(0, 196, 255, 0.8);
+}
+
+/* Glow animation for text */
+@keyframes glow-pulse {
+  0% {
+    text-shadow: 0 0 10px rgba(0, 196, 255, 0.8), 
+                 0 0 20px rgba(0, 196, 255, 0.8), 
+                 0 0 30px rgba(0, 196, 255, 0.8), 
+                 0 0 40px rgba(0, 196, 255, 0.8), 
+                 0 0 70px rgba(0, 196, 255, 0.8), 
+                 0 0 80px rgba(0, 196, 255, 0.8), 
+                 0 0 100px rgba(0, 196, 255, 0.8), 
+                 0 0 150px rgba(0, 196, 255, 0.8);
   }
+  50% {
+    text-shadow: 0 0 15px rgba(0, 196, 255, 0.9), 
+                 0 0 25px rgba(0, 196, 255, 0.9), 
+                 0 0 35px rgba(0, 196, 255, 0.9), 
+                 0 0 45px rgba(0, 196, 255, 0.9), 
+                 0 0 75px rgba(0, 196, 255, 0.9), 
+                 0 0 85px rgba(0, 196, 255, 0.9), 
+                 0 0 105px rgba(0, 196, 255, 0.9), 
+                 0 0 155px rgba(0, 196, 255, 0.9);
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(0, 196, 255, 0.8), 
+                 0 0 20px rgba(0, 196, 255, 0.8), 
+                 0 0 30px rgba(0, 196, 255, 0.8), 
+                 0 0 40px rgba(0, 196, 255, 0.8), 
+                 0 0 70px rgba(0, 196, 255, 0.8), 
+                 0 0 80px rgba(0, 196, 255, 0.8), 
+                 0 0 100px rgba(0, 196, 255, 0.8), 
+                 0 0 150px rgba(0, 196, 255, 0.8);
+  }
+}
+
+/* Apply glow animation on text when fully scrambled */
+.h2-container.scrambled h2 {
+  animation: glow-pulse 2s infinite;
+}
+
+
+
+
+  @keyframes rotate {
+    from {
+      rotate: 0deg;
+    }
+    
+    50% {
+      scale: 1 1.5;
+    }
+    
+    to {
+      rotate: 360deg;
+    }
+  }
+  
+  #blob {
+    height: 34vmax;
+    aspect-ratio: 1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    /* border-radius: 50%; */
+    background: linear-gradient(to right, rgb(0, 0, 0), rgb(65, 63, 63));
+    animation: rotate 20s infinite;
+    opacity: 0.4;
+    filter: blur(12vmax);
+    pointer-events: none;
+  }
+
+  /* <script>
+  const blob = document.getElementById("blob");
+
+    window.onpointermove = event => { 
+    const { clientX, clientY } = event;
+    
+    blob.animate({
+        left: `${clientX}px`,
+        top: `${clientY}px`
+    }, { duration: 3000, fill: "forwards" });
+    }
+</script> 
+
+to use just do- div class blob
+
+
+*/
