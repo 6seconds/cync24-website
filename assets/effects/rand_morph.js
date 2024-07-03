@@ -48,17 +48,22 @@ function startContinuousScrambling() {
   }, 150); // Adjust the interval for continuous scrambling with a slower rate
 }
 
-h2Element.addEventListener("mouseover", () => {
-  if (!isScrambling && !hasScrambled) {
-    h2Element.classList.remove("glow-text"); // Remove glow effect class on mouseover
-    scrambleText(h2Element, targetWord);
-  }
-});
+document.addEventListener("mousemove", (event) => {
+  const cursorOutline = document.querySelector(".cursor-outline");
+  const h2Rect = h2Element.getBoundingClientRect();
+  const cursorRect = cursorOutline.getBoundingClientRect();
 
-h2Element.addEventListener("mouseout", () => {
-  // Start continuous scrambling only if not currently scrambling and not already fully scrambled
-  if (!isScrambling && !hasScrambled) {
-    startContinuousScrambling();
+  // Check if cursor is over the h2 element
+  if (
+    cursorRect.left >= h2Rect.left &&
+    cursorRect.right <= h2Rect.right &&
+    cursorRect.top >= h2Rect.top &&
+    cursorRect.bottom <= h2Rect.bottom
+  ) {
+    if (!isScrambling && !hasScrambled) {
+      h2Element.classList.remove("glow-text"); // Remove glow effect class on hover
+      scrambleText(h2Element, targetWord);
+    }
   }
 });
 
