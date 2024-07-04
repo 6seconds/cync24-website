@@ -1,0 +1,173 @@
+!<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="scroll.css">
+    <link rel="stylesheet" href="assets/cursor/cursor.css">
+  </head>
+  <body>
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+    <div class="container">
+      <div class="active-slide">
+        <img src="images/1.jpg" alt="" />
+        <img src="images/2.jpg" alt="" />
+        <img src="images/3.jpg" alt="" />
+        <img src="images/4.jpg" alt="" />
+        <img src="images/5.jpg" alt="" />
+        <img src="images/6.jpg" alt="" />
+      </div>
+    </div>
+
+    <div class="slider">
+      <!-- slide1 -->
+      <div class="slide" id="slide-1">
+
+        <div class="slide-copy">
+          <p>SLIDE1</p>
+          <p id="index">10000</p>
+        </div>
+      </div>
+
+      <div class="slide" id="slide-2">
+        <div class="slide-copy">
+          <p>SLIDE2</p>
+          <p id="index">10001</p>
+          <div class="slide-text">
+            <p>This is some sample text for the second slide. It could be a description or any other textual content.</p>
+          </div>
+        </div>
+      </div>      
+
+      <div class="slide" id="slide-3">
+
+        <div class="slide-copy">
+          <p>SLIDE3</p>
+          <p id="index">100002</p>
+        </div>
+
+        <div class="slide-img">
+          <img src="images/3.jpg" alt="">
+        </div>
+      </div>
+      <div class="slide" id="slide-4">
+
+        <div class="slide-copy">
+          <p>12904</p>
+          <p id="index">aaaa</p>
+        </div>
+
+        <div class="slide-img">
+          <img src="images/4.jpg" alt="">
+        </div>
+      </div>
+
+      <div class="slide" id="slide-4">
+
+        <div class="slide-copy">
+          <p>124124</p>
+          <p id="index">asdlasdj</p>
+        </div>
+
+        <div class="slide-img">
+          <img src="images/5.jpg" alt="">
+        </div>
+      </div>
+
+      <div class="slide" id="slide-6">
+
+        <div class="slide-copy">
+          <p>123123</p>
+          <p id="index">asdasdasd</p>
+        </div>
+
+        <div class="slide-img">
+          <img src="images/6.jpg" alt="">
+        </div>
+      </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="assets/cursor/cursor.js"></script>
+    <script>
+document.addEventListener("DOMContentLoaded", (event) => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  window.addEventListener('load', function() {
+    const slides = gsap.utils.toArray(".slide");
+    const activeSlideImages = gsap.utils.toArray(".active-slide img");
+
+    function getInitialTranslateZ(slide) {
+      const style = window.getComputedStyle(slide);
+      const matrix = style.transform.match(/matrix3d\((.+)\)/);
+      if (matrix) {
+        const values = matrix[1].split(", ");
+        return parseFloat(values[14] || 0);
+      }
+      return 0;
+    }
+
+    function mapRange(value, inMin, inMax, outMin, outMax) {
+      const clampedValue = Math.max(Math.min(value, inMax), inMin); // Clamp value between inMin and inMax
+      const normalizedValue = (clampedValue - inMin) / (inMax - inMin);
+      const easedValue = gsap.parseEase("power2.inOut")(normalizedValue);
+      return easedValue * (outMax - outMin) + outMin;
+    }
+
+    slides.forEach((slide, index) => {
+      const initialZ = getInitialTranslateZ(slide);
+
+      ScrollTrigger.create({
+        trigger: ".container",
+        start: "top top",
+        end: "bottom bottom",
+        scrub: true,
+        onUpdate: (self) => {
+          const progress = self.progress;
+          const zIncrement = progress * 9000;
+          const currentZ = initialZ + zIncrement;
+
+          let opacity;
+
+          if (currentZ > -2500) {
+            opacity = mapRange(currentZ, -1500, 0, 0.5, 1);
+          } else {
+            opacity = mapRange(currentZ, -3000, -2500, 0, 0.5);
+          }
+
+          gsap.to(slide, {
+            opacity: opacity,
+            transform: `translateX(-50%) translateY(-50%) translateZ(${currentZ}px)`,
+            duration: 0.1,
+            ease: "power2.out"
+          });
+
+          if (currentZ < 100) {
+            gsap.to(activeSlideImages[index], {
+              opacity: 1,
+              duration: 1.5,
+              ease: "power3.out"
+            });
+            gsap.to("body", {
+              duration: 1.5,
+              ease: "power3.out"
+            });
+          }
+        }
+      });
+    });
+  });
+});
+
+
+
+
+     </script>
+  </body>
+</html>
