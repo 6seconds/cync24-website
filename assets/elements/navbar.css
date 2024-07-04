@@ -1,24 +1,20 @@
 .navbar {
     position: fixed;
     top: 3%;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
     padding: 10px 20px;
     border-radius: 20px;
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 80%;
-    max-width: 1200px;
+    width: 100%; /* Full width */
+    z-index: 1000; /* Ensure the navbar is above other content */
 }
 
 .logo {
-    position: absolute;
-    top: 10px;
-    left: 0;
-    padding-left: 20px;
     height: 150px;
+    padding-left: 20px; /* Adjust padding as needed */
     transition: filter 0.3s ease;
 }
 
@@ -26,7 +22,8 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    display: contents;
+    display: flex;
+    align-items: center;
 }
 
 .navbar-links li {
@@ -38,10 +35,10 @@
     position: relative;
     color: white;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 20px;
     padding: 10px 15px;
     letter-spacing: 3px;
-    cursor: none!important;
+    cursor: none !important;
     font-weight: 500;
     border-radius: 20px;
     transition: color 0.3s ease, transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -74,7 +71,10 @@
     transform: translateX(8px) translateY(-2px) scale(1.05); /* Move slightly right and up, scale */
 }
 
-
+/* Move navbar links to the right */
+.navbar-links {
+    margin-left: 100px; /* Pushes navbar links to the right */
+}
 
 /* Dropdown styles */
 .dropdown {
@@ -93,6 +93,9 @@
     opacity: 0;
     transform: translateY(-20px);
     transition: opacity 0.3s ease, transform 0.3s ease;
+    left: calc(15% - 60px); /* Adjusted for centering */
+    transform: translateX(-50%); /* Center the dropdown */
+    top: 50px; /* Adjust top position as needed */
 }
 
 .dropdown-content li {

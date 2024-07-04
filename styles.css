@@ -5,7 +5,7 @@
 }
 
 body {
-    background: radial-gradient(circle,  #475A88 0%,#323332  40%, #070D16 100%);
+    background: radial-gradient(circle,  #475A88 0%,#272928  40%, #070D16 100%);
     background-size: cover;
     height: 100vh;
     overflow: hidden;
@@ -31,10 +31,10 @@ body {
     pointer-events: none;
     position: relative;
     color: #fff;
-    font-size: 20px;
+    font-size: 25px;
     text-transform: uppercase;
     font-weight: 900;
-    letter-spacing: 32px;
+    letter-spacing: 22px;
     line-height: 60px;
     text-align: center;
     perspective: 1000px; /* Adds depth to the 3D effect */
