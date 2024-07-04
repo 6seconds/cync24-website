@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,73 +7,89 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="form.css">
-    <link rel="stylesheet" href="assets/effects/glitch.css">
-    <link rel="stylesheet" href="assets/effects/flicker.css">
     <link rel="stylesheet" href="assets/cursor/cursor.css">
-    <link rel="stylesheet" href="assets/navbar/navbar.css">
-    <link rel="stylesheet" href="assets/effects/stars.css">
-    <link rel="stylesheet" href="assets/navbar/dropdown.css">
-
 </head>
-
 <body>
-
     <div>
-       <div id="bg_container">
-        <div id="form_body">
-            <div class="container2">
+        <div id="bg_container">
+            <div id="form_body">
+                <div class="container2">
+                    <h2>(c)ync Registration Form</h2>
+                    <form action="https://sheetdb.io/api/v1/mggyainc2nvie" method="post" id="sheetdb-form">
+                        <div class="col-md-6">
+                            <label for="Name" class="hov">Name</label>
+                            <input type="text" name="data[name]" id="Name" placeholder="Full name" class="PRN" required />
+                        </div>
+                        <div class="col-md-6">
+                            <label for="email_address">Email Address:</label>
+                            <input type="text" id="email_address" name="data[email_address]" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="name_teacher">Name of Teacher:</label>
+                            <input type="text" id="name_teacher" name="data[name_teacher]" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="contact_no">Contact Number:</label>
+                            <input type="text" id="contact_no" name="data[contact_no]" required>
+                        </div>
 
-                <h2>(c)ync Registration Form</h2>
-                <form action="https://formcarry.com/s/1ubKryA16qb" method="POST">
-                    <div class="form-group">
-                        <label for="school_name">Name of School:</label>
-                        <input type="text" id="school_name" name="school_name" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email Address:<label>
-                        <input type="text" id="email_address" name="email_address" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="name_teacher">Name of Teacher:</label>
-                        <input type="text" id="name_teacher" name="name_teacher" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="contact">Contact Number:</label>
-                        <input type="text" id="name_teacher" name="contact_no" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="event_selection">Select Event:</label>
-                        <select id="event_selection" name="event_selection" required onchange="updateNameFields()">
-                            <option value="select_event">Select Event</option>
-                            <option value="content_creation">Content Creation</option>
-                            <option value="photography">Photography</option>
-                            <option value="videography">Videography + Video Editing</option>
-                            <option value="chatbot_creation">Chatbot Creation</option>
-                            <option value="comic_design">Comic Design</option>
-                            <option value="valorant_tournament">Valorant Tournament</option>
-                        </select>
-                    </div>
-                    <br>
-                    
-                    <div id="name-fields-container"></div>
-                    <div class="form-group">
-                        <button type="submit">Submit</button>
-                    </div>
-                    
-                </form>
+                        <br>
+                        <div id="name-fields-container"></div>
+                        <div class="col-md-6">
+                            <button type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-
     </div>
-</div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="parallax.js"></script>
-    <script src="form.js"></script>
-
     <script src="assets/navbar/navbar.js"></script>
+    <script>
+        var form = document.getElementById("sheetdb-form");
 
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            var formData = new FormData(form);
+            
+            // Convert formData to JSON format for SheetDB
+            var object = {};
+            formData.forEach((value, key) => {
+                if (!object[key]) {
+                    object[key] = value;
+                }
+            });
+            var json = JSON.stringify({ data: [object] });
+
+            console.log("Form Data:", json); // Log the payload to be sent
+
+            fetch(form.action, {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: json,
+            })
+            .then((response) => {
+                console.log("Response Status:", response.status); // Log the response status
+                if (!response.ok) {
+                    return response.json().then((errorData) => {
+                        console.error('Error Data:', errorData);
+                        throw new Error('Network response was not ok');
+                    });
+                }
+                return response.json();
+            })
+            .then((data) => {
+                console.log("Data received:", data);
+                window.open("nextpage.html", "_blank");
+            })
+            .catch((error) => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
+        });
+    </script>
 </body>
-
 </html>
+
