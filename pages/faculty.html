@@ -14,7 +14,12 @@
     <nav class="navbar">
         <a href="../index.html">
             <img src="../assets/images/logo.png" alt="Logo" class="logo">
-            </a>
+        </a>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
         <ul class="navbar-links" id="navbar-links">
             <li><a href="pages/cync.html">(C)YNC</a></li>
             <li><a href="#about">ABOUT</a></li>
@@ -29,6 +34,12 @@
             <li><a href="#contact">CONTACT</a></li>
         </ul>
     </nav>
+    <script>
+        function toggleMenu() {
+            document.getElementById('navbar-links').classList.toggle('show');
+            document.querySelector('.hamburger').classList.toggle('active');
+        }
+        </script>
     <h1>FACULTY</h1>
     <div class="container">
         <div class="item">
