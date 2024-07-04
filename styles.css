@@ -5,7 +5,8 @@
 }
 
 body {
-    background: radial-gradient(circle,  #475A88 0%,#272928  40%, #070D16 100%);
+    /* background: radial-gradient(ellipse at bottom,  #333333 0%,#014b38  60%, #000000 100%); */
+    background: radial-gradient(ellipse at bottom, #225E55ff, #134544ff, #033038ff, #002327ff, #02151Eff, #021014ff, #000D16ff);
     background-size: cover;
     height: 100vh;
     overflow: hidden;
