@@ -5,14 +5,13 @@ body, * {
 body {
     font-family: 'Aquire';
     font-size: 20px;
-    background: radial-gradient(ellipse at bottom, #512467ff, #46225Bff, #3C1849ff, #261130ff, #1A0D21ff, #130918ff);
+    background: radial-gradient(ellipse at bottom, #512467, #46225B, #3C1849, #261130, #1A0D21, #130918);
     color: #fff;
     height: 100vh;
-    width: auto;
-    overflow-x: hidden; /* Prevent horizontal scrollbar */
+    width: 100vw;
+    overflow: hidden; /* Prevent horizontal scrollbar */
     animation: gradientAnimation 1s infinite alternate;
 }
-
 
 #gradient {
     position: fixed;
@@ -21,7 +20,11 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1;
+    background: radial-gradient(circle at center, #225E55, #000D16); /* Initial gradient colors */
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
 
 .container {
     max-width: 600px;
@@ -37,19 +40,22 @@ body {
 
 .register-title {
     font-family: 'DREAMS';
-    text-align: center;
-    font-size: 0.8em;
+    text-align: left;
+    font-size: 0.65em;
     margin-bottom: 6vh;
-    margin-top: 40vh;
+    margin-top: 45vh;
+    margin-left: 10vh;
     animation: fadeIn 1s ease-out forwards; /* Fade in animation */
     opacity: 0;
 }
 
 .line {
-    width: calc(100% - 66.6%); /* Adjust padding and margin of container */
-    height: 1px;
+    position: absolute;
+    top: 0;
+    left: 30%; /* Adjust left position as needed */
+    width: 1px; /* Width of the line */
     background-color: #fceaff;
-    margin: 0 auto 20px; /* Centered with bottom margin */
+    margin: auto;
 }
 
 .step {
@@ -57,7 +63,27 @@ body {
 }
 
 .step.active {
+    position: relative; /* Position relative to its containing block */
+    top: 40%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -60%); /* Center the active step */
     display: block;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    max-width: 80vw; /* Prevent overflow */
+    padding: 10px;
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+.step.active input {
+    width: 100%;
+    margin-bottom: 30px; 
+}
+
+.line {
+    height: 70vh; /* Set height to full viewport height */
+    transform-origin: top center; /* Ensure transformation origin is at top center */
+    transform: translateY(30%); /* Adjust vertical position to center line vertically */
 }
 
 .button-container {
@@ -68,6 +94,19 @@ body {
     animation: fadeIn 1s ease-out forwards; /* Fade in animation */
     opacity: 0;
 }
+
+
+/* .step#step7.active {
+    display: block;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.step#step7.active label,
+.step#step7.active input {
+    width: 100%;
+    margin-bottom: 10px; 
+} */
 
 .button {
     background: transparent;
@@ -124,7 +163,7 @@ body {
 .progress-bar-fill {
     height: 100%;
     width: 0;
-    background: #db349b;
+    background: #0ee9cc;
     transition: width 0.3s;
 }
 
@@ -138,7 +177,7 @@ input[type="text"] {
     color: #fff;
     width: calc(100% - 20px); /* Adjust for padding */
     margin-bottom: 30px; /* Increase margin-bottom to add space between inputs */
-    padding: 10px;
+    padding: 5px;
     transition: border-color 0.3s; /* Smooth border color transition */
 }
 
@@ -186,3 +225,7 @@ label {
     pointer-events: none;
     z-index: 9999; /* Ensure it's above other content */
 }
+
+
+
+the next and back buttons are on top of each other, i want them to be side by side and same with submit button
