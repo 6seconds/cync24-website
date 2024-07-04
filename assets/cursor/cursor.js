@@ -9,6 +9,7 @@ window.addEventListener('mousemove', function (e) {
 
     cursorDot.style.left = `${posX}px`;
     cursorDot.style.top  = `${posY}px`;
+    console.log(posX,posY)
 
     cursorOutline.animate({
         left: `${posX}px`,

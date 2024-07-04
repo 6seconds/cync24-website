@@ -8,13 +8,14 @@ body {
     background: radial-gradient(ellipse at bottom, #512467ff, #46225Bff, #3C1849ff, #261130ff, #1A0D21ff, #130918ff);
     color: #fff;
     height: 100vh;
+    width: auto;
     overflow-x: hidden; /* Prevent horizontal scrollbar */
     animation: gradientAnimation 1s infinite alternate;
 }
 
 
 #gradient {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -174,4 +175,14 @@ label {
     100% {
         opacity: 1;
     }
+}
+
+.cursor-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    pointer-events: none;
+    z-index: 9999; /* Ensure it's above other content */
 }

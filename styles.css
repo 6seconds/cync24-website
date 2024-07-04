@@ -5,7 +5,8 @@
 }
 
 body {
-    background: radial-gradient(circle,  #475A88 0%,#323332  40%, #070D16 100%);
+    /* background: radial-gradient(ellipse at bottom,  #333333 0%,#014b38  60%, #000000 100%); */
+    background: radial-gradient(ellipse at bottom, #225E55ff, #134544ff, #033038ff, #002327ff, #02151Eff, #021014ff, #000D16ff);
     background-size: cover;
     height: 100vh;
     overflow: hidden;
@@ -31,13 +32,22 @@ body {
     pointer-events: none;
     position: relative;
     color: #fff;
-    font-size: 20px;
+    font-size: 25px;
     text-transform: uppercase;
     font-weight: 900;
-    letter-spacing: 32px;
+    letter-spacing: 22px;
     line-height: 60px;
     text-align: center;
     perspective: 1000px; /* Adds depth to the 3D effect */
     padding: 40px; /* Add padding around the content inside the header */
+
+    text-shadow: 
+    0 0 5px rgba(255, 255, 255, 0.27),
+    0 0 10px rgba(255, 255, 255, 0.23),
+    0 0 15px rgba(255, 255, 255, 0.15),
+    0 0 20px rgba(255, 255, 255, 0.07),
+    0 0 25px rgba(255, 255, 255, 0.025);
 }
+
+
 

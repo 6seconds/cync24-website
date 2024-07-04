@@ -3,6 +3,7 @@ body, * {
 }
 
 body {
+    font-family: 'Courier New', Courier, monospace;
     margin: 0;
     padding: 250px;
     display: flex;
@@ -12,6 +13,8 @@ body {
     color: #ffffff;
     background: radial-gradient(ellipse at bottom, #225E55ff, #134544ff, #033038ff, #002327ff, #02151Eff, #021014ff, #000D16ff);
     background-size: cover;
+    height: 100vh;
+    width: auto;
 }
 h1 {
     margin-top:120px;
@@ -87,5 +90,13 @@ h1 {
     color: #000000;
 }
 
-
+.cursor-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    pointer-events: none;
+    z-index: 9999; /* Ensure it's above other content */
+}
 
