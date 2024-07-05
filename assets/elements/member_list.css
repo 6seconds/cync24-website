@@ -28,6 +28,7 @@ body {
     background: radial-gradient(ellipse at bottom, #225E55ff, #134544ff, #033038ff, #002327ff, #02151Eff, #021014ff, #000D16ff);
     background-size: cover;
     min-height: 100vh; /* Ensure the body covers the full viewport height */
+    position: relative;
 }
 
 h1 {
