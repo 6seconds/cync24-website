@@ -16,20 +16,19 @@
 
 </head>
 <body>
-    <section class="" style="position: absolute;">
+    <section class="stars-container">
         <div class = "object" data-value="50" alt="">
             <div id="stars"></div>
             <div id="stars2"></div>
             <div id="stars3"></div>
             <div id="stars4"></div>
-            <div id="title">
         </div>
     </section>
     
-    <div class="container">
+    <div class="container" id="scrollable-container">
 
         <div class="header">
-            <div class="object" data-value="-3" style="padding: 50px;">
+            <div class="object" id='cypher-text' data-value="-3" style="padding: 50px;">
         
                 <span class="flicker">(</span>c<span class="flicker">)</span>ypher
     
@@ -42,8 +41,7 @@
               <!-- </div> -->
              
         </div>
-        
-    
+        <div style="height: 2000vh;"></div>
 
     </div>
     <nav class="navbar">
@@ -68,21 +66,21 @@
         </ul>
     </nav>
     
-    <script>
-    function toggleMenu() {
-        document.getElementById('navbar-links').classList.toggle('show');
-        document.querySelector('.hamburger').classList.toggle('active');
-    }
-    </script>
-    
-    
 
+    
+    
+    <script>
+        function toggleMenu() {
+            document.getElementById('navbar-links').classList.toggle('show');
+            document.querySelector('.hamburger').classList.toggle('active');
+        }
+        </script>
     
     <div class="cursor-dot" data-cursor-dot></div>
     <div class="cursor-outline" data-cursor-outline></div>
     <script src="parallax.js"></script>
     <script src="assets/effects/rand_morph.js"></script>
     <script src="assets/cursor/cursor.js"></script>
-
+    <script src="assets/effects/gradient-scroll.js"></script>
 </body>
 </html>
