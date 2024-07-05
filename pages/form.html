@@ -32,17 +32,17 @@
         </ul>
     </nav>
     <div class="container">
-        <form id="registrationForm">
+        <form action="https://sheetdb.io/api/v1/mggyainc2nvie" method="post" id="sheetdb-form" >
             <!-- Step 1 -->
             <div class="step active" id="step1">
                 <label for="x1">Name of School:</label>
-                <input type="text" id="x1" name="x1" required><br><br>
+                <input type="text" id="x1" name="data[school_name]" required><br><br>
                 <label for="y1">Email Address:</label>
-                <input type="text" id="y1" name="y1" required><br><br>
+                <input type="text" id="y1" name="data[email_address]" required><br><br>
                 <label for="z1">Name of Teacher:</label>
-                <input type="text" id="z1" name="z1" required><br><br>
+                <input type="text" id="z1" name="data[teacher_name]" required><br><br>
                 <label for="z2">Contact Number of Teacher:</label>
-                <input type="text" id="z2" name="z2" required><br><br>
+                <input type="text" id="z2" name="data[teacher_contact]" required><br><br>
                 <button type="button" class="button" onclick="nextStep()">></button>
             </div>
 
@@ -50,11 +50,11 @@
             <div class="step" id="step2">
                 <h2>(C)ONCOCT</h2>
                 <label for="x2">Participant 1:</label>
-                <input type="text" id="x2" name="x2" required><br><br>
+                <input type="text" id="x2" name="data[concoct_p1]" required><br><br>
                 <label for="y2">Participant 2:</label>
-                <input type="text" id="y2" name="y2" required><br><br>
+                <input type="text" id="y2" name="data[concoct_p2]" required><br><br>
                 <label for="z3">Participant 3:</label>
-                <input type="text" id="z3" name="z3" required><br><br>
+                <input type="text" id="z3" name="data[concoct_p3]" required><br><br>
                 <button type="button" class="button" onclick="prevStep()"><</button>
                 <button type="button" class="button" onclick="nextStep()">></button>
             </div>
@@ -63,11 +63,11 @@
             <div class="step" id="step3">
                 <h2>(C)LICK</h2>
                 <label for="x3">Participant 1:</label>
-                <input type="text" id="x3" name="x3" required><br><br>
+                <input type="text" id="x3" name="data[click_p1]" required><br><br>
                 <label for="y3">Participant 2:</label>
-                <input type="text" id="y3" name="y3" required><br><br>
+                <input type="text" id="y3" name="data[click_p2]" required><br><br>
                 <label for="z4">Participant 3:</label>
-                <input type="text" id="z4" name="z4" required><br><br>
+                <input type="text" id="z4" name="data[click_p3]" required><br><br>
                 <button type="button" class="button" onclick="prevStep()"><</button>
                 <button type="button" class="button" onclick="nextStep()">></button>
             </div>
@@ -76,9 +76,9 @@
             <div class="step" id="step4">
                 <h2>(C)IFI</h2>
                 <label for="x4">Participant 1:</label>
-                <input type="text" id="x4" name="x4" required><br><br>
+                <input type="text" id="x4" name="data[cifi_p1]" required><br><br>
                 <label for="y4">Participant 2:</label>
-                <input type="text" id="y4" name="y4" required><br><br>
+                <input type="text" id="y4" name="data[cifi_p2]" required><br><br>
                 <button type="button" class="button" onclick="prevStep()"><</button>
                 <button type="button" class="button" onclick="nextStep()">></button>
             </div>
@@ -87,9 +87,9 @@
             <div class="step" id="step5">
                 <h2>(C)ODE</h2>
                 <label for="x5">Participant 1:</label>
-                <input type="text" id="x5" name="x5" required><br><br>
+                <input type="text" id="x5" name="data[code_p1]" required><br><br>
                 <label for="y5">Participant 2:</label>
-                <input type="text" id="y5" name="y5" required><br><br>
+                <input type="text" id="y5" name="data[code_p2]" required><br><br>
                 <button type="button" class="button" onclick="prevStep()"><</button>
                 <button type="button" class="button" onclick="nextStep()">></button>
             </div>
@@ -98,9 +98,9 @@
             <div class="step" id="step6">
                 <h2>(C)OMIQUE</h2>
                 <label for="x6">Participant 1:</label>
-                <input type="text" id="x6" name="x6" required><br><br>
+                <input type="text" id="x6" name="data[comique_p1]" required><br><br>
                 <label for="y6">Participant 2:</label>
-                <input type="text" id="y6" name="y6" required><br><br>
+                <input type="text" id="y6" name="data[comique_p2]" required><br><br>
                 <button type="button" class="button" onclick="prevStep()"><</button>
                 <button type="button" class="button" onclick="nextStep()">></button>
             </div>
@@ -109,17 +109,17 @@
             <div class="step" id="step7">
                 <h2>(C)ROSSHAIR</h2>
                 <label for="x7">Participant 1:</label>
-                <input type="text" id="x7" name="x7" required><br><br>
+                <input type="text" id="x7" name="data[crosshair_p1]" required><br><br>
                 <label for="y7">Participant 2:</label>
-                <input type="text" id="y7" name="y7" required><br><br>
+                <input type="text" id="y7" name="data[crosshair_p2]" required><br><br>
                 <label for="z5">Participant 3:</label>
-                <input type="text" id="z5" name="z5" required><br><br>
+                <input type="text" id="z5" name="data[crosshair_p3]" required><br><br>
                 <label for="z6">Participant 4:</label>
-                <input type="text" id="z6" name="z6" required><br><br>
+                <input type="text" id="z6" name="data[crosshair_p4]" required><br><br>
                 <label for="z7">Participant 5:</label>
-                <input type="text" id="z7" name="z7" required><br><br>
+                <input type="text" id="z7" name="data[crosshair_p5]" required><br><br>
                 <label for="z8">Participant 6:</label>
-                <input type="text" id="z8" name="z8" required><br><br>
+                <input type="text" id="z8" name="data[crosshair_p6]" required><br><br>
                 <button type="button" class="button" onclick="prevStep()"><</button>
                 <button type="submit" class="button">Submit</button>
             </div>
@@ -138,7 +138,50 @@
     <script src="../assets/cursor/cursor.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../assets/effects/gradient.js"></script>
- 
+    <script>
+        var form = document.getElementById("sheetdb-form");
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            var formData = new FormData(form);
+            
+            // Convert formData to JSON format for SheetDB
+            var object = {};
+            formData.forEach((value, key) => {
+                if (!object[key]) {
+                    object[key] = value;
+                }
+            });
+            var json = JSON.stringify({ data: [object] });
+
+            console.log("Form Data:", json); // Log the payload to be sent
+
+            fetch(form.action, {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: json,
+            })
+            .then((response) => {
+                console.log("Response Status:", response.status); // Log the response status
+                if (!response.ok) {
+                    return response.json().then((errorData) => {
+                        console.error('Error Data:', errorData);
+                        throw new Error('Network response was not ok');
+                    });
+                }
+                return response.json();
+            })
+            .then((data) => {
+                console.log("Data received:", data);
+                window.open("nextpage.html", "_blank");
+            })
+            .catch((error) => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
+        });
+    </script>    
    
 </body>
 </html>
