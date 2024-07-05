@@ -1,11 +1,25 @@
+/* Disable default cursor for all elements */
 body, * {
     cursor: none;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+/* Ensure box-sizing is inherited by all elements */
+* {
+    box-sizing: inherit;
 }
 
 body {
     font-family: 'Courier New', Courier, monospace;
     margin: 0;
-    padding: 250px;
+    padding: 250px 10px; /* Reduce padding for better mobile view */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -13,16 +27,16 @@ body {
     color: #ffffff;
     background: radial-gradient(ellipse at bottom, #225E55ff, #134544ff, #033038ff, #002327ff, #02151Eff, #021014ff, #000D16ff);
     background-size: cover;
-    height: 100vh;
-    overflow-x: hidden;
-    width: auto;
+    min-height: 100vh; /* Ensure the body covers the full viewport height */
 }
+
 h1 {
-    margin-top:120px;
+    margin-top: 120px;
     margin-bottom: 20px;
     font-family: 'DREAMS';
     font-size: 14px;
     padding-bottom: 30px;
+    text-align: center; /* Center align for better presentation */
 }
 
 .container {
@@ -31,8 +45,9 @@ h1 {
     align-items: flex-start;
     width: 80%;
     cursor: none;
-    padding-top: 10px; 
-    border-top: 1px solid #ffffff; 
+    padding-top: 10px;
+    border-top: 1px solid #ffffff;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
 .item {
@@ -42,7 +57,6 @@ h1 {
     margin: 5px 0;
     position: relative;
     overflow: hidden;
-
 }
 
 .item-number {
@@ -99,4 +113,24 @@ h1 {
     height: 100vh; /* Full viewport height */
     pointer-events: none;
     z-index: 9999; /* Ensure it's above other content */
+}
+
+/* Media query for responsive design */
+@media (max-width: 768px) {
+    body {
+        padding: 100px 20px; /* Adjust padding for smaller screens */
+    }
+
+    h1 {
+        margin-top: 60px; /* Adjust margin for smaller screens */
+    }
+
+    .container {
+        width: 100%; /* Full width for smaller screens */
+    }
+
+    .item span {
+        width: auto; /* Auto width for better responsiveness */
+        font-size: 16px; /* Adjust font size for smaller screens */
+    }
 }
