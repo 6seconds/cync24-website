@@ -1,0 +1,138 @@
+/* Disable default cursor for all elements */
+body, * {
+    cursor: none;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-y: scroll;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+/* Ensure box-sizing is inherited by all elements */
+* {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    background: radial-gradient(ellipse at bottom, #225E55ff, #134544ff, #033038ff, #002327ff, #02151Eff, #021014ff, #000D16ff);
+    background-size: cover;
+    height: auto; /* Ensure the body covers the full viewport height */
+}
+
+h1 {
+    margin-top: 120px;
+    margin-bottom: 20px;
+    font-family: 'DREAMS';
+    font-size: 14px;
+    padding-bottom: 30px;
+    text-align: center; /* Center align for better presentation */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 80%;
+    cursor: none;
+    padding-top: 10px;
+    border-top: 1px solid #ffffff;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 5px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.item-number {
+    width: 5%;
+    font-size: 18px;
+    text-align: right;
+}
+
+.item span {
+    width: 25%;
+    transition: color 0.5s;
+    display: inline-block;
+    position: relative;
+    font-size: 18px;
+}
+
+.item span:first-child {
+    text-align: left;
+}
+
+.item span:nth-child(2) {
+    text-align: left;
+}
+
+.item span:last-child {
+    text-align: right;
+}
+
+.item:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    transition: left 0.5s;
+    z-index: -1;
+}
+
+.item:hover:before {
+    left: 0;
+}
+
+.item:hover span {
+    color: #000000;
+}
+
+.cursor-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    pointer-events: none;
+    z-index: 9999; /* Ensure it's above other content */
+}
+
+/* Media query for responsive design */
+@media (max-width: 768px) {
+    body {
+        padding: 100px 20px; /* Adjust padding for smaller screens */
+    }
+
+    h1 {
+        margin-top: 60px; /* Adjust margin for smaller screens */
+    }
+
+    .container {
+        width: 100%; /* Full width for smaller screens */
+    }
+
+    .item span {
+        width: auto; /* Auto width for better responsiveness */
+        font-size: 16px; /* Adjust font size for smaller screens */
+    }
+}
