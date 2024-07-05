@@ -29,7 +29,8 @@ function scrambleText(element, targetText) {
     if (iteration >= targetText.length) {
       clearInterval(interval);
       element.innerText = targetText; // Ensure final text is set to the target
-      element.parentElement.classList.add("scrambled"); // Add class to parent container indicating fully scrambled
+      console.log(element);
+      element.classList.add("scrambled"); // Add class to parent container indicating fully scrambled
       isScrambling = false; // Reset scrambling flag
       hasScrambled = true; // Set flag indicating text has fully scrambled
     }

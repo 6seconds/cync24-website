@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-step Registration Form</title>
+    <link rel="stylesheet" href="../assets/effects/form.css">
+    <link rel="stylesheet" href="../assets/elements/navbar.css">
+    <link rel="stylesheet" href="../assets/cursor/cursor.css">
+    
+</head>
+<body>
+    <div id="gradient"></div>
+    <h1 class="register-title">REGISTER</h1>
+    <div class="line"></div>
+    <nav class="navbar">
+        <a href="../index.html">
+            <img src="../assets/images/logo.png" alt="Logo" class="logo">
+            </a>
+        <ul class="navbar-links" id="navbar-links">
+            <li><a href="pages/cync.html">(C)YNC</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li class="dropdown">
+                <a href="#members">MEMBERS</a>
+                <ul class="dropdown-content">
+                    <li style="--delay: 0s;"><a href="pages/team.html">TEAM</a></li>
+                    <li style="--delay: 0.1s;"><a href="pages/alumni.html">ALUMNI</a></li>
+                    <li style="--delay: 0.2s;"><a href="pages/faculty.html">FACULTY</a></li>
+                </ul>
+            </li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <form action="https://sheetdb.io/api/v1/mggyainc2nvie" method="post" id="sheetdb-form" >
+            <!-- Step 1 -->
+            <div class="step active" id="step1">
+                <label for="x1">Name of School:</label>
+                <input type="text" id="x1" name="data[school_name]" required><br><br>
+                <label for="y1">Email Address:</label>
+                <input type="text" id="y1" name="data[email_address]" required><br><br>
+                <label for="z1">Name of Teacher:</label>
+                <input type="text" id="z1" name="data[teacher_name]" required><br><br>
+                <label for="z2">Contact Number of Teacher:</label>
+                <input type="text" id="z2" name="data[teacher_contact]" required><br><br>
+                <button type="button" class="button" onclick="nextStep()">></button>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step" id="step2">
+                <h2>(C)ONCOCT</h2>
+                <label for="x2">Participant 1:</label>
+                <input type="text" id="x2" name="data[concoct_p1]" required><br><br>
+                <label for="y2">Participant 2:</label>
+                <input type="text" id="y2" name="data[concoct_p2]" required><br><br>
+                <label for="z3">Participant 3:</label>
+                <input type="text" id="z3" name="data[concoct_p3]" required><br><br>
+                <button type="button" class="button" onclick="prevStep()"><</button>
+                <button type="button" class="button" onclick="nextStep()">></button>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step" id="step3">
+                <h2>(C)LICK</h2>
+                <label for="x3">Participant 1:</label>
+                <input type="text" id="x3" name="data[click_p1]" required><br><br>
+                <label for="y3">Participant 2:</label>
+                <input type="text" id="y3" name="data[click_p2]" required><br><br>
+                <label for="z4">Participant 3:</label>
+                <input type="text" id="z4" name="data[click_p3]" required><br><br>
+                <button type="button" class="button" onclick="prevStep()"><</button>
+                <button type="button" class="button" onclick="nextStep()">></button>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="step" id="step4">
+                <h2>(C)IFI</h2>
+                <label for="x4">Participant 1:</label>
+                <input type="text" id="x4" name="data[cifi_p1]" required><br><br>
+                <label for="y4">Participant 2:</label>
+                <input type="text" id="y4" name="data[cifi_p2]" required><br><br>
+                <button type="button" class="button" onclick="prevStep()"><</button>
+                <button type="button" class="button" onclick="nextStep()">></button>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="step" id="step5">
+                <h2>(C)ODE</h2>
+                <label for="x5">Participant 1:</label>
+                <input type="text" id="x5" name="data[code_p1]" required><br><br>
+                <label for="y5">Participant 2:</label>
+                <input type="text" id="y5" name="data[code_p2]" required><br><br>
+                <button type="button" class="button" onclick="prevStep()"><</button>
+                <button type="button" class="button" onclick="nextStep()">></button>
+            </div>
+
+            <!-- Step 6 -->
+            <div class="step" id="step6">
+                <h2>(C)OMIQUE</h2>
+                <label for="x6">Participant 1:</label>
+                <input type="text" id="x6" name="data[comique_p1]" required><br><br>
+                <label for="y6">Participant 2:</label>
+                <input type="text" id="y6" name="data[comique_p2]" required><br><br>
+                <button type="button" class="button" onclick="prevStep()"><</button>
+                <button type="button" class="button" onclick="nextStep()">></button>
+            </div>
+
+            <!-- Step 7 -->
+            <div class="step" id="step7">
+                <h2>(C)ROSSHAIR</h2>
+                <label for="x7">Participant 1:</label>
+                <input type="text" id="x7" name="data[crosshair_p1]" required><br><br>
+                <label for="y7">Participant 2:</label>
+                <input type="text" id="y7" name="data[crosshair_p2]" required><br><br>
+                <label for="z5">Participant 3:</label>
+                <input type="text" id="z5" name="data[crosshair_p3]" required><br><br>
+                <label for="z6">Participant 4:</label>
+                <input type="text" id="z6" name="data[crosshair_p4]" required><br><br>
+                <label for="z7">Participant 5:</label>
+                <input type="text" id="z7" name="data[crosshair_p5]" required><br><br>
+                <label for="z8">Participant 6:</label>
+                <input type="text" id="z8" name="data[crosshair_p6]" required><br><br>
+                <button type="button" class="button" onclick="prevStep()"><</button>
+                <button type="submit" class="button">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div class="progress-bar">
+        <div class="progress-bar-fill" id="progressBarFill"></div>
+    </div>
+
+    <div id="blob-form"></div>
+    <div class="cursor-container">
+        <div class="cursor-dot" data-cursor-dot></div>
+        <div class="cursor-outline" data-cursor-outline></div>
+    </div>
+    <script src="../assets/cursor/blob.js"></script>
+    <script src="../assets/cursor/cursor.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../assets/effects/gradient.js"></script>
+    <script>
+        var form = document.getElementById("sheetdb-form");
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            var formData = new FormData(form);
+            
+            // Convert formData to JSON format for SheetDB
+            var object = {};
+            formData.forEach((value, key) => {
+                if (!object[key]) {
+                    object[key] = value;
+                }
+            });
+            var json = JSON.stringify({ data: [object] });
+
+            console.log("Form Data:", json); // Log the payload to be sent
+
+            fetch(form.action, {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: json,
+            })
+            .then((response) => {
+                console.log("Response Status:", response.status); // Log the response status
+                if (!response.ok) {
+                    return response.json().then((errorData) => {
+                        console.error('Error Data:', errorData);
+                        throw new Error('Network response was not ok');
+                    });
+                }
+                return response.json();
+            })
+            .then((data) => {
+                console.log("Data received:", data);
+                window.open("nextpage.html", "_blank");
+            })
+            .catch((error) => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
+        });
+    </script>    
+   
+</body>
+</html>

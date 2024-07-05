@@ -1,56 +1,89 @@
-.cursor-dot {
-    width: 5px;
-    height: 5px;
-    background-color: white;
-    mix-blend-mode: difference;
-}
-
-.cursor-outline {
-    width: 40px;
-    height: 40px;
-    border: 2px solid hsla(0,0%, 100%, 0.5);
-}
-
-
-.cursor-dot,
-.cursor-outline {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(-50%, -50% );
-    border-radius: 50%;
-    z-index:2;
-    pointer-events: none;
-    
-}
-
-
-
-@keyframes rotate {
-    from {
-      rotate: 0deg;
-    }
-    
-    50% {
-      scale: 1 1.5;
-    }
-    
-    to {
-      rotate: 360deg;
-    }
+/* Default cursor style for mobile/touch devices */
+@media (max-width: 768px) {
+  body, * {
+      cursor: auto !important; /* Set default cursor */
   }
-  
+}
+
+/* Custom cursor styles for desktop */
+@media (min-width: 769px) {
+  body {
+      cursor: none; /* Hide default cursor */
+  }
+
+  /* Custom cursor dot */
+  .cursor-dot {
+      width: 5px;
+      height: 5px;
+      background-color: white;
+      mix-blend-mode: difference; /* Example mix-blend-mode */
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      z-index: 2; /* Ensure dot is above other elements */
+      pointer-events: none; /* Prevents dot from interfering with cursor actions */
+  }
+
+  /* Custom cursor outline */
+  .cursor-outline {
+      width: 40px;
+      height: 40px;
+      border: 2px solid hsla(0, 0%, 100%, 0.5); /* Example border style */
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      z-index: 1; /* Outline behind dot */
+      pointer-events: none; /* Prevents outline from interfering with cursor actions */
+  }
+
+  /* Keyframes for cursor animation */
+  @keyframes rotate {
+      from {
+          transform: rotate(0deg);
+      }
+      50% {
+          transform: scale(1) rotate(180deg); /* Example scale and rotation */
+      }
+      to {
+          transform: rotate(360deg);
+      }
+  }
+
+  /* Custom cursor blob */
   #blob {
-    height: 34vmax;
-    aspect-ratio: 1;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    translate: -50% -50%;
-    /* border-radius: 50%; */
-    background: linear-gradient(to right, rgb(86, 247, 193), mediumpurple);
-    animation: rotate 20s infinite;
-    opacity: 0.4;
-    filter: blur(12vmax);
-    pointer-events: none;
+      height: 34vmax;
+      aspect-ratio: 1;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background: linear-gradient(to right, rgb(86, 247, 193), mediumpurple);
+      animation: rotate 20s infinite;
+      opacity: 0.4;
+      filter: blur(12vmax);
+      pointer-events: none;
+      z-index: 0; /* Behind cursor elements */
   }
+
+  /* Custom cursor blob for form */
+  #blob-form {
+      height: 34vmax;
+      aspect-ratio: 1;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background: linear-gradient(to right, #7442c6, #a089bc, #fceaff);
+      animation: rotate 20s infinite;
+      opacity: 0.1;
+      filter: blur(12vmax);
+      pointer-events: none;
+      z-index: 0; /* Behind cursor elements */
+  }
+}
