@@ -88,7 +88,7 @@
   }
 }
 /* Hide custom cursor on smaller screens */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .cursor-dot,
     .cursor-outline {
         display: none;
