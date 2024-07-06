@@ -4,13 +4,6 @@
     box-sizing: border-box;
 }
 
-@font-face {
-    font-family: 'DREAMS';
-    src: url('fonts/DREAMS.ttf');
-    font-weight: normal;
-    font-style: normal;
-}
-
 html{
     width: 100%;
     height: 100%;
