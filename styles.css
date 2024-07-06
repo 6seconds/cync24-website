@@ -6,8 +6,7 @@
 
 @font-face {
     font-family: 'DREAMS';
-    src: url('fonts/DREAMS.woff2') format('woff2'),
-         url('fonts/DREAMS.woff') format('woff');
+    src: url('fonts/DREAMS.ttf');
     font-weight: normal;
     font-style: normal;
 }
