@@ -1,12 +1,12 @@
 /* Default cursor style for mobile/touch devices */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   body, * {
       cursor: auto !important; /* Set default cursor */
   }
 }
 
 /* Custom cursor styles for desktop */
-@media (min-width: 769px) {
+@media (min-width: 1025px) {
   body {
       cursor: none; /* Hide default cursor */
   }
@@ -87,10 +87,6 @@
       z-index: 0; /* Behind cursor elements */
   }
 }
-/* Hide custom cursor on smaller screens */
-@media (max-width: 1024px) {
-    .cursor-dot,
-    .cursor-outline {
         display: none;
     }
 }
