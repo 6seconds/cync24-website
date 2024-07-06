@@ -1,3 +1,6 @@
+Here is the `navbar.css` file adjusted to be responsive for all the resolutions considered in `form.css`:
+
+```css
 body {
     overflow-x: hidden;
 }
@@ -60,7 +63,6 @@ body {
         0 0 20px rgba(255, 255, 255, 0.1),
         0 0 25px rgba(255, 255, 255, 0.05);
 }
-
 
 .navbar-links a::before {
     content: '';
@@ -159,6 +161,7 @@ body {
         transform: translateY(0);
     }
 }
+
 /* Hamburger Menu */
 .hamburger {
     display: none;
@@ -190,10 +193,44 @@ body {
 }
 
 /* Media Queries for Responsiveness */
+@media (max-width: 1280px) {
+    .navbar {
+        padding: 8px 16px;
+    }
+
+    .navbar-links {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        margin-left: 0;
+        padding: 10px;
+        border-radius: 0 0 10px 10px;
+    }
+
+    .logo {
+        height: 100px;
+    }
+
+    .navbar-links li {
+        margin-left: 15px;
+    }
+
+    .navbar-links a {
+        font-size: 18px;
+        padding: 8px 10px;
+    }
+
+    .dropdown-content {
+        min-width: 100px;
+        left: 0;
+        transform: translateX(0);
+    }
+}
+
 @media (max-width: 768px) {
     .navbar {
-        flex-direction: row;
-        align-items: center;
+        flex-direction: column;
+        align-items: flex-start;
         padding: 10px;
     }
 
@@ -223,15 +260,30 @@ body {
     }
 
     .logo {
-        height: 100px;
+        height: 80px;
         padding-left: 0;
+    }
+
+    .navbar-links a {
+        font-size: 16px;
+        padding: 8px 10px;
+    }
+
+    .dropdown-content {
+        min-width: 80px;
+        left: 0;
+        transform: translateX(0);
     }
 }
 
 @media (max-width: 480px) {
+    .navbar {
+        padding: 8px 12px;
+    }
+
     .navbar-links a {
-        font-size: 18px;
-        padding: 8px 10px;
+        font-size: 14px;
+        padding: 6px 8px;
         letter-spacing: 2px;
     }
 
@@ -239,5 +291,32 @@ body {
         min-width: 10px;
         left: 0;
         transform: translateX(0);
+    }
+
+    .logo {
+        height: 60px;
+    }
+}
+
+/* Specific Resolutions */
+@media (max-width: 360px) and (max-height: 800px) {
+    .navbar {
+        padding: 8px 10px;
+    }
+
+    .navbar-links a {
+        font-size: 12px;
+        padding: 4px 6px;
+        letter-spacing: 1px;
+    }
+
+    .dropdown-content {
+        min-width: 10px;
+        left: 0;
+        transform: translateX(0);
+    }
+
+    .logo {
+        height: 50px;
     }
 }
