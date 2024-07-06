@@ -4,6 +4,14 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'DREAMS';
+    src: url('fonts/DREAMS.woff2') format('woff2'),
+         url('fonts/DREAMS.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html{
     width: 100%;
     height: 100%;
