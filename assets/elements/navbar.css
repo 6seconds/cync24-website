@@ -104,60 +104,55 @@ body {
     list-style-type: none;
     display: none;
     position: absolute;
-    background-color: transparent; /* Transparent background */
-    min-width: 120px; /* Keep the original width */
-    z-index: 1;
+    background-color: rgba(2, 21, 30, 0.4); /* Semi-transparent background */
     border-radius: 20px;
-    overflow: hidden;
+    min-width: 50px; /* Adjust width as needed */
+    z-index: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add some shadow for depth */
+    padding: 10px;
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(-10px);
     transition: opacity 0.3s ease, transform 0.3s ease;
-    left: calc(15% - 60px); /* Adjusted for centering */
-    transform: translateX(-50%); /* Center the dropdown */
-    top: 50px; /* Adjust top position as needed */
+    backdrop-filter: blur(4px);
 }
 
 .dropdown-content li {
-    font-size: 18px; /* Decrease font size */
-    padding: 8px 15px; /* Smaller padding */
-    text-align: left; /* Align text to the left */
-    opacity: 0;
-    transform: translateY(-20px);
-    animation: dropDown 0.5s forwards;
-    animation-delay: var(--delay);
-    border-radius: 20px;
-    transition: background-color 0.3s ease;
+    padding: 10px;
+    font-size: 16px;
 }
 
 .dropdown-content li a {
     color: white;
     text-decoration: none;
     display: block;
-    padding: 8px; /* Smaller padding */
+    padding: 5px 10px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content li a:hover {
+    background-color: rgba(17, 255, 219, 0); /* Light blue hover effect */
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
     opacity: 1;
     transform: translateY(0);
-}
-
-.dropdown:hover .dropdown-content li {
-    opacity: 1;
-    transform: translateY(0);
-    animation: none; /* Remove animation on hover */
+    animation: dropDown 0.3s ease forwards;
 }
 
 @keyframes dropDown {
-    0% {
+    from {
         opacity: 0;
-        transform: translateY(-20px);
+        transform: translateY(-10px);
     }
-    100% {
+    to {
         opacity: 1;
         transform: translateY(0);
+        transform: translateX(-20px);
     }
 }
+
 
 /* Hamburger Menu */
 .hamburger {
@@ -236,13 +231,14 @@ body {
         width: 100%;
         display: none;
         position: absolute;
-        top: 0%;
-        right: -30%;
-        background-color: transparent;
+        top: 60px; /* Adjusted to avoid overlap with hamburger menu */
+        left: 0; /* Position links below the navbar */
+        background-color: rgba(2, 21, 30, 0); /* Semi-transparent background */
         padding: 10px;
-        border-radius: 0 10px 10px 10px;
+        border-radius: 0 0 10px 10px;
+        backdrop-filter: blur(10px); /* Add blur effect */
     }
-
+    
     .navbar-links li {
         margin-left: 0;
         margin-bottom: 10px;
@@ -264,12 +260,33 @@ body {
     .navbar-links a {
         font-size: 16px;
         padding: 8px 10px;
+        text-shadow: 
+        0 0 2px rgba(255, 255, 255, 0.4),
+        0 0 4px rgba(255, 255, 255, 0.3),
+        0 0 6px rgba(255, 255, 255, 0.2),
+        0 0 8px rgba(255, 255, 255, 0.1),
+        0 0 10px rgba(255, 255, 255, 0.05);
     }
 
     .dropdown-content {
         min-width: 80px;
         left: 0;
         transform: translateX(0);
+    }
+
+    /* Show dropdown on hover for phone view */
+    .dropdown:hover .dropdown-content {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+        position: relative; /* Relative position for better alignment */
+        top: 0; /* Reset top position */
+        left: 0; /* Reset left position */
+    }
+
+    .dropdown-content li {
+        font-size: 16px; /* Adjust font size for phone */
+        padding: 6px 10px; /* Adjust padding for phone */
     }
 }
 
@@ -282,6 +299,7 @@ body {
         font-size: 14px;
         padding: 6px 8px;
         letter-spacing: 2px;
+
     }
 
     .dropdown-content {
@@ -295,16 +313,18 @@ body {
     }
 }
 
-/* Specific Resolutions */
 @media (max-width: 360px) and (max-height: 800px) {
     .navbar {
         padding: 8px 10px;
+        justify-content: center;
     }
 
     .navbar-links a {
         font-size: 12px;
-        padding: 4px 6px;
+        padding: 4px 0px;
         letter-spacing: 1px;
+
+}
     }
 
     .dropdown-content {
