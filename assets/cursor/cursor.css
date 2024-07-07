@@ -22,7 +22,7 @@
       left: 0;
       transform: translate(-50%, -50%);
       border-radius: 50%;
-      z-index: 2; /* Ensure dot is above other elements */
+      z-index: 11; /* Ensure dot is above other elements */
       pointer-events: none; /* Prevents dot from interfering with cursor actions */
   }
 
@@ -36,7 +36,7 @@
       left: 0;
       transform: translate(-50%, -50%);
       border-radius: 50%;
-      z-index: 1; /* Outline behind dot */
+      z-index: 11; /* Outline behind dot */
       pointer-events: none; /* Prevents outline from interfering with cursor actions */
   }
 
@@ -55,7 +55,7 @@
 
   /* Custom cursor blob */
   #blob {
-      height: 34vmax;
+      height: 35vmax;
       aspect-ratio: 1;
       position: absolute;
       top: 50%;
@@ -64,7 +64,7 @@
       border-radius: 50%;
       background: linear-gradient(to right, rgb(86, 247, 193), mediumpurple);
       animation: rotate 20s infinite;
-      opacity: 0.4;
+      opacity: 0.2;
       filter: blur(12vmax);
       pointer-events: none;
       z-index: 0; /* Behind cursor elements */
@@ -86,7 +86,4 @@
       pointer-events: none;
       z-index: 0; /* Behind cursor elements */
   }
-}
-        display: none;
-    }
 }
