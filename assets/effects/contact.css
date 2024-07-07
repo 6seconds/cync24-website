@@ -1,0 +1,329 @@
+body, * {
+    cursor: none;
+}
+
+html, body {
+    width: 100%;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+body {
+    font-family: 'Aquire';
+    font-size: 20px;
+    background: radial-gradient(ellipse at bottom, #512467, #46225B, #3C1849, #261130, #1A0D21, #130918);
+    color: #fff;
+    height: 100vh; /* Adjusted to full viewport height */
+        overflow-x: hidden;
+    overflow-y: scroll;
+    animation: gradientAnimation 1s infinite alternate;
+}
+
+#gradient {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: radial-gradient(ellipse at bottom, #225E55ff, #134544ff, #033038ff, #002327ff, #02151Eff, #021014ff, #000D16ff); /* Initial gradient colors */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    width: auto;
+    height: 100vh;
+    margin: -750px auto;
+    padding: 20%;
+    background: transparent;
+    border-radius: 10px;
+    position: relative;
+    z-index: 2;
+    animation: slideInUp 0.5s ease-out forwards; /* Slide in animation */
+    opacity: 0;
+    display: flex;
+    justify-content: center; /* Align content to the start (left) */
+}
+
+.contact-title {
+    font-family: 'DREAMS';
+    text-align: left;
+    font-size: 0.65em;
+    margin-bottom: 6vh;
+    margin-top: 45vh;
+    margin-left: 10vh;
+    animation: fadeIn 1s ease-out forwards; /* Fade in animation */
+    opacity: 0;
+}
+
+.line {
+    position: absolute;
+    bottom: 30%;
+    left: 27.5%; /* Adjust left position as needed */
+    width: 1px; /* Width of the line */
+    background-color: #fceaff;
+    margin: auto;
+    height: 90vh; /* Set height to full viewport height */
+    transform-origin: top center; /* Ensure transformation origin is at top center */
+    transform: translateY(30%); /* Adjust vertical position to center line vertically */
+}
+
+
+.member {
+    font-family: "Quicksand";
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Reduced margin bottom between records */
+    padding-bottom: 10px; /* Added padding bottom for spacing */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Added border bottom for separation */
+    margin-left:350px;
+}
+
+.member p {
+    margin: 5px 200px 5px 0; /* Adjusted margins for spacing between columns */
+    font-size: 20px; /* Adjust font size as needed */
+    line-height: 1.4; /* Ensure proper line spacing */
+    white-space: nowrap; /* Prevent wrapping within columns */
+}
+
+.member p:first-child {
+    flex: 1; /* Makes the first column (NAME) expand to fill available space */
+    margin-right: 30px; /* Adjust spacing between columns */
+}
+
+.member p:last-child {
+    margin-left: 30px; /* Adjust spacing between columns */
+}
+
+.member p strong {
+    font-weight: bold;
+}
+
+#name,#designation,#phone_no{
+    font-family: "Aquire";
+    font-size: larger;
+    font-weight: bolder;
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 1688px) {
+    .container {
+        margin: 30px auto;
+        padding: 15px;
+    }
+
+    .contact-title {
+        font-size: 1em;
+        margin-bottom: 5vh;
+        margin-top: 40vh;
+        margin-left: 5vh;
+    }
+
+
+    .member{
+        margin-right:225px;
+    }
+
+    .member p {
+        margin: 5px 100px 5px 0; /* Adjusted margins for spacing between columns */
+        font-size: 20px; /* Adjust font size as needed */
+        line-height: 1.4; /* Ensure proper line spacing */
+        white-space: nowrap; /* Prevent wrapping within columns */
+    }
+
+    .line {
+        display: none; /* Hide the line on mobile devices */
+    }
+
+    .contact-title {
+        margin-left: 0; /* Center the title */
+        text-align: center; /* Center the text */
+        margin-top: 30vh; /* Adjust top margin */
+    }
+
+}
+
+@media (max-width: 1280px) {
+    .container {
+        margin: 30px auto;
+        padding: 15px;
+    }
+
+    .contact-title {
+        font-size: 0.8em;
+        margin-bottom: 5vh;
+        margin-top: 40vh;
+        margin-left: 5vh;
+    }
+
+    .member p {
+        margin: 5px 100px 5px 0; /* Adjusted margins for spacing between columns */
+        font-size: 15px; /* Adjust font size as needed */
+        line-height: 1.4; /* Ensure proper line spacing */
+        white-space: nowrap; /* Prevent wrapping within columns */
+    }
+
+    .line {
+        display: none; /* Hide the line on mobile devices */
+    }
+
+    .contact-title {
+        margin-left: 0; /* Center the title */
+        text-align: center; /* Center the text */
+        margin-top: 30vh; /* Adjust top margin */
+    }
+}
+
+
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+
+    .container {
+        max-width: 90%;
+        margin: 20px auto;
+        padding: 10px;
+    }
+
+    .contact-title {
+        font-size: 0.8em;
+        margin-bottom: 5vh;
+        margin-top: 40vh;
+        margin-left: 5vh;
+    }
+
+    .line {
+        display: none; /* Hide the line on mobile devices */
+    }
+
+    .contact-title {
+        margin-left: 0; /* Center the title */
+        text-align: center; /* Center the text */
+        margin-top: 30vh; /* Adjust top margin */
+    }
+
+
+    .member {
+        font-family: "Quicksand";
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px; /* Reduced margin bottom between records */
+        padding-bottom: 10px; /* Added padding bottom for spacing */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Added border bottom for separation */
+        margin-left: 225px;
+    }
+    
+    .member p {
+        margin: 5px 5px 5px 0; /* Adjusted margins for spacing between columns */
+        font-size: 14px; /* Adjust font size as needed */
+        line-height: 1.4; /* Ensure proper line spacing */
+        white-space: nowrap; /* Prevent wrapping within columns */
+    }
+    
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    .container {
+        max-width: 95%;
+        margin: 10px auto;
+        padding: 15px;
+    }
+
+    .contact-title {
+        font-size: 0.8em;
+        margin-bottom: 3vh;
+        margin-top: 20vh;
+        margin-left: 0;
+    }
+
+
+    .member {
+        font-family: "Quicksand";
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        margin-bottom: 20px; /* Reduced margin bottom between records */
+        padding-bottom: 20px; /* Added padding bottom for spacing */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Added border bottom for separation */
+    
+    }
+    .member p {
+        margin: 5px 20px 5px 0; /* Adjusted margins for spacing between columns */
+        font-size: 20px; /* Adjust font size as needed */
+        line-height: 1.4; /* Ensure proper line spacing */
+        white-space: nowrap; /* Prevent wrapping within columns */
+    }
+
+    .member p:first-child {
+        margin-right:0;
+    }
+    
+    .member p:last-child {
+        margin-left: 0;
+    }
+
+    #name,#designation,#phone_no{
+        display:none
+    }
+}
+
+/* Specific Resolutions */
+@media (max-width: 360px){
+    .container {
+        max-width: 95%;
+        margin: 10px auto;
+        padding: 10px;
+    }
+
+    .contact-title {
+        font-size: 0.6em
+    }
+
+    .member {
+        font-family: "Quicksand";
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px; /* Reduced margin bottom between records */
+        padding-bottom: 10px; /* Added padding bottom for spacing */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Added border bottom for separation */
+    
+    }
+    
+    .member p {
+        margin: 5px 20px 5px 0; /* Adjusted margins for spacing between columns */
+        font-size: 18px; /* Adjust font size as needed */
+        line-height: 1.4; /* Ensure proper line spacing */
+        white-space: nowrap; /* Prevent wrapping within columns */
+    }
+
+}
