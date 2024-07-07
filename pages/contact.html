@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-step Registration Form</title>
+    <link rel="stylesheet" href="../assets/effects/form.css">
+    <link rel="stylesheet" href="../assets/elements/navbar.css">
+    <link rel="stylesheet" href="../assets/cursor/cursor.css">
+    <link rel="stylesheet" href="../assets/effects/contact.css">
+
+</head>
+<body>
+    <div id="gradient"></div>
+    <h1 class="contact-title">CONTACT</h1>
+    <div class="line"></div>
+    <nav class="navbar">
+        <a href="../index.html">
+            <img src="../assets/images/logo.png" alt="Logo" class="logo">
+        </a>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul class="navbar-links" id="navbar-links">
+            <li><a href="pages/cync.html">(C)YNC</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li class="dropdown">
+                <a href="#members">MEMBERS</a>
+                <ul class="dropdown-content">
+                    <li style="--delay: 0s;"><a href="../pages/team.html">TEAM</a></li>
+                    <li style="--delay: 0.1s;"><a href="../pages/alumni.html">ALUMNI</a></li>
+                    <li style="--delay: 0.2s;"><a href="../pages/faculty.html">FACULTY</a></li>
+                </ul>
+            </li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
+    </nav>
+    <script>
+        function toggleMenu() {
+            document.getElementById('navbar-links').classList.toggle('show');
+            document.querySelector('.hamburger').classList.toggle('active');
+        }
+    </script>
+    <div class="container">
+        <div class="team-info">
+
+            <div class="members">
+                <div class="member">
+                    <p id="name">NAME</p>
+                    <p id="designation">DESIGNATION</p>
+                    <p id="phone_no">PHONE NO</p>
+                </div>
+
+            <div class="members">
+                <div class="member">
+                    <p>ANURAG SEHGAL</p>
+                    <p>TEACHER INCHARGE</p>
+                    <p>+91 78691 19509</p>
+                </div>
+                <div class="member">
+                    <p>ARPIT SHARMA</p>
+                    <p>PRESIDENT</p>
+                    <p>+91 81035 03080</p>
+                </div>
+                <div class="member">
+                    <p>KAUSHIKI SHARMA</p>
+                    <p>SECRETARY</p>
+                    <p>+91 79992 20544</p>
+                </div>
+                <div class="member">
+                    <p>MISHTHI PANJWANI</p>
+                    <p>PR MANAGER</p>
+                    <p>+91 62651 43903</p>
+                </div>
+                <div class="member">
+                    <p>SAMKIT JAIN</p>
+                    <p>DIRECTOR OF CODING</p>
+                    <p>+91 88715 05785</p>
+                </div>
+                <div class="member">
+                    <p>AYUSH VYAS</p>
+                    <p>CODING HEAD</p>
+                    <p>+91 89660 14814</p>
+                </div>
+                <div class="member">
+                    <p>TANISH SHAH</p>
+                    <p>GAMING HEAD</p>
+                    <p>+91 96301 37939</p>
+                </div>
+                <div class="member">
+                    <p>SHOURYA AGARWAL</p>
+                    <p>JUNIOR GAMING HEAD</p>
+                    <p>+91 88151 02060</p>
+                </div>
+                <div class="member">
+                    <p>PRERNA SHARMA</p>
+                    <p>PHOTOGRAPHY HEAD</p>
+                    <p>+91 90987 81807</p>
+                </div>
+                <div class="member">
+                    <p>SALONI DHAKAR</p>
+                    <p>COMPERING HEAD</p>
+                    <p>+91 87706 13340</p>
+                </div>
+                <div class="member">
+                    <p>SAANVI SACKLECHA</p>
+                    <p>GRAPHIC DESIGN HEAD</p>
+                    <p>+91 94256 31812</p>
+                </div>
+                <div class="member">
+                    <p>VEDANSH VERMA</p>
+                    <p>CONTENT HEAD</p>
+                    <p>+91 83196 59771</p>
+                </div>
+                <div class="member">
+                    <p>RIMJHIM DUTTA</p>
+                    <p>CONTENT HEAD</p>
+                    <p>+91 94244 06043</p>
+                </div>
+            </div>
+            
+                
+            </div>
+        </div>
+    </div>
+    <div id="blob-form"></div>
+    <div class="cursor-container">
+        <div class="cursor-dot" data-cursor-dot></div>
+        <div class="cursor-outline" data-cursor-outline></div>
+    </div>
+    <script src="../assets/cursor/blob.js"></script>
+    <script src="../assets/cursor/cursor.js"></script>
+
+</body>
+</html>
