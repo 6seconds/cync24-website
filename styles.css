@@ -1,53 +1,264 @@
-* {
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    /* background: radial-gradient(ellipse at bottom,  #333333 0%,#014b38  60%, #000000 100%); */
-    background: radial-gradient(ellipse at bottom, #225E55ff, #134544ff, #033038ff, #002327ff, #02151Eff, #021014ff, #000D16ff);
-    background-size: cover;
-    height: 100vh;
-    overflow: hidden;
-    cursor: none;
+html, body {
+    width: 100%;
+    height: 100%;
 }
 
+body {
+    background: radial-gradient(ellipse at bottom, #225E55ff, #134544ff, #033038ff, #002327ff, #02151Eff, #021014ff, #000D16ff);
+    background-size: cover;
+    overflow: hidden; /* Prevent body scrolling */
+    cursor: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.stars-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
 
 .container {
     position: relative;
     width: 100%;
     height: 100vh;
+    overflow-y: auto; /* Enable scrolling within the container */
+    overflow-x: hidden; /* Disable horizontal scrolling */
+    color: #fff;
+    z-index: 1;
+}
+
+.slide {
+    width: 100%;
+    height: 100vh;
     display: flex;
-    justify-content: center;
     align-items: center;
-    overflow: hidden;
-    color: transparent;
+    justify-content: center;
 }
 
 .header {
     font-family: "DREAMS";
     z-index: 1;
     pointer-events: none;
-    position: relative;
+    position: absolute; /* Changed to absolute for easier centering */
+    top: 50%; /* Start in the center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center transform */
     color: #fff;
-    font-size: 25px;
+    font-size: 2rem; /* Adjusted for visibility */
     text-transform: uppercase;
     font-weight: 900;
     letter-spacing: 22px;
-    line-height: 60px;
+    line-height: 1.2;
     text-align: center;
-    perspective: 1000px; /* Adds depth to the 3D effect */
-    padding: 40px; /* Add padding around the content inside the header */
-
+    padding: 40px;
     text-shadow: 
-    0 0 5px rgba(255, 255, 255, 0.27),
-    0 0 10px rgba(255, 255, 255, 0.23),
-    0 0 15px rgba(255, 255, 255, 0.15),
-    0 0 20px rgba(255, 255, 255, 0.07),
-    0 0 25px rgba(255, 255, 255, 0.025);
+        0 0 5px rgba(255, 255, 255, 0.27),
+        0 0 10px rgba(255, 255, 255, 0.23),
+        0 0 15px rgba(255, 255, 255, 0.15),
+        0 0 20px rgba(255, 255, 255, 0.07),
+        0 0 25px rgba(255, 255, 255, 0.025);
+}
+
+.container::-webkit-scrollbar {
+    width: 12px;
+}
+
+.container::-webkit-scrollbar-track {
+    background: #2A2A2A;
+    border-radius: 10px;
+}
+
+.container::-webkit-scrollbar-thumb {
+    background-color: #4ae2d5;
+    border-radius: 10px;
+    border: 3px solid #2A2A2A;
+}
+
+.content {
+    font-size: 2rem;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    opacity: 0.8; /* Adjusted for visibility */
 }
 
 
+/* General Slide Styles */
+/* General Slide Styles */
+#cync-overview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
 
+#cync-overview .content {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+#cync-overview .title {
+    font-size: 4rem;
+    font-family: 'Bebas Neue', sans-serif;
+    margin-bottom: 10px;
+    color: #4ae2d5;
+    animation: slideDown 1s ease-in-out, glitch 1s infinite alternate;
+    position: relative;
+    display: inline-block;
+}
+
+#cync-overview .subtitle {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #fff;
+    animation: slideUp 1s ease-in-out;
+}
+
+#cync-overview .event-details p {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #ccc;
+}
+
+#cync-overview .description {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #ddd;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+#cync-overview .icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+#cync-overview .icons img {
+    width: 50px;
+    height: 50px;
+    animation: iconBounce 2s infinite;
+}
+
+#cync-overview .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #4ae2d5;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #4ae2d5, 0 0 20px #4ae2d5, 0 0 30px #4ae2d5;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#cync-overview .btn:hover {
+    background-color: #36b4a9;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #36b4a9, 0 0 25px #36b4a9, 0 0 35px #36b4a9;
+}
+
+#cync-overview .footer {
+    margin-top: 20px;
+}
+
+#cync-overview .footer a {
+    margin: 0 10px;
+}
+
+#cync-overview .footer img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+#cync-overview .footer img:hover {
+    transform: scale(1.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-50px); }
+    to { transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); }
+    to { transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes iconBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes glitch {
+    0% {
+        clip: rect(44px, 9999px, 55px, 0);
+        transform: skew(0.02deg);
+    }
+    20% {
+        clip: rect(87px, 9999px, 27px, 0);
+        transform: skew(0.04deg);
+    }
+    40% {
+        clip: rect(36px, 9999px, 71px, 0);
+        transform: skew(0.06deg);
+    }
+    60% {
+        clip: rect(22px, 9999px, 16px, 0);
+        transform: skew(0.08deg);
+    }
+    80% {
+        clip: rect(90px, 9999px, 20px, 0);
+        transform: skew(0.10deg);
+    }
+    100% {
+        clip: rect(29px, 9999px, 63px, 0);
+        transform: skew(0.12deg);
+    }
+}
+
+#cync-overview .ip-box {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    color: #4ae2d5;
+    font-size: 1.2rem;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+#cync-overview .ip-box p {
+    margin: 0;
+}
