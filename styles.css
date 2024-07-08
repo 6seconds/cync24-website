@@ -1,10 +1,15 @@
-* {
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+:root {    
+    --blue-rgb: 50 140 124;
+    --primary-rgb: var(--blue-rgb);
+  }
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html{
+html, body {
     width: 100%;
     height: 100%;
 }
@@ -12,12 +17,12 @@ html{
 body {
     background: radial-gradient(ellipse at bottom, #225E55ff, #134544ff, #033038ff, #002327ff, #02151Eff, #021014ff, #000D16ff);
     background-size: cover;
-    height: 100vh;
-    overflow: hidden;
-    position: fixed;
-    width: 100%;
+    overflow: hidden; /* Prevent body scrolling */
     cursor: none;
-    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .stars-container {
     position: fixed;
@@ -33,34 +38,35 @@ body {
     position: relative;
     width: 100%;
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: auto;
-    color: transparent;
+    overflow-y: auto; /* Enable scrolling within the container */
+    overflow-x: hidden; /* Disable horizontal scrolling */
+    color: #fff;
     z-index: 1;
 }
 
+
 .header {
     font-family: "DREAMS";
-    z-index: 1;
+    z-index: 100000;
     pointer-events: none;
-    position: relative;
+    position: absolute; /* Changed to absolute for easier centering */
+    top: 50%; /* Start in the center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center transform */
     color: #fff;
-    font-size: 25px;
+    font-size: 2rem; /* Adjusted for visibility */
     text-transform: uppercase;
     font-weight: 900;
     letter-spacing: 22px;
-    line-height: 60px;
+    line-height: 1.2;
     text-align: center;
-    perspective: 1000px;
     padding: 40px;
     text-shadow: 
-    0 0 5px rgba(255, 255, 255, 0.27),
-    0 0 10px rgba(255, 255, 255, 0.23),
-    0 0 15px rgba(255, 255, 255, 0.15),
-    0 0 20px rgba(255, 255, 255, 0.07),
-    0 0 25px rgba(255, 255, 255, 0.025);
+        0 0 5px rgba(255, 255, 255, 0.27),
+        0 0 10px rgba(255, 255, 255, 0.23),
+        0 0 15px rgba(255, 255, 255, 0.15),
+        0 0 20px rgba(255, 255, 255, 0.07),
+        0 0 25px rgba(255, 255, 255, 0.025);
 }
 
 .container::-webkit-scrollbar {
@@ -76,4 +82,242 @@ body {
     background-color: #4ae2d5;
     border-radius: 10px;
     border: 3px solid #2A2A2A;
+}
+
+.slide {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Adjust alignment */
+    padding-left: 5%; /* Adjust as needed */
+}
+
+
+.content {
+    font-size: 2rem;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    opacity: 0.8; /* Adjusted for visibility */
+}
+
+/* Container to ensure the entire section is visible */
+/* Container for the cards */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-template-rows: repeat(2, 1fr); /* 2 equal rows */
+    row-gap: 10px; /* Adjust row gap as needed */
+    column-gap: 20px; /* Adjust column gap as needed */
+    padding: 20px; /* Add padding to container */
+    height: calc(100vh - 200px); /* Adjust height to allow for other content */
+    width: 100%;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+.cync-container {
+    display: flex;
+    justify-content: space-between; /* Ensure space between the two sections */
+    align-items: center;
+    height: 100vh; /* Full height of the viewport */
+    width: 100%;
+    padding: 0 5%; /* Adjust as needed */
+    overflow: visible; /* Allow overflow */
+}
+
+.cync-header {
+    display: flex;
+    flex-direction: column; /* Ensure elements are stacked vertically */
+    align-items: flex-start; /* Align to the left */
+    justify-content: center; /* Center vertically */
+    flex: 1; /* Take up remaining space */
+}
+
+#cync {
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-family: 'DREAMS', sans-serif;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    color: white; /* Ensure visibility against dark background */
+    margin: 0; /* Remove default margin */
+}
+
+.char {
+    transform: translateY(400px);
+    transition: transform .5s;
+}
+
+/* Additional styling for new sections in cync-overview */
+.cync-overview-content {
+    flex: 1; /* Take up remaining space */
+    overflow: visible; /* Allow overflow */
+}
+
+
+.screen {
+    width: 90%; /* Adjust width to make it more flexible */
+    height: 90%; /* Adjust height to make it more flexible */
+    display: flex;
+    border: 3px solid rgb(var(--primary-rgb) / 80%);
+    border-radius: 1rem;
+    background-color: rgb(var(--primary-rgb) / 15%);
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+    margin: auto; /* Remove margin to reduce space */
+}
+  
+.screen:after,
+.screen:before {
+    content: "";
+    height: 5px;
+    position: absolute;
+    z-index: 4;
+    left: 50%;
+    translate: -50% 0%;
+    background-color: white;
+}
+  
+.screen:before {
+    width: 15%;
+    top: 0rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+  
+.screen:after {
+    width: 25%;
+    bottom: 0rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+  
+@keyframes pan-overlay {
+    from {
+        background-position: 0% 0%;
+    }
+    to {
+        background-position: 0% -100%;
+    }
+}
+  
+.screen-overlay {    
+    background: linear-gradient(
+        rgb(var(--primary-rgb) / 0.15),
+        rgb(var(--primary-rgb) / 0.15) 3px,
+        transparent 3px,
+        transparent 9px
+    );
+    background-size: 100% 9px;
+    height: 100%;
+    width: 100%;
+    animation: pan-overlay 22s infinite linear;
+    position: absolute;
+    z-index: 2;
+    left: 0px;
+    top: 0px;
+}
+  
+.screen > .screen-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    flex-grow: 1;
+    gap: 4rem;
+    position: relative;
+    z-index: 3;
+    margin: 1rem;
+    padding-bottom: 6rem;
+    border: 1px solid rgb(var(--primary-rgb) / 50%);
+    border-radius: 0.6rem;
+}
+
+  
+.screen > .screen-content > .screen-user{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+}
+  
+.screen > .screen-content > .screen-user:before,
+.screen > .screen-content > .screen-user:after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    background-color: rgb(var(--primary-rgb));
+    border-radius: 1rem;
+    box-shadow: 0px 0px 8px 3px rgb(var(--primary-rgb) / 60%);
+}
+  
+.screen > .screen-content > .screen-user:before {
+    height: 2px;
+    width: 50px;
+    translate: -20px -1rem;
+    opacity: 0.75;
+}
+  
+.screen > .screen-content > .screen-user:after {
+    height: 3px;
+    width: 30px;
+    translate: 26px calc(-1rem - 0.5px);
+}
+
+
+.screen > .screen-content > .screen-user > :is(.name, .link) {
+    font-family: "Spacetron", monospace;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    text-transform: uppercase; 
+}
+
+  
+.screen > .screen-content > .screen-user > .name {
+    position: relative;
+    font-family: "Spacetron", monospace;
+    font-size: 30px;
+    font-weight: 400;
+}
+  
+.screen > .screen-content > .screen-user > .name:before,
+.screen > .screen-content > .screen-user > .name:after {
+    content: "";
+    height: 4px;
+    width: 4px;
+    position: absolute;
+    border: 2px solid white;
+    border-radius: 2px;
+}
+  
+.screen > .screen-content > .screen-user > .name:before {
+    top: 55%;
+    right: -1.5rem;
+}
+  
+.screen > .screen-content > .screen-user > .name:after {
+    top: 45%;
+    left: -1.5rem;  
+}
+  
+.screen > .screen-content > .screen-user > .link {  
+    opacity: 0.8;
+    font-size: 1.5rem;
+    text-shadow: 0px 0px 0.5rem white;
+    font-weight: 400;
+    letter-spacing: 0.3rem;
+    text-decoration: none;
+}
+  
+.screen > .screen-content > .screen-user > .link:is(:hover, :focus) {  
+    text-decoration: underline; 
+}
+  
+@media(max-width: 700px) {
+    .screen {
+        scale: 0.6;
+        margin-bottom: 0rem;
+    }
 }
