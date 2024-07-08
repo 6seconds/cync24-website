@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
+    <title>Header Scroll Animation</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles.css">
@@ -13,38 +13,108 @@
     <link rel="stylesheet" href="assets/elements/navbar.css">
     <link rel="stylesheet" href="assets/effects/stars.css">
     <link rel="stylesheet" href="assets/effects/rand_morph.css">
-
 </head>
 <body>
-    <section class="" style="position: absolute;">
-        <div class = "object" data-value="50" alt="">
+    <section class="stars-container">
+        <div class="object" data-value="50" alt="">
             <div id="stars"></div>
             <div id="stars2"></div>
             <div id="stars3"></div>
             <div id="stars4"></div>
-            <div id="title">
         </div>
     </section>
     
-    <div class="container">
-
-        <div class="header">
-            <div class="object" data-value="-3" style="padding: 50px;">
-        
-                <span class="flicker">(</span>c<span class="flicker">)</span>ypher
-    
-                
-            </div>
-
-
-            <!-- <div class="h2-container"> -->
+    <div class="container" id="scrollable-container">
+        <div class="slide">
+            <div class="header">
+                <div class="object" id="cypher-text" data-value="-3" style="padding: 50px;">
+                    <span class="flicker">(</span>c<span class="flicker">)</span>ypher
+                </div>
                 <h2>DOING THE IMPOSSIBLE</h2>
-              <!-- </div> -->
-             
+            </div>
+        </div>
+        <div class="slide" id="cync-overview">
+            <div class="cync-container">
+                <header class="cync-header">
+                    <div class="object" data-value="5">
+                        <h1 id="cync">(C)YNC</h1>
+                    </div>
+                </header>
+                <div class="cync-overview-content">
+                    <div class="card-container">
+                        <div class="screen"> 
+                            <div class="screen-overlay"></div>  
+                            <div class="screen-content">
+                              <div class="screen-user">
+                                <span class="name" >EVENT</span>
+                                <a class="link" target="_blank">Learn more</a>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="screen"> 
+                            <div class="screen-overlay"></div>  
+                            <div class="screen-content">
+                              <div class="screen-user">
+                                <span class="name">EVENT</span>
+                                <a class="link" target="_blank">Learn more</a>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="screen"> 
+                            <div class="screen-overlay"></div>  
+                            <div class="screen-content">
+                              <div class="screen-user">
+                                <span class="name" >EVENT</span>
+                                <a class="link" target="_blank">Learn more</a>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="screen"> 
+                            <div class="screen-overlay"></div>  
+                            <div class="screen-content">
+                              <div class="screen-user">
+                                <span class="name" >EVENT</span>
+                                <a class="link" target="_blank">Learn more</a>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="screen"> 
+                            <div class="screen-overlay"></div>  
+                            <div class="screen-content">
+                              <div class="screen-user">
+                                <span class="name" >EVENT</span>
+                                <a class="link" target="_blank">Learn more</a>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="screen"> 
+                            <div class="screen-overlay"></div>  
+                            <div class="screen-content">
+                              <div class="screen-user">
+                                <span class="name" >EVENT</span>
+                                <a class="link" target="_blank">Learn more</a>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
         </div>
         
-    
-
+        
+        
+        <div class="slide">
+            <div class="content">
+                <h2>Slide 1</h2>
+                <p>This is some dummy content for slide 1.</p>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="content">
+                <h2>Slide 1</h2>
+                <p>This is some dummy content for slide 1.</p>
+            </div>
+        </div>                
     </div>
     <nav class="navbar">
         <img src="assets/images/logo.png" alt="Logo" class="logo">
@@ -54,8 +124,7 @@
             <div></div>
         </div>
         <ul class="navbar-links" id="navbar-links">
-            <li><a href="pages/cync.html">(C)YNC</a></li>
-            <li><a href="#about">ABOUT</a></li>
+            <li><a href="pages/cync.html">EVENTS</a></li>
             <li class="dropdown">
                 <a href="#members">MEMBERS</a>
                 <ul class="dropdown-content">
@@ -67,22 +136,26 @@
             <li><a href="#contact">CONTACT</a></li>
         </ul>
     </nav>
+
     
     <script>
-    function toggleMenu() {
-        document.getElementById('navbar-links').classList.toggle('show');
-        document.querySelector('.hamburger').classList.toggle('active');
-    }
+        function toggleMenu() {
+            document.getElementById('navbar-links').classList.toggle('show');
+            document.querySelector('.hamburger').classList.toggle('active');
+        }
+        
     </script>
     
     
-
-    
     <div class="cursor-dot" data-cursor-dot></div>
     <div class="cursor-outline" data-cursor-outline></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
     <script src="parallax.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
     <script src="assets/effects/rand_morph.js"></script>
     <script src="assets/cursor/cursor.js"></script>
-
+    <script src="assets/effects/gradient-scroll.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>

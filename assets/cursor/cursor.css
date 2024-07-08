@@ -22,7 +22,7 @@
       left: 0;
       transform: translate(-50%, -50%);
       border-radius: 50%;
-      z-index: 2; /* Ensure dot is above other elements */
+      z-index: 10000000; /* Ensure dot is above other elements */
       pointer-events: none; /* Prevents dot from interfering with cursor actions */
   }
 
@@ -36,7 +36,7 @@
       left: 0;
       transform: translate(-50%, -50%);
       border-radius: 50%;
-      z-index: 1; /* Outline behind dot */
+      z-index: 1000000; /* Outline behind dot */
       pointer-events: none; /* Prevents outline from interfering with cursor actions */
   }
 
