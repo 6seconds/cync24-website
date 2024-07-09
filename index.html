@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="assets/elements/navbar.css">
     <link rel="stylesheet" href="assets/effects/stars.css">
     <link rel="stylesheet" href="assets/effects/rand_morph.css">
+    <link rel="stylesheet" href="assets/elements/card.css">
 </head>
 <body>
     <section class="stars-container">
@@ -36,71 +37,90 @@
         <div class="slide" id="cync-overview">
             <div class="cync-container">
                 <header class="cync-header">
-                    <div class="object" data-value="5">
-                        <h1 id="cync">(C)YNC</h1>
+                    <h1 id="cync">(C)YNC</h1>
+                    <div class="countdown">
+                      <div>
+                        <span id="days">00</span>
+                        <div class="label">Days</div>
+                      </div>
+                      <div>
+                        <span id="hours">00</span>
+                        <div class="label">Hours</div>
+                      </div>
+                      <div>
+                        <span id="minutes">00</span>
+                        <div class="label">Minutes</div>
+                      </div>
+                      <div>
+                        <span id="seconds">00</span>
+                        <div class="label">Seconds</div>
+                      </div>                      
                     </div>
-                    <div id="countdown">
-                      <ul>
-                        <li><span id="days"></span>days</li>
-                        <li><span id="hours"></span>Hours</li>
-                        <li><span id="minutes"></span>Minutes</li>
-                        <li><span id="seconds"></span>Seconds</li>
-                      </ul>
-                    </div>
+                    <button class="register" area-label="Register" id="reg">
+                      <span area-hidden="true">
+                        <span>REGISTER</span>
+                      </span>
+                    </button>
                 </header>
                 <div class="cync-overview-content">
-                    <div class="card-container">
-                        <div class="screen"> 
+                    <div class="card-container" id="card-container">
+                        <div class="screen">
+                          <div class="screen-image" style="background-image: url(assets/images/cifi.png);"></div> 
                             <div class="screen-overlay"></div>  
                             <div class="screen-content">
                               <div class="screen-user">
-                                <span class="name" >EVENT</span>
-                                <a class="link" target="_blank">Learn more</a>
+                                <span class="name" >CIFI</span>
+                                <a class="link" target="_blank">Discover</a>
                               </div>
                             </div>
                           </div>
                           <div class="screen"> 
+                            <div class="screen-image" style="background-image: url(assets/images/click.png);"></div> 
                             <div class="screen-overlay"></div>  
                             <div class="screen-content">
                               <div class="screen-user">
-                                <span class="name">EVENT</span>
-                                <a class="link" target="_blank">Learn more</a>
+                                <span class="name">CLICK</span>
+                                <a class="link" target="_blank">Discover</a>
                               </div>
                             </div>
                           </div>
                           <div class="screen"> 
+                            <div class="screen-image" style="background-image: url(assets/images/code.png);"></div> 
                             <div class="screen-overlay"></div>  
                             <div class="screen-content">
                               <div class="screen-user">
-                                <span class="name" >EVENT</span>
-                                <a class="link" target="_blank">Learn more</a>
+                                <span class="name" >CODE</span>
+                                <a class="link" target="_blank">Discover</a>
                               </div>
                             </div>
                           </div>
                           <div class="screen"> 
+                            <div class="screen-image" style="background-image: url(assets/images/comique.png);"></div> 
                             <div class="screen-overlay"></div>  
                             <div class="screen-content">
                               <div class="screen-user">
-                                <span class="name" >EVENT</span>
-                                <a class="link" target="_blank">Learn more</a>
+                                <span class="name" >COMIQUE</span>
+                                <a class="link" target="_blank">Discover</a>
                               </div>
                             </div>
                           </div>
                           <div class="screen"> 
+                            <div class="screen-image" style="background-image: url(assets/images/crosshair.png);"></div> 
                             <div class="screen-overlay"></div>  
                             <div class="screen-content">
                               <div class="screen-user">
-                                <span class="name" >EVENT</span>
-                                <a class="link" target="_blank">Learn more</a>
+                                <span class="name" >CROSSHAIR</span>
+                                <a class="link" target="_blank">Discover</a>
                               </div>
                             </div>
                           </div>
                           <div class="screen"> 
+                            <div class="screen-image" style="background-image: url(assets/images/concoct.png);"></div> 
                             <div class="screen-overlay"></div>  
                             <div class="screen-content">
                               <div class="screen-user">
-                                <span class="name" >EVENT</span>
-                                <a class="link" target="_blank">Learn more</a>
+                                <span class="name" >CONCOCT</span>
+                                <a class="link" target="_blank">Discover</a>
                               </div>
                             </div>
                           </div>
@@ -112,14 +132,45 @@
         
         
         <div class="slide">
-            <div class="content">
-                <h2>Slide 1</h2>
-                <p>This is some dummy content for slide 1.</p>
-            </div>
-        </div>
+          <section class="marquees" id="marquee-section">
+              <div class="marquee-container" id="marquee-1">
+                  <div class="marquee">
+                      <div class="item"><img src="assets/images/click.png" alt=""></div>
+                      <div class="item with-text"><h1>DECADE</h1></div>
+                      <div class="item"><img src="assets/images/click.png" alt=""></div>
+                      <div class="item"><img src="assets/images/click.png" alt=""></div>
+                      <div class="item"><img src="assets/images/click.png" alt=""></div>
+                  </div>
+              </div>
+              <div class="marquee-container" id="marquee-2">
+                  <div class="marquee">
+                      <div class="item"><img src="assets/images/click.png" alt="" id="alumni-images"></div>
+                      <div class="item"><img src="assets/images/click.png" alt="" id="alumni-images"></div>
+                      <div class="item"><img src="assets/images/click.png" alt="" id="alumni-images"></div>
+                      <div class="item with-text"><h1>OF</h1></div>
+                      <div class="item"><img src="assets/images/click.png" alt="" id="alumni-images"></div>
+                  </div>
+              </div>
+              <div class="marquee-container" id="marquee-3">
+                  <div class="marquee">
+                      <div class="item"><img src="assets/images/click.png" alt="" id="alumni-images"></div>
+                      <div class="item"><img src="assets/images/click.png" alt="" id="alumni-images"></div>
+                      <div class="item with-text"><h1>(C)YNC</h1></div>
+                      <div class="item"><img src="assets/images/click.png" alt="" id="alumni-images"></div>
+                      <div class="item"><img src="assets/images/click.png" alt="" id="alumni-images"></div>
+                  </div>
+              </div>                        
+          </section>
+      </div>
+        
+        
+        
+        
+        
+        
         <div class="slide">
             <div class="content">
-                <h2>Slide 1</h2>
+                <h2>CIFI</h2>
                 <p>This is some dummy content for slide 1.</p>
             </div>
         </div>                
@@ -147,54 +198,23 @@
 
     
     <script>
-        function toggleMenu() {
-            document.getElementById('navbar-links').classList.toggle('show');
-            document.querySelector('.hamburger').classList.toggle('active');
-        }
-        (function () {
-  const second = 1000,
-        minute = second * 60,
-        hour = minute * 60,
-        day = hour * 24;
-
-  //I'm adding this section so I don't have to keep updating this pen every year :-)
-  //remove this if you don't need it
-  let today = new Date(),
-      dd = String(today.getDate()).padStart(2, "0"),
-      mm = String(today.getMonth() + 1).padStart(2, "0"),
-      yyyy = today.getFullYear(),
-      nextYear = yyyy + 1,
-      dayMonth = "09/30/",
-      birthday = dayMonth + yyyy;
+      // Function to toggle the mobile menu
+      function toggleMenu() {
+          document.getElementById('navbar-links').classList.toggle('show');
+          document.querySelector('.hamburger').classList.toggle('active');
+      }
   
-  today = mm + "/" + dd + "/" + yyyy;
-  if (today > birthday) {
-    birthday = dayMonth + nextYear;
-  }
-  //end
-  
-  const countDown = new Date(birthday).getTime(),
-      x = setInterval(function() {    
 
-        const now = new Date().getTime(),
-              distance = countDown - now;
+      // Function to check viewport width and remove card-container if less than 1111px
 
-        document.getElementById("days").innerText = Math.floor(distance / (day)),
-          document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
-          document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
-          document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
-
-        //do something later when date is reached
-        if (distance < 0) {
-          document.getElementById("headline").innerText = "It's my birthday!";
-          document.getElementById("countdown").style.display = "none";
-          document.getElementById("content").style.display = "block";
-          clearInterval(x);
+        const cyncoverviewcontent = document.getElementById("card-container");
+        if (window.innerWidth < 1024) {
+            cyncoverviewcontent.remove();
+            console.log('awfhawofhawlhu')
         }
-        //seconds
-      }, 0)
-  }());
+  
     </script>
+  
     
     
     <div class="cursor-dot" data-cursor-dot></div>
@@ -203,9 +223,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
     <script src="parallax.js"></script>
     <script src="https://unpkg.com/split-type"></script>
+    <script src="https://unpkg.com/lenis@1.1.5/dist/lenis.min.js"></script>
     <script src="assets/effects/rand_morph.js"></script>
     <script src="assets/cursor/cursor.js"></script>
     <script src="assets/effects/gradient-scroll.js"></script>
     <script src="app.js"></script>
+    <script src="assets/effects/countdown.js"></script>
 </body>
 </html>
