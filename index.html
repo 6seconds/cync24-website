@@ -36,62 +36,85 @@
         <div class="slide" id="cync-overview">
             <div class="cync-container">
                 <header class="cync-header">
-                    <div class="object" data-value="5">
-                        <h1 id="cync">(C)YNC</h1>
+                    <h1 id="cync">(C)YNC</h1>
+                    <div class="countdown">
+                      <div>
+                        <span id="days">00</span>
+                        <div class="label">Days</div>
+                      </div>
+                      <div>
+                        <span id="hours">00</span>
+                        <div class="label">Hours</div>
+                      </div>
+                      <div>
+                        <span id="minutes">00</span>
+                        <div class="label">Minutes</div>
+                      </div>
                     </div>
+                    <button class="register" area-label="Register" id="reg">
+                      <span area-hidden="true">
+                        <span>REGISTER</span>
+                      </span>
+                    </button>
                 </header>
                 <div class="cync-overview-content">
                     <div class="card-container">
-                        <div class="screen"> 
+                        <div class="screen">
+                          <div class="screen-image" style="background-image: url(assets/images/cifi.png);"></div> 
                             <div class="screen-overlay"></div>  
                             <div class="screen-content">
                               <div class="screen-user">
-                                <span class="name" >EVENT</span>
+                                <span class="name" >CIFI</span>
                                 <a class="link" target="_blank">Learn more</a>
                               </div>
                             </div>
                           </div>
                           <div class="screen"> 
+                            <div class="screen-image" style="background-image: url(assets/images/click.png);"></div> 
                             <div class="screen-overlay"></div>  
                             <div class="screen-content">
                               <div class="screen-user">
-                                <span class="name">EVENT</span>
+                                <span class="name">CLICK</span>
                                 <a class="link" target="_blank">Learn more</a>
                               </div>
                             </div>
                           </div>
                           <div class="screen"> 
+                            <div class="screen-image" style="background-image: url(assets/images/code.png);"></div> 
                             <div class="screen-overlay"></div>  
                             <div class="screen-content">
                               <div class="screen-user">
-                                <span class="name" >EVENT</span>
+                                <span class="name" >CODE</span>
                                 <a class="link" target="_blank">Learn more</a>
                               </div>
                             </div>
                           </div>
                           <div class="screen"> 
+                            <div class="screen-image" style="background-image: url(assets/images/comique.png);"></div> 
                             <div class="screen-overlay"></div>  
                             <div class="screen-content">
                               <div class="screen-user">
-                                <span class="name" >EVENT</span>
+                                <span class="name" >COMIQUE</span>
                                 <a class="link" target="_blank">Learn more</a>
                               </div>
                             </div>
                           </div>
                           <div class="screen"> 
+                            <div class="screen-image" style="background-image: url(assets/images/crosshair.png);"></div> 
                             <div class="screen-overlay"></div>  
                             <div class="screen-content">
                               <div class="screen-user">
-                                <span class="name" >EVENT</span>
+                                <span class="name" >CROSSHAIR</span>
                                 <a class="link" target="_blank">Learn more</a>
                               </div>
                             </div>
                           </div>
                           <div class="screen"> 
+                            <div class="screen-image" style="background-image: url(assets/images/concoct.png);"></div> 
                             <div class="screen-overlay"></div>  
                             <div class="screen-content">
                               <div class="screen-user">
-                                <span class="name" >EVENT</span>
+                                <span class="name" >CONCOCT</span>
                                 <a class="link" target="_blank">Learn more</a>
                               </div>
                             </div>
@@ -104,14 +127,45 @@
         
         
         <div class="slide">
-            <div class="content">
-                <h2>Slide 1</h2>
-                <p>This is some dummy content for slide 1.</p>
-            </div>
-        </div>
+          <section class="marquees" id="marquee-section">
+              <div class="marquee-container" id="marquee-1">
+                  <div class="marquee">
+                      <div class="item"><img src="assets/images/click.png" alt=""></div>
+                      <div class="item with-text"><h1>DECADE</h1></div>
+                      <div class="item"><img src="assets/images/click.png" alt=""></div>
+                      <div class="item"><img src="assets/images/click.png" alt=""></div>
+                      <div class="item"><img src="assets/images/click.png" alt=""></div>
+                  </div>
+              </div>
+              <div class="marquee-container" id="marquee-2">
+                  <div class="marquee">
+                      <div class="item"><img src="assets/images/click.png" alt="" id="alumni-images"></div>
+                      <div class="item"><img src="assets/images/click.png" alt="" id="alumni-images"></div>
+                      <div class="item"><img src="assets/images/click.png" alt="" id="alumni-images"></div>
+                      <div class="item with-text"><h1>OF</h1></div>
+                      <div class="item"><img src="assets/images/click.png" alt="" id="alumni-images"></div>
+                  </div>
+              </div>
+              <div class="marquee-container" id="marquee-3">
+                  <div class="marquee">
+                      <div class="item"><img src="assets/images/click.png" alt="" id="alumni-images"></div>
+                      <div class="item"><img src="assets/images/click.png" alt="" id="alumni-images"></div>
+                      <div class="item with-text"><h1>(C)YNC</h1></div>
+                      <div class="item"><img src="assets/images/click.png" alt="" id="alumni-images"></div>
+                      <div class="item"><img src="assets/images/click.png" alt="" id="alumni-images"></div>
+                  </div>
+              </div>                        
+          </section>
+      </div>
+        
+        
+        
+        
+        
+        
         <div class="slide">
             <div class="content">
-                <h2>Slide 1</h2>
+                <h2>CIFI</h2>
                 <p>This is some dummy content for slide 1.</p>
             </div>
         </div>                
@@ -143,7 +197,6 @@
             document.getElementById('navbar-links').classList.toggle('show');
             document.querySelector('.hamburger').classList.toggle('active');
         }
-        
     </script>
     
     
@@ -153,9 +206,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
     <script src="parallax.js"></script>
     <script src="https://unpkg.com/split-type"></script>
+    <script src="https://unpkg.com/lenis@1.1.5/dist/lenis.min.js"></script>
     <script src="assets/effects/rand_morph.js"></script>
     <script src="assets/cursor/cursor.js"></script>
     <script src="assets/effects/gradient-scroll.js"></script>
     <script src="app.js"></script>
+    <script src="assets/effects/countdown.js"></script>
 </body>
 </html>

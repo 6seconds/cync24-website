@@ -1,28 +1,24 @@
+
 body, * {
     cursor: none;
 }
-
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-y: scroll;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
 body {
     font-family: 'Aquire';
     font-size: 20px;
-    background: radial-gradient(ellipse at bottom, #512467, #46225B, #3C1849, #261130, #1A0D21, #130918);
+    background: radial-gradient(ellipse at bottom, #225E55ff, #134544ff, #033038ff, #002327ff, #02151Eff, #021014ff, #000D16ff);
     color: #fff;
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden; /* Prevent horizontal scrollbar */
-    animation: gradientAnimation 1s infinite alternate;
-}
-
-#gradient {
-    position: fixed;
-    top: 0;
-    left: 0;
+    height: auto;
     width: 100%;
-    height: 100%;
-    z-index: -1;
-    background: radial-gradient(circle at center, #225E55, #000D16); /* Initial gradient colors */
-    background-repeat: no-repeat;
-    background-size: cover;
+    animation: gradientAnimation 1s infinite alternate;
 }
 
 
@@ -56,6 +52,9 @@ body {
     width: 1px; /* Width of the line */
     background-color: #fceaff;
     margin: auto;
+    height: 70vh; /* Set height to full viewport height */
+    transform-origin: top center; /* Ensure transformation origin is at top center */
+    transform: translateY(30%); /* Adjust vertical position to center line vertically */
 }
 
 .step {
@@ -80,12 +79,6 @@ body {
     margin-bottom: 30px; 
 }
 
-.line {
-    height: 70vh; /* Set height to full viewport height */
-    transform-origin: top center; /* Ensure transformation origin is at top center */
-    transform: translateY(30%); /* Adjust vertical position to center line vertically */
-}
-
 .button-container {
     display: flex;
     justify-content: center;
@@ -94,19 +87,6 @@ body {
     animation: fadeIn 1s ease-out forwards; /* Fade in animation */
     opacity: 0;
 }
-
-
-/* .step#step7.active {
-    display: block;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.step#step7.active label,
-.step#step7.active input {
-    width: 100%;
-    margin-bottom: 10px; 
-} */
 
 .button {
     background: transparent;
@@ -187,7 +167,7 @@ input[type="text"]::placeholder {
 
 input[type="text"]:focus {
     outline: none;
-    border-color: palevioletred; /* Highlight border color on focus */
+    border-color: rgb(15, 206, 190); /* Highlight border color on focus */
 }
 
 label {
@@ -226,5 +206,136 @@ label {
     z-index: 9999; /* Ensure it's above other content */
 }
 
+/* General Responsive Styles */
+@media (max-width: 1688px) {
+    .container {
+        margin: 30px auto;
+        padding: 15px;
+    }
 
+    .register-title {
+        font-size: 1em;
+        margin-bottom: 5vh;
+        margin-top: 40vh;
+        margin-left: 5vh;
+    }
 
+    .step.active {
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -30%);
+    }
+
+    .button {
+        padding: 8px 12px;
+        font-size: 0.9em;
+    }
+
+    .line {
+        display: none; /* Hide the line on mobile devices */
+    }
+
+    .register-title {
+        margin-left: 0; /* Center the title */
+        text-align: center; /* Center the text */
+        margin-top: 30vh; /* Adjust top margin */
+    }
+
+    .step.active {
+        top: auto; /* Adjust top margin for active step */
+        left: auto;
+        transform: none;
+        margin-top: 5vh;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+
+    .container {
+        max-width: 90%;
+        margin: 20px auto;
+        padding: 10px;
+    }
+
+    .register-title {
+        font-size: 0.8em;
+        margin-bottom: 5vh;
+        margin-top: 40vh;
+        margin-left: 5vh;
+    }
+
+    .step.active {
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -30%);
+    }
+
+    .button {
+        padding: 8px 12px;
+        font-size: 0.9em;
+    }
+
+    .line {
+        display: none; /* Hide the line on mobile devices */
+    }
+
+    .register-title {
+        margin-left: 0; /* Center the title */
+        text-align: center; /* Center the text */
+        margin-top: 30vh; /* Adjust top margin */
+    }
+
+    .step.active {
+        top: auto; /* Adjust top margin for active step */
+        left: auto;
+        transform: none;
+        margin-top: 5vh;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    .container {
+        max-width: 95%;
+        margin: 10px auto;
+        padding: 5px;
+    }
+
+    .register-title {
+        font-size: 0.6em;
+        margin-bottom: 3vh;
+        margin-top: 20vh;
+        margin-left: 0;
+    }
+
+    .step.active {
+        top: auto;
+        left: auto;
+        transform: none;
+        margin-top: 5vh;
+    }
+
+    .button {
+        padding: 5px 8px;
+        font-size: 0.7em;
+    }
+}
+
+/* Specific Resolutions */
+@media (max-width: 360px) and (max-height: 800px) {
+    .container {
+        max-width: 95%;
+        margin: 10px auto;
+        padding: 5px;
+    }
+
+    .register-title {
+        font-size: 0.4em
+    }
+}

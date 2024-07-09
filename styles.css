@@ -121,7 +121,7 @@ body {
     align-items: center;
     height: 100vh; /* Full height of the viewport */
     width: 100%;
-    padding: 0 5%; /* Adjust as needed */
+    padding: 0 0%; /* Adjust as needed */
     overflow: visible; /* Allow overflow */
 }
 
@@ -131,15 +131,19 @@ body {
     align-items: flex-start; /* Align to the left */
     justify-content: center; /* Center vertically */
     flex: 1; /* Take up remaining space */
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: 30%;
 }
 
 #cync {
-    font-size: 2rem;
+    font-size: 2.5rem;
     text-transform: uppercase;
     font-family: 'DREAMS', sans-serif;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     color: white; /* Ensure visibility against dark background */
-    margin: 0; /* Remove default margin */
+    margin-bottom: 60px; /* Remove default margin */
 }
 
 .char {
@@ -217,7 +221,22 @@ body {
     left: 0px;
     top: 0px;
 }
-  
+
+.screen > .screen-image {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    left: 0px;
+    top: 0px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: sepia(100%) hue-rotate(160deg) blur(3px);
+    opacity: 0.2;
+  }
+
+
 .screen > .screen-content {
     display: flex;
     flex-direction: column;
@@ -320,4 +339,203 @@ body {
         scale: 0.6;
         margin-bottom: 0rem;
     }
+}
+
+
+.countdown {
+    text-align: center;
+    font-family: 'Spacetron';
+    margin-bottom: 50px;
+  }
+  
+  .countdown div {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  
+  .countdown div span {
+    display: block;
+    font-size: 4rem;
+    text-shadow:     
+    0 0 8px rgba(0, 255, 255, 0.6),
+    0 0 16px rgba(0, 255, 255, 0.4),
+    0 0 24px rgba(0, 255, 255, 0.3),
+    0 0 32px rgba(0, 255, 255, 0.2),
+    0 0 40px rgba(0, 255, 255, 0.1);
+    
+  }
+  
+  .label {
+    font-size: 2rem;
+    text-shadow: 
+    0 0 8px rgba(0, 255, 255, 0.6),
+    0 0 16px rgba(0, 255, 255, 0.4),
+    0 0 24px rgba(0, 255, 255, 0.3),
+    0 0 32px rgba(0, 255, 255, 0.2),
+    0 0 40px rgba(0, 255, 255, 0.1);
+  }
+  
+  @media (max-width: 48rem) {
+    .countdown div span {
+      font-size: 1.5rem;
+    }
+  
+    .label {
+      font-size: 0.875rem;
+    }
+  }
+  
+  @media (max-width: 30rem) {
+    .countdown div {
+      margin: 0 0.25rem;
+    }
+  
+    .countdown div span {
+      font-size: 1.25rem;
+    }
+  
+    .label {
+      font-size: 0.75rem;
+    }
+  }
+
+.register {
+    margin: 0 auto;
+    border: none;
+    background: none;
+    color: #fff;
+    border-bottom: solid 1px #328C7C;
+    padding: 0 0 0.5rem;
+    font-family: "DREAMS";
+    font-size: 1em;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    /* clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); */
+    cursor: none;
+    overflow: visible;
+    text-shadow: 
+    0 0 3px rgba(124, 221, 189, 0.4), 
+    0 0 6px rgba(124, 221, 189, 0.3), 
+    0 0 9px rgba(124, 221, 189, 0.2), 
+    0 0 12px rgba(0, 255, 255, 0.3), 
+    0 0 15px rgba(0, 255, 255, 0.2), 
+    0 0 18px rgba(0, 255, 255, 0.1), 
+    0 0 21px rgba(0, 255, 255, 0.05);
+}
+
+ .register > span {
+    overflow: visible;
+    display: block;
+    position: relative;
+}
+
+/*.register > span > span {
+    display: inline-block;
+}
+
+.register > span > span:nth-of-type(1) {
+    transition: 0.4s ease all;
+}
+
+.register > span > span > span {
+    content: attr(data-text);
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(200%);
+}
+
+.register:hover > span > span,
+.register:focus > span > span {
+    transform: translateY(-200%);
+} */
+
+@font-face {
+    font-family: 'Big Shoulders Family';
+    src: url('./bigshoulders.ttf') format("woff2-variations");
+}
+
+.marquee-container {
+    position: relative;
+    width: 125%;
+    height: 250px;
+    display: flex;
+    margin-bottom: 1em;
+    overflow: hidden;
+}
+
+.marquee {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 1em;
+}
+
+#marquee-1 .marquee,
+#marquee-3 .marquee {
+    left: -15%;
+}
+
+.item {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item.with-text {
+    flex: 1.5;
+}
+
+.item h1 {
+    text-transform: uppercase;
+    font-size: 140px;
+}
+
+@media(max-width: 900px) {
+    section.marquees {
+        height: 100vh;
+    }
+    .marquee-container {
+        width: 250%;
+        height: 150px;
+    }
+
+    #marquee-2 .marquee,
+    #marquee-4 .marquee {
+        left: -35%;
+    }
+
+    .item.with-text {
+        flex: 1;
+    }
+    .item h1 {
+        font-size: 60px;
+    }
+}
+
+html.lenis, html.lenis body {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+    pointer-events: none;
 }
