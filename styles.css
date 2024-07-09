@@ -367,7 +367,21 @@ body {
     }
 }
 
-html.lenis, html.lenis body {
+.flicker {
+    display: inline-block;
+    animation: flickerAnimation 5s infinite;
+}
+
+@keyframes flickerAnimation {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        opacity: 1;
+    }
+    20%, 24%, 55% {
+        opacity: 0;
+    }
+}
+
+/* html.lenis, html.lenis body {
     height: auto;
 }
 
@@ -385,4 +399,4 @@ html.lenis, html.lenis body {
 
 .lenis.lenis-smooth iframe {
     pointer-events: none;
-}
+} */

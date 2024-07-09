@@ -1,6 +1,7 @@
-gsap.registerPlugin(ScrollTrigger);
+
 
 document.addEventListener('DOMContentLoaded', () => {
+    gsap.registerPlugin(ScrollTrigger);
     ScrollTrigger.scrollerProxy(".container", {
         scrollTop(value) {
             return arguments.length ? document.querySelector(".container").scrollTo(0, value) : document.querySelector(".container").scrollTop;
@@ -23,17 +24,11 @@ document.addEventListener('DOMContentLoaded', () => {
             scroller: ".container", // specify the container
             trigger: '.container',
             start: 'top top',
-            end: '+=400',
-            scrub: 0.5,
+            end: '+=900',
+            scrub: true,
             opacity: 0,
-            pin: '.header',
-            pinSpacing: false,
-            onUpdate: self => {
-                if (self.progress === 1) {
-                    self.pin.style.left = '50%';
-                    self.pin.style.transform = 'translate(-50%, 0)';
-                }
-            }
+            // pin: '.header',
+            // pinSpacing: false,
         }
     });
 
@@ -123,10 +118,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    const lenis = new Lenis();
-    lenis.on('scroll', ScrollTrigger.update);
-    gsap.ticker.add((time) => lenis.raf(time * 1000));
-    gsap.ticker.lagSmoothing(0);
+    // const lenis = new Lenis();
+    // lenis.on('scroll', ScrollTrigger.update);
+    // gsap.ticker.add((time) => lenis.raf(time * 1000));
+    // gsap.ticker.lagSmoothing(0);
 
     ScrollTrigger.addEventListener("refresh", () => ScrollTrigger.update());
     ScrollTrigger.refresh();

@@ -115,8 +115,8 @@
 
 .screen > .screen-content > .screen-user > .name {
     position: relative;
-    font-family: "Spacetron", monospace;
-    font-size: 2em; /* Responsive font size */
+    font-family: "VT323 Regular", monospace;
+    font-size: 4em; /* Responsive font size */
     font-weight: 400;
 }
 
