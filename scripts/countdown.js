@@ -4,7 +4,6 @@ function updateCountdown() {
     const timeDifference = targetDate - now;
   
     if (timeDifference <= 0) {
-    //   document.getElementById("months").innerText = "00";
       document.getElementById("days").innerText = "00";
       document.getElementById("hours").innerText = "00";
       document.getElementById("minutes").innerText = "00";
@@ -20,7 +19,7 @@ function updateCountdown() {
       (timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
     );
     const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-    // const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+    const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
   
     // document.getElementById("months").innerText = String(months).padStart(2, "0");
     document.getElementById("days").innerText = String(days).padStart(2, "0");
@@ -29,10 +28,10 @@ function updateCountdown() {
       2,
       "0"
     );
-    // document.getElementById("seconds").innerText = String(seconds).padStart(
-    //   2,
-    //   "0"
-    // );
+    document.getElementById("seconds").innerText = String(seconds).padStart(
+      2,
+      "0"
+    );
   }
   
   setInterval(updateCountdown, 1000);

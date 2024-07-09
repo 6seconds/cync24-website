@@ -45,6 +45,8 @@ document.addEventListener("DOMContentLoaded", () => {
     function updateProgressBar() {
         const progress = ((currentStep + 1) / steps.length) * 100;
         progressBarFill.style.width = `${progress}%`;
+        
+        
     }
   
     window.nextStep = function() {
@@ -53,6 +55,8 @@ document.addEventListener("DOMContentLoaded", () => {
             currentStep++;
             steps[currentStep].classList.add('active');
             updateProgressBar();
+            const height = steps[currentStep].offsetHeight;
+            document.querySelector('line').style.height = `${height}px`; 
         }
     }
   
@@ -62,6 +66,8 @@ document.addEventListener("DOMContentLoaded", () => {
             currentStep--;
             steps[currentStep].classList.add('active');
             updateProgressBar();
+            const height = steps[currentStep].offsetHeight;
+            document.querySelector('line').style.height = `${height}px`;
         }
     }
   

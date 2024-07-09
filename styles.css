@@ -11,6 +11,7 @@
 
 html, body {
     width: 100%;
+    
     height: 100%;
 }
 
@@ -38,6 +39,7 @@ body {
     position: relative;
     width: 100%;
     height: 100vh;
+    scroll-behavior: smooth;
     overflow-y: auto; /* Enable scrolling within the container */
     overflow-x: hidden; /* Disable horizontal scrolling */
     color: #fff;
@@ -57,7 +59,7 @@ body {
     font-size: 2rem; /* Adjusted for visibility */
     text-transform: uppercase;
     font-weight: 900;
-    letter-spacing: 22px;
+    letter-spacing: 15px;
     line-height: 1.2;
     text-align: center;
     padding: 40px;
@@ -123,12 +125,12 @@ body {
     width: 100%;
     padding: 0 0%; /* Adjust as needed */
     overflow: visible; /* Allow overflow */
+    margin-right: 40px;
 }
 
 .cync-header {
     display: flex;
     flex-direction: column; /* Ensure elements are stacked vertically */
-    align-items: flex-start; /* Align to the left */
     justify-content: center; /* Center vertically */
     flex: 1; /* Take up remaining space */
     align-items: center;
@@ -157,188 +159,43 @@ body {
     overflow: visible; /* Allow overflow */
 }
 
-
-.screen {
-    width: 90%; /* Adjust width to make it more flexible */
-    height: 90%; /* Adjust height to make it more flexible */
-    display: flex;
-    border: 3px solid rgb(var(--primary-rgb) / 80%);
-    border-radius: 1rem;
-    background-color: rgb(var(--primary-rgb) / 15%);
-    overflow: hidden;
-    position: relative;
-    z-index: 10;
-    margin: auto; /* Remove margin to reduce space */
-}
-  
-.screen:after,
-.screen:before {
-    content: "";
-    height: 5px;
-    position: absolute;
-    z-index: 4;
-    left: 50%;
-    translate: -50% 0%;
-    background-color: white;
-}
-  
-.screen:before {
-    width: 15%;
-    top: 0rem;
-    border-bottom-left-radius: 1rem;
-    border-bottom-right-radius: 1rem;
-}
-  
-.screen:after {
-    width: 25%;
-    bottom: 0rem;
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
-}
-  
-@keyframes pan-overlay {
-    from {
-        background-position: 0% 0%;
-    }
-    to {
-        background-position: 0% -100%;
-    }
-}
-  
-.screen-overlay {    
-    background: linear-gradient(
-        rgb(var(--primary-rgb) / 0.15),
-        rgb(var(--primary-rgb) / 0.15) 3px,
-        transparent 3px,
-        transparent 9px
-    );
-    background-size: 100% 9px;
-    height: 100%;
-    width: 100%;
-    animation: pan-overlay 22s infinite linear;
-    position: absolute;
-    z-index: 2;
-    left: 0px;
-    top: 0px;
+.scaler {
+    opacity: 0;
+    filter: blur(5px);
+    scale: 0;
+    transition: all 1.4s;
 }
 
-.screen > .screen-image {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    z-index: 1;
-    left: 0px;
-    top: 0px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    filter: sepia(100%) hue-rotate(160deg) blur(3px);
-    opacity: 0.2;
-  }
-
-
-.screen > .screen-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    flex-grow: 1;
-    gap: 4rem;
-    position: relative;
-    z-index: 3;
-    margin: 1rem;
-    padding-bottom: 6rem;
-    border: 1px solid rgb(var(--primary-rgb) / 50%);
-    border-radius: 0.6rem;
+.rightreveal {
+    opacity: 0;
+    filter: blur(5px);
+    scale: 0;
+    transform: translateX(+100%);
+    transition: all 1.4s;
 }
 
-  
-.screen > .screen-content > .screen-user{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    position: relative;
-}
-  
-.screen > .screen-content > .screen-user:before,
-.screen > .screen-content > .screen-user:after {
-    content: "";
-    position: absolute;
-    top: 0px;
-    background-color: rgb(var(--primary-rgb));
-    border-radius: 1rem;
-    box-shadow: 0px 0px 8px 3px rgb(var(--primary-rgb) / 60%);
-}
-  
-.screen > .screen-content > .screen-user:before {
-    height: 2px;
-    width: 50px;
-    translate: -20px -1rem;
-    opacity: 0.75;
-}
-  
-.screen > .screen-content > .screen-user:after {
-    height: 3px;
-    width: 30px;
-    translate: 26px calc(-1rem - 0.5px);
+.show {
+    filter: blur(0);
+    scale: 1;
+    transform: translateX(0);
+    opacity: 1;
+ }
+
+.card-container:nth-child(2) {
+    transition-delay: 200ms;
 }
 
-
-.screen > .screen-content > .screen-user > :is(.name, .link) {
-    font-family: "Spacetron", monospace;
-    font-size: 30px;
-    color: white;
-    text-align: center;
-    text-transform: uppercase; 
+.card-container:nth-child(3) {
+    transition-delay: 8000ms;
 }
-
-  
-.screen > .screen-content > .screen-user > .name {
-    position: relative;
-    font-family: "Spacetron", monospace;
-    font-size: 30px;
-    font-weight: 400;
+.card-container:nth-child(4) {
+    transition-delay: 4000ms;
 }
-  
-.screen > .screen-content > .screen-user > .name:before,
-.screen > .screen-content > .screen-user > .name:after {
-    content: "";
-    height: 4px;
-    width: 4px;
-    position: absolute;
-    border: 2px solid white;
-    border-radius: 2px;
+.card-container:nth-child(5) {
+    transition-delay: 6000ms;
 }
-  
-.screen > .screen-content > .screen-user > .name:before {
-    top: 55%;
-    right: -1.5rem;
-}
-  
-.screen > .screen-content > .screen-user > .name:after {
-    top: 45%;
-    left: -1.5rem;  
-}
-  
-.screen > .screen-content > .screen-user > .link {  
-    opacity: 0.8;
-    font-size: 1.5rem;
-    text-shadow: 0px 0px 0.5rem white;
-    font-weight: 400;
-    letter-spacing: 0.3rem;
-    text-decoration: none;
-}
-  
-.screen > .screen-content > .screen-user > .link:is(:hover, :focus) {  
-    text-decoration: underline; 
-}
-  
-@media(max-width: 700px) {
-    .screen {
-        scale: 0.6;
-        margin-bottom: 0rem;
-    }
+.card-container:nth-child(6) {
+    transition-delay: 8000ms;
 }
 
 
@@ -366,7 +223,7 @@ body {
   }
   
   .label {
-    font-size: 2rem;
+    /* font-size: 2rem; */
     text-shadow: 
     0 0 8px rgba(0, 255, 255, 0.6),
     0 0 16px rgba(0, 255, 255, 0.4),
@@ -399,6 +256,58 @@ body {
     }
   }
 
+  
+  @media (max-width: 1440px) {
+    #cync {
+        font-size: 1.7em; /* Adjust font size for smaller screens */
+    }
+    .register {
+        font-size: 0.796em;
+    }
+
+
+    .countdown .label {
+        font-size: 1.5em; /* Adjust font size for smaller screens */
+    }
+}
+
+@media (max-width: 1024px) {
+    .header {
+        font-size: 1rem;
+
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+    .cync-header {
+        margin: 0 auto;
+        width: 100%;
+    }
+    .register {
+        font-size: 0.796em;
+    }
+
+
+    .countdown .label {
+        font-size: 1em; /* Adjust font size for smaller screens */
+    }
+}
+
+@media (max-width: 1200px) {
+    #cync {
+        font-size: 1.2em; /* Adjust font size for smaller screens */
+    }
+    .register {
+        font-size: 0.196em;
+    }
+
+
+    .countdown .label {
+        font-size: 1em; /* Adjust font size for smaller screens */
+    }
+}
+
 .register {
     margin: 0 auto;
     border: none;
@@ -407,7 +316,7 @@ body {
     border-bottom: solid 1px #328C7C;
     padding: 0 0 0.5rem;
     font-family: "DREAMS";
-    font-size: 1em;
+    /* font-size: 1em; */
     text-decoration: none;
     display: inline-block;
     position: relative;
@@ -430,27 +339,6 @@ body {
     position: relative;
 }
 
-/*.register > span > span {
-    display: inline-block;
-}
-
-.register > span > span:nth-of-type(1) {
-    transition: 0.4s ease all;
-}
-
-.register > span > span > span {
-    content: attr(data-text);
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translateY(200%);
-}
-
-.register:hover > span > span,
-.register:focus > span > span {
-    transform: translateY(-200%);
-} */
 
 @font-face {
     font-family: 'Big Shoulders Family';
@@ -520,7 +408,21 @@ body {
     }
 }
 
-html.lenis, html.lenis body {
+.flicker {
+    display: inline-block;
+    animation: flickerAnimation 5s infinite;
+}
+
+@keyframes flickerAnimation {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        opacity: 1;
+    }
+    20%, 24%, 55% {
+        opacity: 0;
+    }
+}
+
+/* html.lenis, html.lenis body {
     height: auto;
 }
 
@@ -538,4 +440,17 @@ html.lenis, html.lenis body {
 
 .lenis.lenis-smooth iframe {
     pointer-events: none;
+} */
+
+@keyframes appear {
+    from {
+        /* opacity: 0; */
+        transform: translate(-300px);
+        /* scale: 0.5; */
+    }
+    to {
+        /* opacity: 1; */
+        transform: translate(0px);
+    }
 }
+
