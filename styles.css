@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @font-face {
     font-family:'DREAMS';
-    src: url('../assets/fonts/DREAMS.ttf') format('truetype');
+    src: url('../fonts/DREAMS.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
