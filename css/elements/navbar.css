@@ -20,7 +20,7 @@ body {
 .logo {
     height: 125px;
     padding-left: 20px; /* Adjust padding as needed */
-    transition: filter 0.3s ease;
+    transition: logo_anim 2s;
     width: auto;
 }
 
@@ -162,7 +162,7 @@ body {
     display: none;
     cursor: pointer;
     position: absolute;
-    top: 10px;
+    top: 19px;
     right: 20px;
     z-index: 1001;
 }

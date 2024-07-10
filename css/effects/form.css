@@ -21,7 +21,6 @@ body {
     animation: gradientAnimation 1s infinite alternate;
 }
 
-
 .container {
     max-width: 600px;
     margin: 50px auto;
@@ -57,7 +56,7 @@ body {
     width: 1px; /* Width of the line */
     background-color: #fceaff;
     margin: auto;
-    height: 70vh; /* Set height to full viewport height */
+    height:70vh; /* Set height to full viewport height */
     transform-origin: top center; /* Ensure transformation origin is at top center */
     transform: translateY(30%); /* Adjust vertical position to center line vertically */
 }
@@ -74,11 +73,23 @@ body {
     display: block;
     flex-direction: column;
     align-items: flex-start;
-    
+    overflow: hidden;
     max-width: 80vw; /* Prevent overflow */
     padding: 10px;
     box-sizing: border-box; /* Include padding in width calculation */
 }
+
+#step2,#step3{
+    transform: translate(-50%, -42.5%);
+    .line{height: 80vh;}}
+
+#step7{ 
+transform: translate(-50%, -22.5%); }
+
+#step4,#step5{
+    transform: translate(-50%, -60%);}
+
+    
 .step.active input {
     width: 100%;
     margin-bottom: 30px; 
@@ -154,7 +165,7 @@ body {
 
 /* Add styles for invisible textboxes with borders */
 input[type="text"] {
-    font-family: 'Aquire';
+    font-family: 'Quicksand';
     font-size: 20px;
     background: transparent;
     border: none;
@@ -172,7 +183,7 @@ input[type="text"]::placeholder {
 
 ::placeholder {
     color: rgb(75, 75, 75);
-    opacity: 0.1; /* Firefox */
+    opacity: 0.15; /* Firefox */
     font-weight:lighter;
   }
 
@@ -189,14 +200,13 @@ select{
     transition: border-color 0.3s; /* Smooth border color transition */
 }
 
-
 select option{
     background-color: rgba(0, 0, 0, 0.8); /* Reduced opacity background */
     color: #fff; /* Text color for dropdown options */
 }
 
-select option[value=0]{
-    opacity: 0.1;
+select option[value="0"]{
+    color: rgba(255, 255, 255, 0.1); /* Adjust the transparency as needed */
 }
 
 select:focus {

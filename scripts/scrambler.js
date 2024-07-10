@@ -87,7 +87,6 @@ function update() {
     cursorRect.bottom <= h2Rect.bottom
   ) {
     if (!isScrambling && !hasScrambled) {
-      h2Element.classList.remove("glow-text"); // Remove glow effect class on hover
       scrambleText(h2Element, targetWord);
     }
   }
@@ -95,5 +94,8 @@ function update() {
 
 document.addEventListener("mousemove", handleMouseMove);
 
-// Initialize with scrambled text
-startContinuousScrambling();
+if (window.innerWidth >= 768) {
+  startContinuousScrambling();
+} else {
+  pass;
+}

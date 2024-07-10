@@ -16,9 +16,10 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.to('.header', {
         fontSize: '0.6rem',
         letterSpacing: '0.2rem',
+        opacity: 0,
         top: '0.6rem', // Move to the top center
         left: '50%', // Ensure it stays centered horizontally
-        transform: 'translate(-50%, 0)', // Adjust transform to maintain horizontal centering
+        transform: 'translate(-50%, 0)', 
         padding: '20px',
         scrollTrigger: {
             scroller: ".container", // specify the container
@@ -27,8 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
             end: '+=900',
             scrub: true,
             opacity: 0,
-            // pin: '.header',
-            // pinSpacing: false,
+            delay: 0.2,
+            pin: '.header',
+            pinSpacing: false,
         }
     });
 
@@ -42,21 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
             start: 'top top',
             end: '+=1000',
             scrub: 0.5,
-        }
-    });
-
-    // Split the text for CYNC reveal
-    const heading2 = new SplitType('#reg');
-    // GSAP animation for CYNC reveal
-    gsap.to('.char', {
-        y: 0,
-        stagger: 0.1,
-        delay: 0.1,
-        duration: 0.5,
-        scrollTrigger: {
-            trigger: '#cync-overview', // trigger when cync-overview comes into view
-            start: 'top 80%', // adjust as needed
-            scroller: '.container'
         }
     });
 

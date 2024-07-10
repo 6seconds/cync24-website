@@ -4,10 +4,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const cursorDot = document.querySelector("[data-cursor-dot]");
     const steps = document.querySelectorAll('.step');
     const progressBarFill = document.getElementById('progressBarFill');
+    const divider = document.getElementById('divider');
+    const class_selector = document.querySelectorAll('.selector_menu');
     let currentStep = 0;
   
     if (blob || blobForm) {
         window.onpointermove = event => {
+            class_selector.forEach((value, key) => {
+                if (value.value == "0") {
+                    value.style.opacity = 0.6;
+                } else {
+                    value.style.opacity = 1
+                }
+            });
             const { clientX, clientY } = event;
             
             // Calculate the position to center the blob on the cursor dot
@@ -41,11 +50,16 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         console.error('Elements with ID "blob" and/or "blob-form" not found.');
     }
-  
+    
+    
+
+
     function updateProgressBar() {
         const progress = ((currentStep + 1) / steps.length) * 100;
         progressBarFill.style.width = `${progress}%`;
     }
+
+
   
     window.nextStep = function() {
         if (currentStep < steps.length - 1) {

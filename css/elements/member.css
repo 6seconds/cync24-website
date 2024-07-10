@@ -19,7 +19,8 @@ html, body {
 }
 
 body {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Source Code Pro', Courier, monospace;
+    font-weight: 400;
     margin: 0;
     width: 100%;
     display: flex;

@@ -2,7 +2,7 @@
 
 h2 {
   font-family: 'Spacetron', monospace;
-  font-size: 40px;
+  /* font-size: 40px; */
   color: rgb(124, 221, 189);
   text-align: center;
   position: relative;
@@ -54,4 +54,5 @@ h2.scrambled {
       0 0 42px rgba(0, 255, 255, 0.1);
   }
 }
+
 

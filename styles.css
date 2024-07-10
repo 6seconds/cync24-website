@@ -11,6 +11,7 @@
 
 html, body {
     width: 100%;
+    
     height: 100%;
 }
 
@@ -38,6 +39,7 @@ body {
     position: relative;
     width: 100%;
     height: 100vh;
+    scroll-behavior: smooth;
     overflow-y: auto; /* Enable scrolling within the container */
     overflow-x: hidden; /* Disable horizontal scrolling */
     color: #fff;
@@ -57,7 +59,7 @@ body {
     font-size: 2rem; /* Adjusted for visibility */
     text-transform: uppercase;
     font-weight: 900;
-    letter-spacing: 22px;
+    letter-spacing: 15px;
     line-height: 1.2;
     text-align: center;
     padding: 40px;
@@ -129,7 +131,6 @@ body {
 .cync-header {
     display: flex;
     flex-direction: column; /* Ensure elements are stacked vertically */
-    align-items: flex-start; /* Align to the left */
     justify-content: center; /* Center vertically */
     flex: 1; /* Take up remaining space */
     align-items: center;
@@ -142,7 +143,6 @@ body {
     font-size: 2.5rem;
     text-transform: uppercase;
     font-family: 'DREAMS', sans-serif;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     color: white; /* Ensure visibility against dark background */
     margin-bottom: 60px; /* Remove default margin */
 }
@@ -158,7 +158,46 @@ body {
     overflow: visible; /* Allow overflow */
 }
 
+.scaler {
+    opacity: 0;
+    filter: blur(5px);
+    scale: 0;
+    transition: all 1.4s;
+    animation-timing-function: ease-in;
+}
 
+.rightreveal {
+    opacity: 0;
+    filter: blur(5px);
+    scale: 0;
+    transform: translateX(+100%);
+    transition: all 1.4s;
+    animation-timing-function: ease-in;
+}
+
+.show {
+    filter: blur(0);
+    scale: 1;
+    transform: translateX(0);
+    opacity: 1;
+ }
+
+.card-container:nth-child(2) {
+    transition-delay: 200ms;
+}
+
+.card-container:nth-child(3) {
+    transition-delay: 8000ms;
+}
+.card-container:nth-child(4) {
+    transition-delay: 4000ms;
+}
+.card-container:nth-child(5) {
+    transition-delay: 6000ms;
+}
+.card-container:nth-child(6) {
+    transition-delay: 8000ms;
+}
 
 
 .countdown {
@@ -185,7 +224,7 @@ body {
   }
   
   .label {
-    font-size: 2rem;
+    /* font-size: 2rem; */
     text-shadow: 
     0 0 8px rgba(0, 255, 255, 0.6),
     0 0 16px rgba(0, 255, 255, 0.4),
@@ -218,6 +257,7 @@ body {
     }
   }
 
+  
   @media (max-width: 1440px) {
     #cync {
         font-size: 1.7em; /* Adjust font size for smaller screens */
@@ -229,6 +269,29 @@ body {
 
     .countdown .label {
         font-size: 1.5em; /* Adjust font size for smaller screens */
+    }
+}
+
+@media (max-width: 1024px) {
+    .header {
+        font-size: 1rem;
+
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+    .cync-header {
+        margin: 0 auto;
+        width: 100%;
+    }
+    .register {
+        font-size: 0.796em;
+    }
+
+
+    .countdown .label {
+        font-size: 1em; /* Adjust font size for smaller screens */
     }
 }
 
@@ -277,27 +340,6 @@ body {
     position: relative;
 }
 
-/*.register > span > span {
-    display: inline-block;
-}
-
-.register > span > span:nth-of-type(1) {
-    transition: 0.4s ease all;
-}
-
-.register > span > span > span {
-    content: attr(data-text);
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translateY(200%);
-}
-
-.register:hover > span > span,
-.register:focus > span > span {
-    transform: translateY(-200%);
-} */
 
 @font-face {
     font-family: 'Big Shoulders Family';
@@ -400,3 +442,4 @@ body {
 .lenis.lenis-smooth iframe {
     pointer-events: none;
 } */
+
