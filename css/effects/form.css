@@ -6,7 +6,7 @@ html, body {
     width: 100%;
     height: 100%;
     overflow-x: hidden; /* Prevent horizontal scrolling */
-    overflow-y: scroll;
+    overflow-y: hidden;
     margin: 0;
     padding: 0;
     position: relative;
@@ -21,6 +21,10 @@ body {
     animation: gradientAnimation 1s infinite alternate;
 }
 
+.meow{
+    overflow-y: scroll;
+    height: 100vh;
+}
 .container {
     max-width: 600px;
     margin: 50px auto;
@@ -39,6 +43,7 @@ body {
 }
 
 .register-title {
+    position: absolute;
     font-family: 'DREAMS';
     text-align: left;
     font-size: 0.65em;
@@ -69,7 +74,7 @@ body {
     position: relative; /* Position relative to its containing block */
     top: 40%; /* Center vertically */
     left: 50%; /* Center horizontally */
-    transform: translate(-50%, -60%); /* Center the active step */
+    transform: translate(-50%, 30%); /* Center the active step */
     display: block;
     flex-direction: column;
     align-items: flex-start;
@@ -80,14 +85,14 @@ body {
 }
 
 #step2,#step3{
-    transform: translate(-50%, -42.5%);
+    transform: translate(-50%, 2.5%);
     .line{height: 80vh;}}
 
 #step7{ 
-transform: translate(-50%, -22.5%); }
+transform: translate(-50%, 2.25%); }
 
-#step4,#step5{
-    transform: translate(-50%, -60%);}
+#step4,#step5,#step6{
+    transform: translate(-50%, 2.55%);}
 
     
 .step.active input {
@@ -178,17 +183,16 @@ input[type="text"] {
 }
 
 input[type="text"]::placeholder {
-    color: rgb(0, 255, 234);
+    color: #fff;
 }
 
 ::placeholder {
     color: rgb(75, 75, 75);
-    opacity: 0.15; /* Firefox */
-    font-weight:lighter;
+    opacity: 0.45; /* Firefox */
   }
 
 select{
-    font-family: 'Aquire';
+    font-family: 'Quicksand';
     font-size: 20px;
     background: transparent;
     border: none;
