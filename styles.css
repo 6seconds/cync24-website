@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @font-face {
-    font-family:'DREAMS';
-    src: url('www.cypherclub.org');
-    font-style: normal/italic;
-    font-weight: 900;
+font-family:'the name for the font';
+src: url('www.cypherclub.org');
+font-family: 'DREAMS';
+font-weight: 900;
+}
 :root {    
     --blue-rgb: 50 140 124;
     --primary-rgb: var(--blue-rgb);
