@@ -1,4 +1,4 @@
-const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!&)#$)0!@%?";
+const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+[]{}|;:",.<>?/~`';
 let interval = null;
 const h2Element = document.querySelector("h2");
 const targetWord = "DOING THE IMPOSSIBLE";
@@ -31,14 +31,28 @@ function scrambleText(element, targetText) {
       element.innerText = targetText; // Ensure final text is set to the target
       console.log(element);
       element.classList.add("scrambled"); // Add class to parent container indicating fully scrambled
+      
       isScrambling = false; // Reset scrambling flag
       hasScrambled = true; // Set flag indicating text has fully scrambled
+
+      const preloader = document.querySelector('.preloader');
+      const navbar = document.querySelector('.navbar');
+      const cypher = document.getElementById('cypher-text');
+
+      cypher.style.animationPlayState = 'running';
+      cypher.addEventListener('animationend', () => {
+        preloader.style.animationPlayState = 'running';
+        preloader.addEventListener('animationend', () => {
+          preloader.remove();
+          navbar.style.opacity = '1';
+        });
+        
+      });    
     }
 
     iteration++;
   }, 100); // Slower interval for smoother effect and aesthetic
 
-  // You can add easing effects here for more aesthetic transition
 }
 
 function startContinuousScrambling() {
@@ -95,6 +109,21 @@ function update() {
 document.addEventListener("mousemove", handleMouseMove);
 
 if (window.innerWidth >= 768) {
-  startContinuousScrambling();
+  document.addEventListener("DOMContentLoaded", () => {
+    startContinuousScrambling();
+  });
 } else {
+  const preloader = document.querySelector('.preloader');
+  const navbar = document.querySelector('.navbar');
+  const cypher = document.getElementById('cypher-text');
+
+  cypher.style.animationPlayState = 'running';
+  cypher.addEventListener('animationend', () => {
+    preloader.style.animationPlayState = 'running';
+    preloader.addEventListener('animationend', () => {
+      preloader.remove();
+      navbar.style.opacity = '1';
+    });
+    
+  });  
 }

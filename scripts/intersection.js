@@ -23,17 +23,15 @@ elements.forEach((el) => observer.observe(el));
 right.forEach((el) => observer.observe(el));
 rightslide.forEach((el) => observer.observe(el));
 
-
-
 document.addEventListener('DOMContentLoaded', () => {
     const targets = document.querySelectorAll('.scramble');
 
     // Function to scramble text
     function scrambleText(element) {
         const originalText = element.textContent;
-        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-        const duration = 1000; // Scramble duration in milliseconds
-        const interval = 50; // Interval between updates in milliseconds
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+[]{}|;:",.<>?/~`';
+        const duration = 1500; // Scramble duration in milliseconds
+        const interval = 100; // Interval between updates in milliseconds
         let startTime;
         let lastUpdateTime = 0;
 
@@ -66,6 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 requestAnimationFrame(updateText);
             } else {
                 element.textContent = originalText;
+                element.classList.add('scrambled');
             }
         }
 
