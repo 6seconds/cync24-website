@@ -75,13 +75,20 @@ body {
     letter-spacing: 15px;
     line-height: 1.2;
     text-align: center;
-    padding: 40px;
+    justify-content: center;
+    padding: 50px;
+    width: 80%; /* Set width as a percentage or fixed value */
+    max-width: 100%; /* Set max-width to ensure it doesn't get too wide */
+    white-space: nowrap; /* Prevent text from wrapping to the next line */
     text-shadow: 
         0 0 5px rgba(255, 255, 255, 0.27),
         0 0 10px rgba(255, 255, 255, 0.23),
         0 0 15px rgba(255, 255, 255, 0.15),
         0 0 20px rgba(255, 255, 255, 0.07),
         0 0 25px rgba(255, 255, 255, 0.025);
+}
+.header h2{
+    white-space:normal;
 }
 
 .container::-webkit-scrollbar {
@@ -248,13 +255,12 @@ body {
     border: none;
     background: none;
     color: #fff;
-    border-bottom: solid 1px #328C7C;
-    padding: 0.5rem 1rem;
+    padding: 0 0 0.5rem;
     font-family: "DREAMS";
     text-decoration: none;
     display: inline-block;
     position: relative;
-    cursor: pointer;
+    cursor: none;
     overflow: visible;
     text-shadow: 
         0 0 3px rgba(124, 221, 189, 0.4), 
@@ -264,7 +270,16 @@ body {
         0 0 15px rgba(0, 255, 255, 0.2), 
         0 0 18px rgba(0, 255, 255, 0.1), 
         0 0 21px rgba(0, 255, 255, 0.05);
-    cursor: none;
+}
+
+.register::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px; /* Default thickness */
+    width: 100%;
+    background-color: #328C7C; /* Default underline color */
 }
 
 .register::after {
@@ -272,41 +287,26 @@ body {
     position: absolute;
     left: 0;
     bottom: 0;
-    height: 2px;
+    height: 2px; /* Underline thickness */
     width: 0;
-    background-color: #00FFFF;
+    background-color: #00FFFF; /* Hover underline color */
     transition: width 0.3s ease-in-out;
 }
 
 .register:hover::after {
     width: 100%;
 }
-  
-  @media (max-width: 48rem) {
-    .countdown div span {
-      font-size: 1.5rem;
-    }
-  
-    .label {
-      font-size: 0.875rem;
-    }
-  }
-  
-  @media (max-width: 30rem) {
-    .countdown div {
-      margin: 0 0.25rem;
-    }
-  
-    .countdown div span {
-      font-size: 1.25rem;
-    }
-  
-    .label {
-      font-size: 0.75rem;
-    }
-  }
 
+.register > span {
+    overflow: visible;
+    display: block;
+    position: relative;
+}
   
+
+
+
+
   @media (max-width: 1440px) {
     #cync {
         font-size: 1.7em; /* Adjust font size for smaller screens */
@@ -321,30 +321,18 @@ body {
     }
 }
 
-@media (max-width: 1024px) {
-    .header {
-        font-size: 1rem;
-
-    }
-
-    h2 {
-        font-size: 20px;
-    }
-    .cync-header {
-        margin: 0 auto;
-        width: 100%;
-    }
-    .register {
-        font-size: 0.796em;
-    }
-
-
-    .countdown .label {
-        font-size: 1em; /* Adjust font size for smaller screens */
-    }
+@media(min-width:1281px) and (max-width:1440px){
+    .header{
+        font-size: 1.5em;
+        transform: translate(-50%, -50%); 
+}
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1280px) {
+    .header{
+        font-size: 1.4em;
+    }
+
     #cync {
         font-size: 1.2em; /* Adjust font size for smaller screens */
     }
@@ -357,6 +345,91 @@ body {
         font-size: 1em; /* Adjust font size for smaller screens */
     }
 }
+
+@media (max-width: 1024px) {
+    .header{
+        font-size: 1em;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    .cync-header {
+        margin: 0 auto;
+        width: 100%;
+    }
+    .register {
+        font-size: 0.196em;
+    }
+    .countdown .label {
+        font-size: 1em; /* Adjust font size for smaller screens */
+    }
+}
+
+
+@media (max-width: 768px) {
+    .countdown div span {
+      font-size: 24px;
+    }
+  
+    .label {
+      font-size: 14px;
+    }
+
+    .header{
+        padding:20px;
+        font-size: 0.7em;
+    }
+    .header h2{
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width:597px){
+    .header{
+        transform: translate(-60%, -50%);
+        font-size: 0.7em;
+    }
+    .header h2{
+        display: none;
+    }
+}
+@media (max-width:520px){
+    .header{ 
+        transform: translate(-55%, -50%);
+        font-size: 0.5em;
+        left:50% 
+  }
+}
+
+@media (max-width: 460px) {
+    .countdown div {
+      margin: 0 0.25rem;
+    }
+  
+    .countdown div span {
+      font-size: 20px;
+    }
+  
+    .label {
+      font-size: 12px;
+    }
+
+    .header{
+        transform: translate(-62.5%, -50%);
+        font-size: 0.45em;
+        left:50% 
+    }
+    }
+
+@media (max-width:400px){
+    .header{
+        transform: translate(-70%, -50%);
+        left:50% 
+        padding: 0px;
+        font-size: 0.4em;
+    }
+}
+
 
 .flicker {
     display: inline-block;

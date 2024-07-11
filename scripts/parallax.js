@@ -40,6 +40,8 @@ function enableParallax() {
     }
 }
 
+// Initial check
 enableParallax();
 
+// Listen for window resize
 window.addEventListener("resize", enableParallax);

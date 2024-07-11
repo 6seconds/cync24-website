@@ -15,47 +15,21 @@ if (cursorDot && cursorOutline && textContent) {
             top: `${posY}px`
         }, { duration: 250, fill: 'forwards' });
 
-        // Check if the current page is index.html
-        if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/') {
-            let isHovering = false;
+        let isHovering = false;
 
-            textContent.forEach(element => {
-                const rect = element.getBoundingClientRect();
-                if (posX >= rect.left && posX <= rect.right && posY >= rect.top && posY <= rect.bottom) {
-                    const elemAtPoint = document.elementFromPoint(posX, posY);
-
-                    if (elemAtPoint && element.contains(elemAtPoint)) {
-                        // Check if the element under the cursor is a text node or has text content
-                        if (elemAtPoint.nodeType === Node.TEXT_NODE || 
-                            (elemAtPoint.nodeType === Node.ELEMENT_NODE && elemAtPoint.textContent.trim())) {
-                            const range = document.createRange();
-                            const textNode = Array.from(elemAtPoint.childNodes).find(node => node.nodeType === Node.TEXT_NODE);
-
-                            if (textNode) {
-                                range.selectNodeContents(textNode);
-                                const rects = range.getClientRects();
-                                for (const rect of rects) {
-                                    if (posX >= rect.left && posX <= rect.right && posY >= rect.top && posY <= rect.bottom) {
-                                        isHovering = true;
-                                        break;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            });
-
-            if (isHovering) {
-                cursorDot.classList.add('hover');
-                cursorOutline.classList.add('hover');
-            } else {
-                cursorDot.classList.remove('hover');
-                cursorOutline.classList.remove('hover');
+        textContent.forEach(element => {
+            const rect = element.getBoundingClientRect();
+            if (posX >= rect.left && posX <= rect.right && posY >= rect.top && posY <= rect.bottom) {
+                isHovering = true;
             }
+        });
+
+        if (isHovering) {
+            cursorDot.classList.add('hover');
+            cursorOutline.classList.add('hover');
         } else {
-            cursorDot.classList.remove('hover');
             cursorOutline.classList.remove('hover');
+            cursorDot.classList.remove('hover');
         }
     });
 }
