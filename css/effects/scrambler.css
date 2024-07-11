@@ -75,7 +75,8 @@ h2.scrambled {
       0 0 12px rgba(0, 255, 255, 0.1),
       0 0 16px rgba(0, 255, 255, 0.05);    
   }
-
+}
+@media (max-width: 1300px){
     @keyframes flicker {
     0%, 100% {
       opacity: 0.8;
