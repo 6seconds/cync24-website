@@ -59,7 +59,7 @@ body {
     letter-spacing: 4px;
     cursor: none !important;
     backdrop-filter: blur(10px);
-    font-weight: 600;
+    font-weight: 500;
     border-radius: 20px;
     transition: color 0.3s ease, transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border: 2px solid transparent;
