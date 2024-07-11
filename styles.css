@@ -636,12 +636,6 @@ body {
     width: 100%;
 }
 
-
-
-
-
-  
-
   @media (max-width: 1440px) {
     #cync {
         font-size: 1.7em; /* Adjust font size for smaller screens */
@@ -759,7 +753,7 @@ body {
 @media (max-width:400px){
     .header{
         transform: translate(-70%, -50%);
-        left:50%;
+        left:50% ;
         padding: 0px;
         font-size: 0.4em;
     }
