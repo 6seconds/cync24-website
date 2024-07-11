@@ -24,6 +24,7 @@ right.forEach((el) => observer.observe(el));
 rightslide.forEach((el) => observer.observe(el));
 
 
+
 document.addEventListener('DOMContentLoaded', () => {
     const targets = document.querySelectorAll('.scramble');
 
@@ -31,28 +32,38 @@ document.addEventListener('DOMContentLoaded', () => {
     function scrambleText(element) {
         const originalText = element.textContent;
         const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-        const duration = 2000; // Scramble duration in milliseconds
-        const interval = 100; // Interval between updates in milliseconds
+        const duration = 1000; // Scramble duration in milliseconds
+        const interval = 50; // Interval between updates in milliseconds
         let startTime;
+        let lastUpdateTime = 0;
+
+        function getRandomChar() {
+            return characters[Math.floor(Math.random() * characters.length)];
+        }
 
         function updateText() {
-            if (!startTime) startTime = Date.now();
-            const elapsedTime = Date.now() - startTime;
-            const progress = elapsedTime / duration;
-            let scrambledText = '';
+            const currentTime = Date.now();
+            if (!startTime) startTime = currentTime;
 
-            for (let i = 0; i < originalText.length; i++) {
-                if (Math.random() < progress) {
-                    scrambledText += originalText[i];
-                } else {
-                    scrambledText += characters[Math.floor(Math.random() * characters.length)];
+            const elapsedTime = currentTime - startTime;
+            const progress = Math.min(elapsedTime / duration, 1);
+
+            if (currentTime - lastUpdateTime >= interval) {
+                let scrambledText = '';
+                for (let i = 0; i < originalText.length; i++) {
+                    if (Math.random() < progress) {
+                        scrambledText += originalText[i];
+                    } else {
+                        scrambledText += getRandomChar();
+                    }
                 }
+
+                element.textContent = scrambledText;
+                lastUpdateTime = currentTime;
             }
 
-            element.textContent = scrambledText;
-
             if (progress < 1) {
-                setTimeout(() => requestAnimationFrame(updateText), interval);
+                requestAnimationFrame(updateText);
             } else {
                 element.textContent = originalText;
             }

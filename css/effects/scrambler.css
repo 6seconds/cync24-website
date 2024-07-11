@@ -61,3 +61,18 @@ h2.scrambled {
 }
 
 
+@media (max-width: 1024px) {
+  h2 {
+    font-family: 'Spacetron', monospace;
+    /* font-size: 40px; */
+    color: rgb(84, 181, 124); /* Less saturated and lighter teal color */
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    text-shadow: 
+      0 0 4px rgba(0, 255, 255, 0.3), /* Reduce shadow intensity and blur */
+      0 0 8px rgba(0, 255, 255, 0.2),
+      0 0 12px rgba(0, 255, 255, 0.1),
+      0 0 16px rgba(0, 255, 255, 0.05);    
+  }
+}
