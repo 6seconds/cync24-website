@@ -634,31 +634,7 @@ body {
 
 
   
-  @media (max-width: 48rem) {
-    .countdown div span {
-      font-size: 1.5rem;
-    }
-  
-    .label {
-      font-size: 0.875rem;
-    }
-  }
-  
-  @media (max-width: 30rem) {
-    .countdown div {
-      margin: 0 0.25rem;
-    }
-  
-    .countdown div span {
-      font-size: 1.25rem;
-    }
-  
-    .label {
-      font-size: 0.75rem;
-    }
-  }
 
-  
   @media (max-width: 1440px) {
     #cync {
         font-size: 1.7em; /* Adjust font size for smaller screens */
@@ -673,26 +649,23 @@ body {
     }
 }
 
-@media (max-width: 1024px) {
-    .header {
-        font-size: 1rem;
+@media(min-width:1281px) and (max-width:1440px){
+    .header{
+        font-size: 1.5em;
+        transform: translate(-50%, -50%); 
+}
+}
 
+@media (max-width: 1280px) {
+    .header{
+        font-size: 1.4em;
     }
 
-    h2 {
-        font-size: 20px;
-    }
-    .cync-header {
-        margin: 0 auto;
-        width: 100%;
-        height: 100%; /* Ensure it takes the full height of its parent */
-        display: flex; /* Use flexbox */
-        justify-content: center; /* Center horizontally */
-        align-items: center; /* Center vertically */
-        text-align: center; /* Center-align the text inside .cync-header */
+    #cync {
+        font-size: 1.2em; /* Adjust font size for smaller screens */
     }
     .register {
-        font-size: 0.796em;
+        font-size: 0.196em;
     }
 
 
@@ -701,19 +674,90 @@ body {
     }
 }
 
-@media (max-width: 1200px) {
-    #cync {
-        font-size: 1.2em; /* Adjust font size for smaller screens */
+@media (max-width: 1024px) {
+    .header{
+        font-size: 1em;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    .cync-header {
+        margin: 0 auto;
+        width: 100%;
     }
     .register {
-        font-size: 0.696em;
+        font-size: 0.196em;
     }
-
-
     .countdown .label {
-        font-size: 0.86em; /* Adjust font size for smaller screens */
+        font-size: 1em; /* Adjust font size for smaller screens */
     }
 }
+
+
+@media (max-width: 768px) {
+    .countdown div span {
+      font-size: 24px;
+    }
+  
+    .label {
+      font-size: 14px;
+    }
+
+    .header{
+        padding:20px;
+        font-size: 0.7em;
+    }
+    .header h2{
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width:597px){
+    .header{
+        transform: translate(-60%, -50%);
+        font-size: 0.7em;
+    }
+    .header h2{
+        display: none;
+    }
+}
+@media (max-width:520px){
+    .header{ 
+        transform: translate(-55%, -50%);
+        font-size: 0.5em;
+        left:50% 
+  }
+}
+
+@media (max-width: 460px) {
+    .countdown div {
+      margin: 0 0.25rem;
+    }
+  
+    .countdown div span {
+      font-size: 20px;
+    }
+  
+    .label {
+      font-size: 12px;
+    }
+
+    .header{
+        transform: translate(-62.5%, -50%);
+        font-size: 0.45em;
+        left:50% 
+    }
+    }
+
+@media (max-width:400px){
+    .header{
+        transform: translate(-70%, -50%);
+        left:50% 
+        padding: 0px;
+        font-size: 0.4em;
+    }
+}
+
 
 .flicker {
     display: inline-block;
