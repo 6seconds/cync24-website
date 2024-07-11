@@ -1,0 +1,338 @@
+@font-face {
+    font-family: 'Economica';
+    src: url('../../../fonts/Economica-Regular.woff2') format('woff2'),
+         url('../../../fonts/Economica-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* General Text Styling */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    color: #f8f8f8; /* Light text on dark background for contrast */
+    background-color: #1a1a1a; /* Dark background */
+    line-height: 1.6; /* Increased line height for readability */
+}
+
+/* Event Layout */
+.event {
+    width: 100%;
+    height: 100vh; /* Ensuring the height is 100vh */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px; /* Reduced grid gap */
+    align-items: start;
+    padding: 0 5%;
+    box-sizing: border-box;
+    font-family: "Economica";
+    letter-spacing: 1px;
+    /* font-weight: 900; */
+}
+
+.left-container,
+.right-container {
+    overflow: hidden; /* Disable scrolling */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures content is evenly distributed */
+}
+
+.left-container, .right-container {
+    height: 100%; /* Ensure it takes full height */
+}
+
+.text-content {
+    padding: 5px; /* Reduced padding */
+    color: #fff;
+    background: transparent;
+    border-radius: 10px;
+    flex: 1; /* Ensures each section takes equal space */
+}
+
+.text-content:first-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-content h1 {
+    text-align: center;
+    color: rgb(124, 221, 189);
+    font-size: 44px; /* Increased font size */
+    margin: 5px 0; /* Reduced margin */
+}
+
+.text-content h2 {
+    text-align: center;
+    color: rgb(124, 221, 189);
+    font-size: 48px; /* Increased font size */
+    margin: 5px 0; /* Reduced margin */
+}
+
+.text-content h3 {
+    color: #258877;
+    font-size: 28px; /* Increased font size */
+    margin: 5px 0; /* Reduced margin */
+}
+
+.text-content p, .text-content ul {
+    margin: 5px 0; /* Reduced margin */
+    font-size: 22px; /* Increased font size */
+    line-height: 1.3; /* Adjusted line-height */
+}
+
+.text-content ul {
+    padding-left: 20px;
+}
+
+.text-content ul li {
+    margin-bottom: 5px; /* Reduced margin */
+}
+
+.left-container .text-content,
+.right-container .text-content {
+    margin-bottom: 5px; /* Reduced margin-bottom */
+}
+
+.left-container .text-content:last-child,
+.right-container .text-content:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .event {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+
+    .left-container, .right-container {
+        width: 100%;
+        height: auto;
+    }
+
+    .text-content {
+        margin-bottom: 10px; /* Increased margin-bottom for mobile */
+    }
+
+    .left-container .text-content, .right-container .text-content {
+        margin-bottom: 10px; /* Increased margin-bottom for mobile */
+    }
+
+    p {
+        font-size: 16px; /* Adjust font size for smaller screens */
+    }
+
+    h1, h2, h3 {
+        font-size: 1.5em; /* Adjust heading size for smaller screens */
+    }
+}
+
+/* Hover Effects for Items */
+.item {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 5px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.item-number {
+    width: 5%;
+    font-size: 18px;
+    text-align: right;
+}
+
+.item span {
+    width: 25%;
+    transition: color 0.5s;
+    display: inline-block;
+    position: relative;
+    font-size: 18px;
+}
+
+.item span:first-child {
+    text-align: left;
+}
+
+.item span:nth-child(2) {
+    text-align: left;
+}
+
+.item span:last-child {
+    text-align: right;
+}
+
+.item:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    transition: left 0.5s;
+    z-index: -1;
+}
+
+.item:hover:before {
+    left: 0;
+}
+
+.item:hover span {
+    color: #000000;
+}
+
+.text-content.hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Example: Change background color */
+    /* Add other styles as needed */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Additional Media Queries for Various Screen Sizes */
+@media (min-width: 1200px) {
+    .event {
+        grid-gap: 40px; /* Increased grid gap for larger screens */
+        padding: 0 10%; /* Increased padding for larger screens */
+    }
+
+    .text-content {
+        padding: 20px; /* Increased padding for larger screens */
+    }
+
+    .text-content h1 {
+        font-size: 56px; /* Increased font size for larger screens */
+    }
+
+    .text-content h2 {
+        font-size: 52px; /* Increased font size for larger screens */
+    }
+
+    .text-content h3 {
+        font-size: 38px; /* Increased font size for larger screens */
+    }
+
+    .text-content p, .text-content ul {
+        font-size: 26px; /* Increased font size for larger screens */
+    }
+}
+
+@media (max-width: 1200px) {
+    h1 {
+        font-size: 40px; /* Adjusted font size */
+    }
+
+    h2 {
+        font-size: 38px; /* Adjusted font size */
+    }
+
+    .item-number {
+        font-size: 18px;
+    }
+
+    .item span {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 992px) {
+    h1 {
+        font-size: 36px; /* Adjusted font size */
+    }
+
+    h2 {
+        font-size: 34px; /* Adjusted font size */
+    }
+
+    .item-number {
+        font-size: 16px;
+    }
+
+    .item span {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        margin-top: 60px;
+        font-size: 32px; /* Adjusted font size */
+    }
+
+    h2 {
+        font-size: 30px; /* Adjusted font size */
+    }
+
+    .item span {
+        width: auto;
+        font-size: 14px;
+    }
+
+    .item-number {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 28px; /* Adjusted font size */
+    }
+
+    h2 {
+        font-size: 26px; /* Adjusted font size */
+    }
+
+    .item-number {
+        font-size: 13px;
+    }
+
+    .item span {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 400px) {
+    h1 {
+        font-size: 24px; /* Adjusted font size */
+    }
+
+    h2 {
+        font-size: 22px; /* Adjusted font size */
+    }
+
+    .item-number {
+        font-size: 12px;
+    }
+
+    .item span {
+        font-size: 12px;
+    }
+}

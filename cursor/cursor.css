@@ -24,20 +24,30 @@
       border-radius: 50%;
       z-index: 11; /* Ensure dot is above other elements */
       pointer-events: none; /* Prevents dot from interfering with cursor actions */
+      transition: transform 0.69s ease;
+  }
+
+  .cursor-dot.hover {
+    transform: scale(9);
   }
 
   /* Custom cursor outline */
   .cursor-outline {
       width: 40px;
       height: 40px;
-      border: 2px solid hsla(0, 0%, 100%, 0.5); /* Example border style */
+      border: 2px solid hsla(0, 0%, 100%, 0.5); 
       position: absolute;
       top: 0;
       left: 0;
       transform: translate(-50%, -50%);
       border-radius: 50%;
-      z-index: 11; /* Outline behind dot */
-      pointer-events: none; /* Prevents outline from interfering with cursor actions */
+      z-index: 11;
+      pointer-events: none;
+      transition: transform 0.69s ease;
+  }
+
+  .cursor-outline.hover {
+    transform: scale(0.1);
   }
 
   /* Keyframes for cursor animation */

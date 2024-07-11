@@ -1,4 +1,11 @@
-/* Disable default cursor for all elements */
+@font-face {
+    font-family: 'DREAMS';
+    src: url('../../../fonts/dreams-webfont.woff2') format('woff2'),
+         url('../../../fonts/dreams-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body, * {
     cursor: none;
 }

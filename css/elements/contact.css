@@ -1,10 +1,33 @@
+@font-face {
+    font-family: 'DREAMS';
+    src: url('../../../fonts/dreams-webfont.woff2') format('woff2'),
+         url('../../../fonts/dreams-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Aquire';
+    src: url('../../../fonts/Aquire-BW0ox.woff2') format('woff2'),
+         url('../../../fonts/Aquire-BW0ox.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Quicksand';
+    src: url('../../../fonts/quicksand-variablefont_wght-webfont.woff2') format('woff2'),
+         url('../../../fonts/quicksand-variablefont_wght-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 body, * {
     cursor: none;
 }
 
 html, body {
     width: 100%;
-    height: auto;
+   
     overflow-x: hidden;
     overflow-y: scroll;
     margin: 0;
@@ -39,7 +62,7 @@ body {
 .container {
     width: auto;
     height: 100vh;
-    margin: -750px auto;
+    margin: -275px auto;
     padding: 20%;
     background: transparent;
     border-radius: 10px;
@@ -52,6 +75,7 @@ body {
 }
 
 .contact-title {
+    position: fixed;
     font-family: 'DREAMS';
     text-align: left;
     font-size: 0.65em;
@@ -63,13 +87,13 @@ body {
 }
 
 .line {
-    position: absolute;
-    bottom: 30%;
+    position: fixed;
+    bottom: 40%;
     left: 27.5%; /* Adjust left position as needed */
     width: 1px; /* Width of the line */
     background-color: #fceaff;
     margin: auto;
-    height: 90vh; /* Set height to full viewport height */
+    height: 80vh; /* Set height to full viewport height */
     transform-origin: top center; /* Ensure transformation origin is at top center */
     transform: translateY(30%); /* Adjust vertical position to center line vertically */
 }
@@ -138,6 +162,7 @@ body {
     }
 
     .contact-title {
+        position: relative;
         font-size: 1em;
         margin-bottom: 5vh;
         margin-top: 40vh;

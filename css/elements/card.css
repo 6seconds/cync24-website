@@ -1,3 +1,15 @@
+@font-face {
+    font-family: 'NEXTSTEP';
+    src: url('../../../fonts/nextstep-webfont.woff2') format('woff2'),
+         url('../../../fonts/nextstep-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --primary-rgb: 31 161 108;
+  }
+
 .screen {
     max-width: 90%;
     max-height: 90%;
@@ -105,7 +117,7 @@
 }
 
 .screen > .screen-content > .screen-user > :is(.name, .link) {
-    font-family: "Spacetron", monospace;
+    font-family: "NEXTSTEP", monospace;
     font-size: 2em;
     color: white;
     text-align: center;
@@ -117,6 +129,7 @@
     font-family: "NEXTSTEP", monospace;
     font-size: 4em;
     font-weight: 900;
+    letter-spacing: 1.1px;
 }
 
 .screen > .screen-content > .screen-user > .link {
@@ -126,6 +139,7 @@
     font-family: "NEXTSTEP";
     font-weight: 700;
     letter-spacing: 0.3rem;
+    cursor: none;
     text-decoration: none;
 }
 

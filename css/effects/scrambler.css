@@ -1,5 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Spacetron&display=swap');
-
+@font-face {
+  font-family: 'Spacetron';
+  src: url('../../../fonts/spacetron-webfont.woff2') format('woff2'),
+       url('../../../fonts/spacetron-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 h2 {
   font-family: 'Spacetron', monospace;
   /* font-size: 40px; */
