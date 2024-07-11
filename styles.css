@@ -758,7 +758,15 @@ body {
         font-size: 0.4em;
     }
 }
-
+@media (max-width:400px){
+  .cync-header {
+        position: static; /* Reset position to static for normal document flow */
+        transform: none; /* Remove any previous transforms */
+        text-align: center; /* Center align text */
+        font-size: 14px; /* Adjust font size for visibility */
+        padding: 10px; /* Add padding for spacing */
+    }
+}
 
 .flicker {
     display: inline-block;
