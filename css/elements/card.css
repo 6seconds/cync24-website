@@ -1,0 +1,214 @@
+@font-face {
+    font-family: 'NEXTSTEP';
+    src: url('../../../fonts/nextstep-webfont.woff2') format('woff2'),
+         url('../../../fonts/nextstep-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --primary-rgb: 31 161 108;
+  }
+
+.screen {
+    max-width: 90%;
+    max-height: 90%;
+    display: flex;
+    border: 3px solid rgb(var(--primary-rgb) / 80%);
+    border-radius: 1rem;
+    background-color: rgb(var(--primary-rgb) / 15%);
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+}
+
+.screen:after,
+.screen:before {
+    content: "";
+    height: 5px;
+    position: absolute;
+    z-index: 4;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(171, 241, 218);
+    text-shadow: 
+        0 0 8px rgba(0, 255, 255, 0.6),
+        0 0 16px rgba(204, 247, 247, 0.4),
+        0 0 24px rgba(0, 255, 255, 0.3),
+        0 0 32px rgba(0, 255, 255, 0.2),
+        0 0 40px rgba(0, 255, 255, 0.1);
+}
+
+.screen:before {
+    width: 15%;
+    top: 0;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.screen:after {
+    width: 25%;
+    bottom: 0;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+@keyframes pan-overlay {
+    from {
+        background-position: 0% 0%;
+    }
+    to {
+        background-position: 0% -100%;
+    }
+}
+
+.screen-overlay {
+    background: linear-gradient(
+        rgb(var(--primary-rgb) / 0.15),
+        rgb(var(--primary-rgb) / 0.15) 3px,
+        transparent 3px,
+        transparent 9px
+    );
+    background-size: 100% 9px;
+    height: 100%;
+    width: 100%;
+    animation: pan-overlay 22s infinite linear;
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 0;
+}
+
+.screen > .screen-image {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: sepia(100%) hue-rotate(160deg) blur(3px);
+    opacity: 0.2;
+}
+
+.screen > .screen-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    flex-grow: 1;
+    gap: 2rem;
+    position: relative;
+    z-index: 3;
+    margin: 1rem;
+    padding-bottom: 4rem;
+    border: 1px solid rgb(var(--primary-rgb) / 50%);
+    border-radius: 0.6rem;
+}
+
+.screen > .screen-content > .screen-user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+}
+
+.screen > .screen-content > .screen-user > :is(.name, .link) {
+    font-family: "NEXTSTEP", monospace;
+    font-size: 2em;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.screen > .screen-content > .screen-user > .name {
+    position: relative;
+    font-family: "NEXTSTEP", monospace;
+    font-size: 4em;
+    font-weight: 900;
+    letter-spacing: 1.1px;
+}
+
+.screen > .screen-content > .screen-user > .link {
+    opacity: 0.8;
+    font-size: 2em;
+    text-shadow: 0 0 0.5rem white;
+    font-family: "NEXTSTEP";
+    font-weight: 700;
+    letter-spacing: 0.3rem;
+    cursor: none;
+    text-decoration: none;
+}
+
+.screen > .screen-content > .screen-user > .link:hover,
+.screen > .screen-content > .screen-user > .link:focus {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1500px) {
+    .screen {
+        max-width: 100%;
+    }
+
+    .screen > .screen-content {
+        gap: 1rem;
+        padding-bottom: -1rem;
+    }
+
+    .screen > .screen-content > .screen-user {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .screen > .screen-content > .screen-user > .name {
+        font-size: 0.9em;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .screen > .screen-content > .screen-user > .link {
+        font-size: 0.9em;
+        letter-spacing: 0.1rem;
+    }
+
+    .screen > .screen-content > .screen-user > .name:before,
+    .screen > .screen-content > .screen-user > .name:after {
+        display: none;
+    }
+}
+
+@media (max-width: 1100px) {
+    .screen > .screen-content > .screen-user > .name {
+        font-size: 0.7em;
+    }
+
+    .screen > .screen-content > .screen-user > .link {
+        font-size: 0.7em;
+    }
+}
+
+/* Additional adjustment for extra-large screens */
+@media (min-width: 1920px) {
+    .screen > .screen-content > .screen-user > .name {
+        font-size: 1.6em;
+    }
+
+    .screen > .screen-content > .screen-user > .link {
+        font-size: 1.3em;
+    }
+}
+
+@media (min-width: 1500px) and (max-width: 1919px) {
+    .screen > .screen-content > .screen-user > .name {
+        font-size: 1.2em;
+    }
+
+    .screen > .screen-content > .screen-user > .link {
+        font-size: 0.9em;
+    }
+}

@@ -43,7 +43,7 @@ function updateGradient(scrollPercentage) {
     const gradientString = `radial-gradient(ellipse at bottom, ${newColors.join(', ')})`;
 
     // Log the new gradient colors
-    console.log(`New Gradient Colors: ${gradientString}`);
+    // console.log(`New Gradient Colors: ${gradientString}`);
 
     // Apply the new gradient smoothly
     document.body.style.transition = 'background 0.6s ease'; // Increase transition duration

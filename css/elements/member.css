@@ -1,0 +1,260 @@
+@font-face {
+    font-family: 'DREAMS';
+    src: url('../../../fonts/dreams-webfont.woff2') format('woff2'),
+         url('../../../fonts/dreams-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body, * {
+    cursor: none;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-y: auto;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+/* Ensure box-sizing is inherited by all elements */
+* {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Source Code Pro', Courier, monospace;
+    font-weight: 400;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    background: 
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 1px, transparent 1px) repeat,
+    linear-gradient(to right, rgba(0, 0, 0, 0.1) 1px, transparent 1px) repeat,
+    radial-gradient(ellipse at bottom, #225E55ff, #134544ff, #033038ff, #002327ff, #02151Eff, #021014ff, #000D16ff);
+    background-size: 100% 20px, 20px 100%, cover;
+    height: auto; /* Ensure the body covers the full viewport height */
+}
+
+/* Custom scrollbar for WebKit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #2A2A2A; /* Background color of the track */
+    border-radius: 10px; /* Optional: round the corners of the track */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #4ae2d5; /* Background color of the scrollbar handle */
+    border-radius: 10px; /* Optional: round the corners of the handle */
+    border: 3px solid #2A2A2A;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Background color of the scrollbar handle when hovered */
+}
+
+/* Firefox scrollbar styles */
+body {
+    scrollbar-width: thin; /* Options: auto, thin, none */
+    scrollbar-color: #4ae2d5 #2A2A2A; /* handle color track color */
+}
+
+h1 {
+    margin-top: 120px;
+    margin-bottom: 20px;
+    font-family: 'DREAMS';
+    font-size: 14px;
+    padding-bottom: 30px;
+    text-align: center; /* Center align for better presentation */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 80%;
+    cursor: none;
+    padding-top: 10px;
+    border-top: 1px solid #ffffff;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.container::-webkit-scrollbar {
+    width: 12px;
+}
+
+.container::-webkit-scrollbar-track {
+    background: #2A2A2A;
+    border-radius: 10px;
+}
+
+.container::-webkit-scrollbar-thumb {
+    background-color: #4ae2d5;
+    border-radius: 10px;
+    border: 3px solid #2A2A2A;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 5px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.item-number {
+    width: 5%;
+    font-size: 18px;
+    text-align: right;
+}
+
+.item span {
+    width: 25%;
+    transition: color 0.5s;
+    display: inline-block;
+    position: relative;
+    font-size: 18px;
+}
+
+.item span:first-child {
+    text-align: left;
+}
+
+.item span:nth-child(2) {
+    text-align: left;
+}
+
+.item span:last-child {
+    text-align: right;
+}
+
+.item:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    transition: left 0.5s;
+    z-index: -1;
+}
+
+.item:hover:before {
+    left: 0;
+}
+
+.item:hover span {
+    color: #000000;
+}
+
+.cursor-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    pointer-events: none;
+    z-index: 9999; /* Ensure it's above other content */
+}
+
+/* Media query for responsive design */
+@media (max-width: 1200px) {
+    h1 {
+        font-size: 12px;
+    }
+
+    .item-number {
+        font-size: 16px;
+    }
+
+    .item span {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 992px) {
+    h1 {
+        font-size: 11px;
+    }
+
+    .item-number {
+        font-size: 15px;
+    }
+
+    .item span {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 100px 20px; /* Adjust padding for smaller screens */
+    }
+
+    h1 {
+        margin-top: 60px; /* Adjust margin for smaller screens */
+        font-size: 10px; /* Adjust font size for smaller screens */
+    }
+
+    .container {
+        width: 100%; /* Full width for smaller screens */
+    }
+
+    .item span {
+        width: auto; /* Auto width for better responsiveness */
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+
+    .item-number {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 9px;
+    }
+
+    .item-number {
+        font-size: 13px;
+    }
+
+    .item span {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 400px) {
+    h1 {
+        font-size: 8px;
+    }
+
+    .item-number {
+        font-size: 12px;
+    }
+
+    .item span {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #hide-mobile {
+        display: none; /* Hide the "2024-25" text on smaller screens */
+    }
+}

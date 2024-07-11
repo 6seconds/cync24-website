@@ -3,20 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Header Scroll Animation</title>
+    <title>(c)ypher</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/logo.png">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="assets/effects/glitch.css">
-    <link rel="stylesheet" href="assets/effects/flicker.css">
-    <link rel="stylesheet" href="assets/cursor/cursor.css">
-    <link rel="stylesheet" href="assets/elements/navbar.css">
-    <link rel="stylesheet" href="assets/effects/stars.css">
-    <link rel="stylesheet" href="assets/effects/rand_morph.css">
+    <link rel="stylesheet" href="cursor/cursor.css">
+    <link rel="stylesheet" href="css/elements/navbar.css">
+    <link rel="stylesheet" href="css/effects/stars.css">
+    <link rel="stylesheet" href="css/effects/scrambler.css">
+    <link rel="stylesheet" href="css/elements/card.css">
+    <link rel="stylesheet" href="css/elements/event.css">
+    <link rel="stylesheet" href="css/effects/gallery.css">
 </head>
 <body>
+
     <section class="stars-container">
-        <div class="object" data-value="50" alt="">
+        <div class="object" data-value="-20" alt="">
             <div id="stars"></div>
             <div id="stars2"></div>
             <div id="stars3"></div>
@@ -26,77 +29,414 @@
     
     <div class="container" id="scrollable-container">
         <div class="slide">
+          <div class="preloader">
+          </div>
             <div class="header">
-                <div class="object" id="cypher-text" data-value="-3" style="padding: 50px;">
+                <div class="object" id="cypher-text" data-value="3" style="padding: 50px;">
                     <span class="flicker">(</span>c<span class="flicker">)</span>ypher
                 </div>
                 <h2>DOING THE IMPOSSIBLE</h2>
             </div>
+            <div id="sd-container">
+              <div class="arrow"></div>
+              <div class="arrow"></div>
+            </div>
         </div>
         <div class="slide" id="cync-overview">
-            <div class="content">
-                <!-- Title and Subtitle -->
-                <h1 class="title glitch" data-text="CYNC 2024">CYNC 2024</h1>
-                <h3 class="subtitle">The 10th Iteration</h3>
-                
-                <!-- Date and Location -->
-                <div class="event-details">
-                    <p><strong>Date:</strong> August 15-21, 2024</p>
-                    <p><strong>Location:</strong> Tech University Campus</p>
-                </div>
-                
-                <!-- Brief Description -->
-                <p class="description">Join us for a week of innovation, creativity, and celebration as we mark a decade of CYNC. Experience the best in technology, photography, and much more.</p>
-                
-                <!-- Visual Elements (Icons) -->
-                <div class="icons">
-                    <img src="icons/tech.png" alt="Tech Icon" class="icon-bounce">
-                    <img src="icons/photography.png" alt="Photography Icon" class="icon-bounce">
-                    <img src="icons/workshop.png" alt="Workshop Icon" class="icon-bounce">
-                </div>
-                
-                <!-- Call to Action -->
-                <a href="#more-info" class="btn neon">Learn More</a>
-        
-                <!-- IP Address Box -->
-                <div class="ip-box" id="ip-box">
-                    <p>Your IP Address: <span id="ip-address">Loading...</span></p>
-                </div>
-                
-                <!-- Footer Area -->
-                <div class="footer">
-                    <a href="https://facebook.com" target="_blank"><img src="icons/facebook.png" alt="Facebook" class="footer-icon"></a>
-                    <a href="https://twitter.com" target="_blank"><img src="icons/twitter.png" alt="Twitter" class="footer-icon"></a>
-                    <a href="https://instagram.com" target="_blank"><img src="icons/instagram.png" alt="Instagram" class="footer-icon"></a>
-                    <a href="https://linkedin.com" target="_blank"><img src="icons/linkedin.png" alt="LinkedIn" class="footer-icon"></a>
+            <div class="cync-container">
+                <header class="cync-header">
+                    <h1 id="cync" class="scaler">(C)YNC</h1>
+                    <div class="countdown scaler">
+                      <div>
+                        <span id="days">00</span>
+                        <div class="label">Days</div>
+                      </div>
+                      <div>
+                        <span id="hours">00</span>
+                        <div class="label">Hours</div>
+                      </div>
+                      <div>
+                        <span id="minutes">00</span>
+                        <div class="label">Minutes</div>
+                      </div>
+                      <div>
+                        <span id="seconds">00</span>
+                        <div class="label">Seconds</div>
+                      </div>                      
+                    </div>
+                    <button class="register scaler" aria-label="Register" id="reg" onclick="window.location.href='pages/form.html';">
+                      REGISTER
+                  </button>
+                </header>
+                <div class="cync-overview-content">
+                    <div class="card-container" id="card-container">
+                        <div class="screen rightreveal">
+                          <div class="screen-image" style="background-image: url(assets/images/cifi.png);"></div> 
+                            <div class="screen-overlay"></div>  
+                            <div class="screen-content">
+                              <div class="screen-user">
+                                <span class="name" >(C)IFI</span>
+                                <a class="link" href="#cifi">Discover</a>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="screen rightreveal"> 
+                            <div class="screen-image" style="background-image: url(assets/images/click.png);"></div> 
+                            <div class="screen-overlay"></div>  
+                            <div class="screen-content">
+                              <div class="screen-user">
+                                <span class="name">(C)LICK</span>
+                                <a class="link" href="#click">Discover</a>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="screen rightreveal"> 
+                            <div class="screen-image" style="background-image: url(assets/images/code.png);"></div> 
+                            <div class="screen-overlay"></div>  
+                            <div class="screen-content">
+                              <div class="screen-user">
+                                <span class="name" >(C)ODE</span>
+                                <a class="link" href="#code">Discover</a>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="screen rightreveal"> 
+                            <div class="screen-image" style="background-image: url(assets/images/comique.png);"></div> 
+                            <div class="screen-overlay"></div>  
+                            <div class="screen-content">
+                              <div class="screen-user">
+                                <span class="name" >(C)OMIQUE</span>
+                                <a class="link" href="#comique">Discover</a>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="screen rightreveal"> 
+                            <div class="screen-image" style="background-image: url(assets/images/crosshair.png);"></div> 
+                            <div class="screen-overlay"></div>  
+                            <div class="screen-content">
+                              <div class="screen-user">
+                                <span class="name" >(C)ROSSHAIR</span>
+                                <a class="link" href="#crosshair">Discover</a>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="screen rightreveal"> 
+                            <div class="screen-image" style="background-image: url(assets/images/concoct.png);"></div> 
+                            <div class="screen-overlay"></div>  
+                            <div class="screen-content">
+                              <div class="screen-user">
+                                <span class="name">(C)ONCOCT</span>
+                                <a class="link" href="#concoct">Discover</a>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
                 </div>
             </div>
         </div>
+<!-- train - 7 coffee - 8 -->
+<div class="slide">
+  <div id="gallery">
+    <!-- Tiles will be injected here by JavaScript -->
+  </div>
+  <div class="center-heading">
+    <h2 style="font-size: 80px;">A Decade of Tech Excellence</h2>
+    <p>10 Years of Ideas, Innovation, and Impact</p>
+    <p>Join Us in Celebrating Our Milestones and Beyond</p>
+  </div>
+</div>
+
+
         
         
         
-        <div class="slide">
-            <div class="content">
-                <h2>Slide 1</h2>
-                <p>This is some dummy content for slide 1.</p>
+        
+        
+        <div class="event" id="concoct">
+          <div class="container left-container">
+            <div class="text-content">
+              <h2 class="scramble">(C)ONCOCT</h2>
+              <h2 style="font-size: 16px;">Content Creation</h2>
             </div>
+            <div class="text-content">
+              <h3>Overview</h3>
+              <p>This is an event that provides participants a platform to showcase the brightest minds from various schools. Our aim is to create an unparalleled platform for collaboration, innovation, and skill development by designing an Instagram page.</p>
+            </div>
+            <div class="text-content">
+              <h3>Eligibility Criteria</h3>
+              <p>For classes 9th-12th</p>
+            </div>
+            <div class="text-content">
+              <h3>Participation</h3>
+              <p>The team shall consist of 3 members: videographer, video editor & graphic designer.</p>
+            </div>
+          </div>
+          <div class="container right-container">
+            <div class="text-content">
+              <h3>Duration</h3>
+              <p>The team should complete all the tasks under the time limit of 2.5 hours.</p>
+            </div>
+            <div class="text-content">
+              <h3>Rules and Regulations</h3>
+              <ul class="events">
+                <li>The team has to prepare an Instagram page consisting of 5 posts (3 graphic posts and 2 reels).</li>
+                <li>The theme/topic of the page will be given on the spot. The judgment will be based on the creative outlook.</li>
+                <li>Participants should bring their own equipment (lights, laptop, camera, pen drive etc.)</li>
+                <li>INTERNET WILL BE PROVIDED</li>
+                <li>The team cannot use templates to create reels.</li>
+              </ul>
+            </div>
+            <div class="text-content">
+              <h3>Prizes</h3>
+              <p>1st position: Cash prize of Rs. 3000</p>
+              <p>2nd position: Cash prize of Rs. 2000</p>
+              <p>3rd position: Cash prize of Rs. 1000</p>
+            </div>
+          </div>
+        </div>        
+
+        <div style="height: 300px;"></div>
+
+        <div class="event" id="click">
+          <div class="container left-container">
+            <div class="text-content">
+              <h2 class="scramble">(C)LICK</h2>
+              <h2 style="font-size: 16px;">Photography</h2>
+            </div>
+            <div class="text-content">
+              <h3>Overview</h3>
+              <p>This is an event that provides participants a platform to showcase the brightest minds from various schools. Our aim is to create an unparalleled platform for collaboration, innovation, and skill development by designing an Instagram page.</p>
+            </div>
+            <div class="text-content">
+              <h3>Eligibility Criteria</h3>
+              <p>For classes 6th-8th</p>
+            </div>
+            <div class="text-content">
+              <h3>Participation</h3>
+              <p>Individuals (maximum 3 students per school).</p>
+            </div>
+          </div>
+          <div class="container right-container">
+            <div class="text-content">
+              <h3>Duration</h3>
+              <p>The team should complete all the tasks under the time limit of 90 minutes.</p>
+            </div>
+            <div class="text-content">
+              <h3>Rules and Regulations</h3>
+              <ul class="events">
+                <li>Participants proficient in photography undergo this task, which will test their skill sets in all situations to capture the best photo at the optimal timing</li>
+                <li>Participants will be allotted an on-the-spot theme for which they will have to capture pictures from the campus or its surroundings.</li>
+                <li>Participants will submit both the original and the edited photographs.</li>
+              </ul>
+            </div>
+            <div class="text-content">
+              <h3>Prizes</h3>
+              <p>1st position: Cash prize of Rs. 2500</p>
+              <p>2nd position: Cash prize of Rs. 2000</p>
+              <p>3rd position: Cash prize of Rs. 1500</p>
+            </div>
+          </div>
         </div>
-        <div class="slide">
-            <div class="content">
-                <h2>Slide 1</h2>
-                <p>This is some dummy content for slide 1.</p>
+
+
+        <div style="height: 300px;"></div>
+
+        <div class="event" id="cifi">
+          <div class="container left-container">
+            <div class="text-content">
+              <h2 class="scramble">(C)IFI</h2>
+              <h2 style="font-size: 16px;">Videography || VideoEditing</h2>
             </div>
-        </div>                
+            <div class="text-content">
+              <h3>Overview</h3>
+              <p>This event combines both videography and video-editing skills of the teams. A topic/product will be given on the spot. Each team will have to create an advertisement for it.</p>
+            </div>
+            <div class="text-content">
+              <h3>Eligibility Criteria</h3>
+              <p>For classes 9th-12th</p>
+            </div>
+            <div class="text-content">
+              <h3>Participation</h3>
+              <p>Both the videography and video-editing teams should have only 2 members each.</p>
+            </div>
+          </div>
+          <div class="container right-container">
+            <div class="text-content">
+              <h3>Duration</h3>
+              <p>The combined team should complete their task within the given time limit of 90 minutes for editing and 30 minutes for shooting.</p>
+            </div>
+            <div class="text-content">
+              <h3>Rules and Regulations</h3>
+              <ul class="events">
+                <li>The videography and video-editing teams will be divided into two.</li>
+                <li>The team will not be allowed to leave the school premises.</li>
+                <li>The topic will be given on the spot to individual teams.</li>
+                <li>Participants are to bring their own equipment (laptop, camera, pendrive etc.)</li>
+              </ul>
+            </div>
+            <div class="text-content">
+              <h3>Prizes</h3>
+              <p>1st position: Cash prize of Rs. 3000</p>
+              <p>2nd position: Cash prize of Rs. 2000</p>
+              <p>3rd position: Cash prize of Rs. 1000</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="height: 300px;"></div>
+
+        <div class="event" id="code">
+          <div class="container left-container">
+            <div class="text-content">
+              <h2 class="scramble">(C)ODE</h2>
+              <h2 style="font-size: 16px;">Competitive Programming</h2>
+            </div>
+            <div class="text-content">
+              <h3>Overview</h3>
+              <p>This is a competitive programming event in which students will be given an opportunity to showcase their problem solving skills in a challenging environment. This event aims to foster creativity and critical thinking through a wide range of complex problems.</p>
+            </div>
+            <div class="text-content">
+              <h3>Eligibility Criteria</h3>
+              <p>For classes 9th-12th</p>
+            </div>
+            <div class="text-content">
+              <h3>Participation</h3>
+              <p>1 team of 2 people allowed for each school.</p>
+            </div>
+          </div>
+          <div class="container right-container">
+            <div class="text-content">
+              <h3>Duration</h3>
+              <p>The teams shall complete their tasks under the set time limit of 90 minutes.</p>
+            </div>
+            <div class="text-content">
+              <h3>Rules and Regulations</h3>
+              <ul class="events">
+                <li>Software - Any text editor/IDE.</li>
+                <li>Participants must use python or java.</li>
+                <li>Participants may use their own laptops.</li>
+              </ul>
+            </div>
+            <div class="text-content">
+              <h3>Prizes</h3>
+              <p>1st position: Cash prize of Rs. 3000</p>
+              <p>2nd position: Cash prize of Rs. 2000</p>
+              <p>3rd position: Cash prize of Rs. 1000</p>
+            </div>
+          </div>
+        </div>
+        <div style="height: 300px;"></div>
+
+        <div class="event" id="comique">
+          <div class="container left-container">
+            <div class="text-content">
+              <h2 class="scramble">(C)OMIQUE</h2>
+              <h2 style="font-size: 16px;">COMIC DESIGN</h2>
+            </div>
+            <div class="text-content">
+              <h3>Overview</h3>
+              <p>This is an event that provides participants a platform to showcase their creative skills from various schools. The task involves creating a comic along with a corresponding comic cover, centered around the given topic.</p>
+            </div>
+            <div class="text-content">
+              <h3>Eligibility Criteria</h3>
+              <p>For classes 6th-12th</p>
+            </div>
+            <div class="text-content">
+              <h3>Participation</h3>
+              <p>1 team of 2 people per school.</p>
+            </div>
+          </div>
+          <div class="container right-container">
+            <div class="text-content">
+              <h3>Duration</h3>
+              <p>The team should complete all the tasks under the time limit of 90 minutes.</p>
+            </div>
+            <div class="text-content">
+              <h3>Rules and Regulations</h3>
+              <ul class="events">
+                <li>The participants are allowed to bring their own devices.</li>
+                <li>They can use any editing software of their preference (Adobe Photoshop ,Canva etc.)</li>
+                <li>Use of the internet is allowed.</li>
+                <li>Both Portrait and Landscape orientations are allowed. The topic will be given on spot.</li>
+              </ul>
+            </div>
+            <div class="text-content">
+              <h3>Prizes</h3>
+              <p>1st position: Cash prize of Rs. 3000</p>
+              <p>2nd position: Cash prize of Rs. 2000</p>
+              <p>3rd position: Cash prize of Rs. 1000</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="height: 300px;"></div>
+
+        <div class="event" id="crosshair">
+          <div class="container left-container">
+            <div class="text-content">
+              <h2 class="scramble">(C)ROSSHAIR</h2>
+              <h2 style="font-size: 16px;"></h2>
+            </div>
+            <div class="text-content">
+              <h3>Overview</h3>
+              <p>Embraced by computer gamers of all ages, Valorant stands as a pinnacle of gaming excellence. This upcoming event offers an unparalleled opportunity for both current and future generations of gamers to showcase their prowess in this acclaimed title. It serves as a rigorous test of coordination, teamwork, individual capabilities, and strategic acumen, pushing participants to their limits.
+                The tournament promises to be a spectacle of skill and determination, with teams vying to outwit and outmaneuver their opponents through stunning displays of gameplay and tactical mastery. Ultimately, only the most resilient and skilled team will emerge victorious, claiming the coveted grand prize.</p>
+            </div>
+            <div class="text-content">
+              <h3>Eligibility Criteria</h3>
+              <p>For classes 8th-12th</p>
+            </div>
+            <div class="text-content">
+              <h3>Participation</h3>
+              <p>Team of 5+1(substitute) per school</p>
+            </div>
+          </div>
+          <div class="container right-container">
+            <div class="text-content">
+              <h3>Duration</h3>
+              <p>The team should complete all the tasks under the time limit of 2.5 hours.</p>
+            </div>
+            <div class="text-content">
+              <h3>Rules and Regulations</h3>
+              <ul class="events">
+                <li>The competition will begin with all the teams divided into 2 groups.</li>
+                <li>These teams will be then put through a deathmatch; only one member per team will be allowed in the deathmatch.</li>
+                <li>The 5v5 matches will start once the top 4 teams have been decided through the results of deathmatches</li>
+                <li>These 5v5 matches will follow the standard ranked Valorant rules.</li>
+                <li>The semi-finals and finals will be broadcasted live on YouTube on the official (c)ypher channel.</li>
+              </ul>
+            </div>
+            <div class="text-content">
+              <h3>Prizes</h3>
+              <p>1st position: Cash prize of Rs. 7500</p>
+              <p>2nd position: Cash prize of Rs. 5000</p>
+              <p>3rd position: Cash prize of Rs. 2500</p>
+            </div>
+          </div>
+        </div>
     </div>
-    <nav class="navbar">
-        <img src="assets/images/logo.png" alt="Logo" class="logo">
+    <nav class="navbar" style="opacity: 0; transition: opacity 1s;">
+        <a href="#cync-overview">
+          <img src="assets/images/logo.png" alt="Logo" class="logo">
+      </a>
         <div class="hamburger" onclick="toggleMenu()">
             <div></div>
             <div></div>
             <div></div>
         </div>
         <ul class="navbar-links" id="navbar-links">
-            <li><a href="pages/cync.html">EVENTS</a></li>
+          <li><a href="pages/form.html">REGISTER</a></li>
+          <li class="dropdown">
+            <a href="#event">EVENTS</a>
+            <ul class="dropdown-content">
+                <li style="--delay: 0s;"><a href="#concoct">(C)ONCOCT</a></li>
+                <li style="--delay: 0.1s;"><a href="#click">(C)LICK</a></li>
+                <li style="--delay: 0.2s;"><a href="#cifi">(C)IFI</a></li>
+                <li style="--delay: 0.3s;"><a href="#code">(C)ODE</a></li>
+                <li style="--delay: 0.4s;"><a href="#comique">(C)OMIQUE</a></li>
+                <li style="--delay: 0.5s;"><a href="#crosshair">(C)ROSSHAIR</a></li>
+            </ul>
+        </li>
             <li class="dropdown">
                 <a href="#members">MEMBERS</a>
                 <ul class="dropdown-content">
@@ -105,30 +445,30 @@
                     <li style="--delay: 0.2s;"><a href="pages/faculty.html">FACULTY</a></li>
                 </ul>
             </li>
-            <li><a href="#contact">CONTACT</a></li>
+            <li><a href="pages/contact.html">CONTACT</a></li>
         </ul>
     </nav>
-
     
     <script>
-        function toggleMenu() {
-            document.getElementById('navbar-links').classList.toggle('show');
-            document.querySelector('.hamburger').classList.toggle('active');
+      // Function to toggle the mobile menu
+      function toggleMenu() {
+          document.getElementById('navbar-links').classList.toggle('show');
+          document.querySelector('.hamburger').classList.toggle('active');
+      }
+
+        const cyncoverviewcontent = document.getElementById("card-container");
+        if (window.innerWidth < 1024) {
+            cyncoverviewcontent.remove();
         }
-        
-    </script>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        fetch('https://api.ipify.org?format=json')
-        .then(response => response.json())
-        .then(data => {
-            document.getElementById('ip-address').textContent = data.ip;
-        })
-        .catch(error => {
-            console.error('Error fetching IP address:', error);
-            document.getElementById('ip-address').textContent = 'Error fetching IP';
-        });
+        document.addEventListener("DOMContentLoaded", () => {
+    // Optional: You can programmatically remove the preloader after the animation ends
+    const preloader = document.querySelector('.preloader');
+    const navbar = document.querySelector(".navbar");
+    preloader.addEventListener('animationend', () => {
+        navbar.style.opacity = '1';
+        preloader.remove();
     });
+});
     </script>
     
     
@@ -136,10 +476,14 @@
     <div class="cursor-outline" data-cursor-outline></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
-    <script src="parallax.js"></script>
-    <script src="assets/effects/rand_morph.js"></script>
-    <script src="assets/cursor/cursor.js"></script>
-    <script src="assets/effects/gradient-scroll.js"></script>
-    <script src="app.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="scripts/scrambler.js"></script>
+    <script src="scripts/parallax.js"></script>
+    <script src="scripts/gallery.js"></script>
+    <script src="cursor/cursor.js"></script>
+    <script src="scripts/gradient_scroll.js"></script>
+    <script src="scripts/gsap_anims.js"></script>
+    <script src="scripts/countdown.js"></script>
+    <script src="scripts/intersection.js"></script>
 </body>
 </html>
