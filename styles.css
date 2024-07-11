@@ -248,12 +248,13 @@ body {
     border: none;
     background: none;
     color: #fff;
-    padding: 0 0 0.5rem;
+    border-bottom: solid 1px #328C7C;
+    padding: 0.5rem 1rem;
     font-family: "DREAMS";
     text-decoration: none;
     display: inline-block;
     position: relative;
-    cursor: none;
+    cursor: pointer;
     overflow: visible;
     text-shadow: 
         0 0 3px rgba(124, 221, 189, 0.4), 
@@ -263,16 +264,7 @@ body {
         0 0 15px rgba(0, 255, 255, 0.2), 
         0 0 18px rgba(0, 255, 255, 0.1), 
         0 0 21px rgba(0, 255, 255, 0.05);
-}
-
-.register::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 2px; /* Default thickness */
-    width: 100%;
-    background-color: #328C7C; /* Default underline color */
+    cursor: none;
 }
 
 .register::after {
@@ -280,20 +272,14 @@ body {
     position: absolute;
     left: 0;
     bottom: 0;
-    height: 2px; /* Underline thickness */
+    height: 2px;
     width: 0;
-    background-color: #00FFFF; /* Hover underline color */
+    background-color: #00FFFF;
     transition: width 0.3s ease-in-out;
 }
 
 .register:hover::after {
     width: 100%;
-}
-
-.register > span {
-    overflow: visible;
-    display: block;
-    position: relative;
 }
   
   @media (max-width: 48rem) {
