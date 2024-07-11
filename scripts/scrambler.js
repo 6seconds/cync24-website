@@ -97,5 +97,4 @@ document.addEventListener("mousemove", handleMouseMove);
 if (window.innerWidth >= 768) {
   startContinuousScrambling();
 } else {
-  pass;
 }
