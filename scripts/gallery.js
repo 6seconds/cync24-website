@@ -9,7 +9,7 @@ const items = [
   { src: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExamg3ODNtNzFmeTB1bjVwY2hkd2prcG1jZHNiMDZ5enQ2MGNjZzZ3cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QLGILiyap4bv2Osdqe/giphy-downsized-large.gif", type: "gif", number: 6 },
   { src: "assets/images/cyncmeow5.png", type: "image", number: 6 },
   { src: "assets/images/cyncmeow6.png", type: "image", number: 7 },
-  { src: "https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnh4aGZkOXZocjRiZmU0NWF2bGVsYXIwNGd6NGJ1OHh1cW5tZDgyayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MDJ9IbxxvDUQM/giphy.gif", type: "gif", number: 9 },
+  { src: "assets/images/cyncmeow7.png", type: "image", number: 8 },
   { src: "https://via.placeholder.com/150?text=10", type: "image", number: 10 },
   { src: "https://via.placeholder.com/150?text=11", type: "image", number: 11 },
   { src: "https://via.placeholder.com/150?text=12", type: "image", number: 12 },
