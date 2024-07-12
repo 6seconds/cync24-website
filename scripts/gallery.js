@@ -11,7 +11,7 @@ const items = [
   { src: "assets/images/cyncmeow6.png", type: "image", number: 7 },
   { src: "assets/images/cyncmeow7.png", type: "image", number: 8 },
   { src: "assets/images/cyncmeow8.png", type: "image", number: 9 },
-  { src: "https://via.placeholder.com/150?text=11", type: "image", number: 11 },
+  { src: "assets/images/cyncmeow9.png", type: "image", number: 10 },
   { src: "https://via.placeholder.com/150?text=12", type: "image", number: 12 },
   { src: "https://via.placeholder.com/150?text=13", type: "image", number: 13 },
 ];
