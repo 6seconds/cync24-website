@@ -1,0 +1,19 @@
+
+html{
+    cursor: none;
+height: 100%;
+width:100%;}
+
+body{
+    background: 
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 1px, transparent 1px) repeat,
+    linear-gradient(to right, rgba(0, 0, 0, 0.1) 1px, transparent 1px) repeat,
+    radial-gradient(ellipse at bottom, #225E55ff, #134544ff, #033038ff, #002327ff, #02151Eff, #021014ff, #000D16ff);
+    background-size: 100% 20px, 20px 100%, cover;
+}
+
+.cat{
+    width: 100%;
+    size: 100%;
+    z-index: -1;
+}
