@@ -523,8 +523,11 @@ body {
       font-size: 20px;
   }
   .cync-header {
+      position: absolute;
       margin: 0 auto;
       width: 100%;
+      left:50%;
+      transform: translate(-50%, -50%);
   }
   .register {
       font-size: 0.196em;
