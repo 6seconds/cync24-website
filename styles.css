@@ -481,7 +481,7 @@ body {
       font-size: 1.7em; /* Adjust font size for smaller screens */
   }
   .register {
-      font-size: 0.796em;
+      font-size: 2em;
   }
 
 
@@ -506,7 +506,7 @@ body {
       font-size: 1.2em; /* Adjust font size for smaller screens */
   }
   .register {
-      font-size: 0.196em;
+      font-size: 0.8em;
   }
 
 
@@ -530,7 +530,7 @@ body {
       transform: translate(-50%, -50%);
   }
   .register {
-      font-size: 0.196em;
+      font-size: 0.7em;
   }
   .countdown .label {
       font-size: 1em; /* Adjust font size for smaller screens */
@@ -554,6 +554,9 @@ body {
   .header h2{
       font-size: 1.5em;
   }
+  .register {
+    font-size: 0.6em;
+  }
 }
 
 @media (max-width:597px){
@@ -571,6 +574,9 @@ body {
       font-size: 0.5em;
       left:50% 
 }
+  .register{
+    font-size: 0.5em;
+  }
 }
 
 @media (max-width: 460px) {
@@ -590,6 +596,9 @@ body {
       transform: translate(-62.5%, -50%);
       font-size: 0.45em;
       left:50% 
+  }
+  .register{
+    font-size: 0.5em;
   }
   }
 
