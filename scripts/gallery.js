@@ -1,13 +1,13 @@
 const gallery = document.getElementById("gallery");
 
 const items = [
-  { src: "https://via.placeholder.com/150?text=1", type: "image", number: 1 },
-  { src: "https://via.placeholder.com/150?text=2", type: "image", number: 2 },
-  { src: "https://via.placeholder.com/150?text=3", type: "image", number: 3 },
-  { src: "https://via.placeholder.com/150?text=4", type: "image", number: 4 },
-  { src: "https://via.placeholder.com/150?text=5", type: "image", number: 5 },
-  { src: "https://via.placeholder.com/150?text=6", type: "image", number: 6 },
-  { src: "https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnh4aGZkOXZocjRiZmU0NWF2bGVsYXIwNGd6NGJ1OHh1cW5tZDgyayZlcD13MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MDJ9IbxxvDUQM/giphy.gif", type: "gif", number: 7 },
+  { src: "assets/images/cyncmeow2.jpg",type: "image",number: 1 },
+  { src: "assets/images/cyncmeow.png", type: "image", number: 2 },
+  { src: "assets/images/cyncmeow3.png", type: "image", number: 3 },
+  { src: "assets/images/cyncmeow4.jpg", type: "image", number: 4 },
+  { src: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaHd4OTdzOHVweHZ2NmZpMjRzZTJlanc2YXVodnF6M3BqcWw2OWJ2cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/0vVqCxoqPWgUxaJXp0/giphy.gif", type: "gif", number: 5 },
+  { src: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExamg3ODNtNzFmeTB1bjVwY2hkd2prcG1jZHNiMDZ5enQ2MGNjZzZ3cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QLGILiyap4bv2Osdqe/giphy-downsized-large.gif", type: "gif", number: 6 },
+  { src: "assets/images/cyncmeow5.png", type: "image", number: 6 },
   { src: "https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnh4aGZkOXZocjRiZmU0NWF2bGVsYXIwNGd6NGJ1OHh1cW5tZDgyayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MDJ9IbxxvDUQM/giphy.gif", type: "gif", number: 8 },
   { src: "https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnh4aGZkOXZocjRiZmU0NWF2bGVsYXIwNGd6NGJ1OHh1cW5tZDgyayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MDJ9IbxxvDUQM/giphy.gif", type: "gif", number: 9 },
   { src: "https://via.placeholder.com/150?text=10", type: "image", number: 10 },
