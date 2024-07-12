@@ -93,27 +93,30 @@ function startContinuousScrambling() {
 // }
 
 // document.addEventListener("mousemove", handleMouseMove);
-
 document.addEventListener("DOMContentLoaded", () => {
-  startContinuousScrambling();
-  const preloader = document.querySelector('.preloader');
-  const navbar = document.querySelector('.navbar');
-  const cypher = document.getElementById('cypher-text');
-  const C = document.getElementById('C');
-  preloader.style.animationPlayState = 'running';
-  
-  preloader.addEventListener('animationend', () => {
-      
-      scrambleText(h2Element,targetWord);
-      cypher.style.animationPlayState = 'running';
-      cypher.addEventListener('animationstart', () => {
-        scrambleText(h2Element, targetWord);  
-      });
-      cypher.addEventListener('animationend', () => {
-        preloader.remove();
-        navbar.style.opacity = '1';
-      });
+  if (!sessionStorage.getItem('preloaderShown')) {
+    startContinuousScrambling();
+    const preloader = document.querySelector('.preloader');
+    const navbar = document.querySelector('.navbar');
+    const cypher = document.getElementById('cypher-text');
 
-  });  
-  
+    preloader.style.animationPlayState = 'running';
+    
+    preloader.addEventListener('animationend', () => {
+        cypher.style.animationPlayState = 'running';
+        preloader.remove();
+        cypher.addEventListener('animationend', () => {
+            scrambleText(h2Element, targetWord);
+            navbar.style.opacity = '1';
+        });
+    });
+
+    // Mark the preloader as shown
+    sessionStorage.setItem('preloaderShown', 'true');
+  } else {
+    console.log("hi");
+    document.getElementById('cypher-text').style.animationPlayState ='running';
+    document.querySelector('.preloader').remove();
+    document.querySelector('.navbar').style.opacity = '1';
+  }
 });
