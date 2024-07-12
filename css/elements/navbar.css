@@ -29,11 +29,11 @@ body {
     height: 125px;
     padding-left: 20px; /* Adjust padding as needed */
     width: auto;
-    transition: filter 0.3s ease-in-out;
+    transition: filter 0.3s ease-out;
     cursor: none;
 }
 .logo:hover {
-    filter: drop-shadow(0 0 40px rgba(0, 191, 255, 0.9));
+    filter: drop-shadow(0 0 100px rgba(0, 255, 191, 0.9));
 }
 
 .navbar-links {
