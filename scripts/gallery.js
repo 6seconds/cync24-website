@@ -13,7 +13,6 @@ const items = [
   { src: "assets/images/cyncmeow8.png", type: "image", number: 9 },
   { src: "assets/images/cyncmeow9.png", type: "image", number: 10 },
   { src: "assets/images/cyncmeow10.png", type: "image", number: 11 },
-  { src: "https://via.placeholder.com/150?text=13", type: "image", number: 13 },
 ];
 
 const usedPositions = [];
