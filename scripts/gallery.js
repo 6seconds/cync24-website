@@ -83,7 +83,16 @@ items.forEach((item) => {
 
 // Function to check for touch devices
 const isTouchDevice = () => {
-  return 'ontouchstart' in window || navigator.maxTouchPoints;
+  const isTouchScreen = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  const userAgent = navigator.userAgent.toLowerCase();
+  
+  // Detect iOS and Android devices
+  const isMobile = /iphone|ipod|ipad|android/.test(userAgent);
+
+  // Additional checks for tablets
+  const isTablet = /ipad|tablet|kindle|playbook|silk|android(?!.*mobile)/.test(userAgent);
+
+  return isTouchScreen && (isMobile || isTablet);
 };
 
 if (isTouchDevice()) {
