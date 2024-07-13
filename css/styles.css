@@ -49,7 +49,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  animation: fadeOut 3s ease-in-out;
+  animation: fadeOut 2.5s ease-in-out;
   animation-play-state: paused; /* Initially pause the animation */
 }
 
