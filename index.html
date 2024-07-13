@@ -474,6 +474,28 @@
         if (window.innerWidth < 1024) {
             cyncoverviewcontent.remove();
         }
+        document.addEventListener("DOMContentLoaded", () => {
+  const footer = document.getElementById("footer");
+  const mainContent = document.getElementById("scrollable-container");
+  const crosshair = document.getElementById('crosshair');
+  mainContent.addEventListener("scroll", () => {
+    console.log("Scroll event detected");
+    
+    const cross = crosshair.getBoundingClientRect().bottom;
+    const viewportHeight = window.innerHeight;
+
+    console.log("mainContentBottom:", cross);
+    console.log("viewportHeight:", viewportHeight);
+    
+    if (cross <= viewportHeight) {
+      console.log('Footer visible');
+      footer.style.bottom = "0";
+    } else {
+      footer.style.bottom = "-45vh";
+    }
+  });
+});
+
     </script>
     
     
