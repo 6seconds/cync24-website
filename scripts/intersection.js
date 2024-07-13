@@ -1,7 +1,5 @@
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-        // Log entry details for debugging
-        console.log(entry);
         
         // Check if the entry is intersecting
         if (entry.isIntersecting) {

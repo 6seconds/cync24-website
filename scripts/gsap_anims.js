@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    if (window.innerWidth >= 1111) { // Check if the screen width is greater than or equal to 1111px
+
+    if (window.innerWidth >= 1111) {
         gsap.registerPlugin(ScrollTrigger);
         ScrollTrigger.scrollerProxy(".container", {
             scrollTop(value) {
@@ -50,3 +51,5 @@ document.addEventListener('DOMContentLoaded', () => {
         ScrollTrigger.refresh();
     }
 });
+
+

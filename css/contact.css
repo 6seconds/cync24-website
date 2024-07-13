@@ -39,7 +39,11 @@ html, body {
 body {
     font-family: 'Aquire';
     font-size: 20px;
-    background: radial-gradient(ellipse at bottom, #512467, #46225B, #3C1849, #261130, #1A0D21, #130918);
+    background: 
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 1px, transparent 1px) repeat,
+    linear-gradient(to right, rgba(0, 0, 0, 0.1) 1px, transparent 1px) repeat,
+    radial-gradient(ellipse at bottom, #225E55ff, #134544ff, #033038ff, #002327ff, #02151Eff, #021014ff, #000D16ff);
+    background-size: 100% 20px, 20px 100%, cover;
     color: #fff;
     height: 100vh; /* Adjusted to full viewport height */
         overflow-x: hidden;

@@ -1,19 +1,18 @@
 const gallery = document.getElementById("gallery");
 
 const items = [
-  { src: "https://via.placeholder.com/150?text=1", type: "image", number: 1 },
-  { src: "https://via.placeholder.com/150?text=2", type: "image", number: 2 },
-  { src: "https://via.placeholder.com/150?text=3", type: "image", number: 3 },
-  { src: "https://via.placeholder.com/150?text=4", type: "image", number: 4 },
-  { src: "https://via.placeholder.com/150?text=5", type: "image", number: 5 },
-  { src: "https://via.placeholder.com/150?text=6", type: "image", number: 6 },
-  { src: "https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnh4aGZkOXZocjRiZmU0NWF2bGVsYXIwNGd6NGJ1OHh1cW5tZDgyayZlcD13MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MDJ9IbxxvDUQM/giphy.gif", type: "gif", number: 7 },
-  { src: "https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnh4aGZkOXZocjRiZmU0NWF2bGVsYXIwNGd6NGJ1OHh1cW5tZDgyayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MDJ9IbxxvDUQM/giphy.gif", type: "gif", number: 8 },
-  { src: "https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnh4aGZkOXZocjRiZmU0NWF2bGVsYXIwNGd6NGJ1OHh1cW5tZDgyayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MDJ9IbxxvDUQM/giphy.gif", type: "gif", number: 9 },
-  { src: "https://via.placeholder.com/150?text=10", type: "image", number: 10 },
-  { src: "https://via.placeholder.com/150?text=11", type: "image", number: 11 },
-  { src: "https://via.placeholder.com/150?text=12", type: "image", number: 12 },
-  { src: "https://via.placeholder.com/150?text=13", type: "image", number: 13 },
+  { src: "assets/images/cyncmeow2.jpg",type: "image"},
+  { src: "assets/images/cyncmeow.png", type: "image"},
+  { src: "assets/images/cyncmeow3.png", type: "image"},
+  { src: "assets/images/cyncmeow4.jpg", type: "image"},
+  { src: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaHd4OTdzOHVweHZ2NmZpMjRzZTJlanc2YXVodnF6M3BqcWw2OWJ2cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/0vVqCxoqPWgUxaJXp0/giphy.gif", type: "gif"},
+  { src: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExamg3ODNtNzFmeTB1bjVwY2hkd2prcG1jZHNiMDZ5enQ2MGNjZzZ3cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QLGILiyap4bv2Osdqe/giphy-downsized-large.gif", type: "gif"},
+  { src: "assets/images/cyncmeow5.png", type: "image"},
+  { src: "assets/images/cyncmeow6.png", type: "image"},
+  { src: "assets/images/cyncmeow7.png", type: "image" },
+  { src: "assets/images/cyncmeow8.png", type: "image"},
+  { src: "assets/images/cyncmeow9.png", type: "image"},
+  { src: "assets/images/cyncmeow10.png", type: "image"}
 ];
 
 const usedPositions = [];
@@ -84,10 +83,20 @@ items.forEach((item) => {
 
 // Function to check for touch devices
 const isTouchDevice = () => {
-  return 'ontouchstart' in window || navigator.maxTouchPoints;
+  const isTouchScreen = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  const userAgent = navigator.userAgent.toLowerCase();
+  
+  // Detect iOS and Android devices
+  const isMobile = /iphone|ipod|ipad|android/.test(userAgent);
+
+  // Additional checks for tablets
+  const isTablet = /ipad|tablet|kindle|playbook|silk|android(?!.*mobile)/.test(userAgent);
+
+  return isTouchScreen;
 };
 
 if (isTouchDevice()) {
+  console.log(isTouchDevice());
   gallery.classList.add('touch');
 } else {
   window.onmousemove = e => {
