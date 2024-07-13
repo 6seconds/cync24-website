@@ -633,7 +633,7 @@ footer {
   z-index: 5;
   width: 100%;
   height: 50vh;
-  position: fixed;
+  position: absolute;
   bottom: -65vh; 
   transition: bottom 0.3s ease-in-out;
   display: flex;
