@@ -92,10 +92,11 @@ const isTouchDevice = () => {
   // Additional checks for tablets
   const isTablet = /ipad|tablet|kindle|playbook|silk|android(?!.*mobile)/.test(userAgent);
 
-  return isTouchScreen && (isMobile || isTablet);
+  return isTouchScreen;
 };
 
 if (isTouchDevice()) {
+  console.log(isTouchDevice());
   gallery.classList.add('touch');
 } else {
   window.onmousemove = e => {
