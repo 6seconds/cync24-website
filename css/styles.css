@@ -452,7 +452,7 @@ body {
 }
 
 #cypher-text {
-  animation: fadeIn 1s ease-in-out forwards;
+  animation: fadeIn 1s ease-in-out;
   animation-play-state: paused; 
 
 }
