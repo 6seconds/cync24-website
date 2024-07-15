@@ -752,7 +752,10 @@ a {
 @media screen and (max-width: 1000px) {
   :root {
     --m: 3rem;
-  }
+    }
+  .col1 {
+    display: none
+    }
 }
 
 @media screen and (max-width: 700px) {
@@ -763,9 +766,6 @@ a {
   .col {
     width: 100%;
   }
-  .col1 {
-    display: none
-    }
 }
 
 
