@@ -713,12 +713,6 @@ footer::before {
   width: 22%; /* Reduced width */
 }
 
-.col2, .col3 {
-  /* background-color: #121212; */
-  border-radius: calc(0.5 * var(--m));
-  text-decoration: underline;
-}
-
 img {
   background: none;
   height: calc(0.3 * var(--m));
