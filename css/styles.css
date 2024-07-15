@@ -754,7 +754,8 @@ a {
     --m: 3rem;
     }
   .col1 {
-    display: none
+    display: none;
+    width: 40%;
     }
 }
 
