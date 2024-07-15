@@ -763,6 +763,9 @@ a {
   .col {
     width: 100%;
   }
+  .col1 {
+    display: none
+    }
 }
 
 
