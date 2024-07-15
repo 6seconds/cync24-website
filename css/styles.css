@@ -662,6 +662,11 @@ footer {
   padding: 3rem 1vw; /* Reduced padding */
 }
 
+#footer-text {
+  font-family: "Economica";
+  font-size: 20px;
+}
+
 footer::before {
   content: '';
   position: absolute;
