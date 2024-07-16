@@ -20,7 +20,7 @@
 </head>
 <body>
     <div class="meow">
-    <h1 class="register-title">REGISTER</h1>
+    <h1 class="register-title" id="register_title">REGISTER</h1>
     <div class="line" id="divider"></div>
     <nav class="navbar" style="position: absolute;">
         <a href="../index.html">
@@ -50,7 +50,14 @@
             document.querySelector('.hamburger').classList.toggle('active');
         }
         </script>
-    <div class="container">
+    <div id="loading-screen" style="display: none;">
+        <div class="loading-spinner"><span></span></div>
+    </div>
+    <div id="success-screen" style="display: none;">
+        <h1>Thank you for registering!</h1>
+        <h2>See you in cync v10</h2>            
+    </div>
+    <div class="container" id="FORM">
         <form action="https://sheetdb.io/api/v1/mggyainc2nvie" method="post" id="sheetdb-form" >
             <!-- Step 1 -->
             <div class="step active" id="step1">
@@ -362,6 +369,15 @@
 
         form.addEventListener("submit", (e) => {
             e.preventDefault();
+
+            var isValid = form.checkValidity();
+            if (!isValid) {
+                alert("Please fill in all required fields.");
+                return;
+            }
+            // Show the loading screen
+            document.getElementById("loading-screen").style.display = "flex";
+            
             var formData = new FormData(form);
             
             // Convert formData to JSON format for SheetDB
@@ -386,21 +402,29 @@
                 console.log("Response Status:", response.status); // Log the response status
                 if (!response.ok) {
                     return response.json().then((errorData) => {
-                        console.error('Error Data:', errorData);
-                        throw new Error('Network response was not ok');
+                        // Hide the loading screen in case of error
+                        document.getElementById("loading-screen").style.display = "none";
+                        // Handle error
+                        // $('#failed').modal('show');
                     });
                 }
-                return response.json();
-            })
-            .then((data) => {
-                console.log("Data received:", data);
-                window.open("nextpage.html", "_blank");
+
+                
+                document.getElementById('FORM').style.display = 'none';
+                document.getElementById('register_title').style.display = 'none';
+                document.getElementById('divider').style.display = 'none';
+                document.getElementById("loading-screen").style.display = "none";
+                document.getElementById('success-screen').style.display = 'block';
             })
             .catch((error) => {
-                console.error('There was a problem with the fetch operation:', error);
+                console.error("Error:", error);
+                // Hide the loading screen in case of error
+                document.getElementById("loading-screen").style.display = "none";
+                // Handle error
+                // $('#failed').modal('show');
             });
         });
-    </script>    
+    </script>
    </div>
 </body>
 </html>
