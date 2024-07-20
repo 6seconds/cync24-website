@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/cursor.css">
+    <link rel="stylesheet" href="css/welcome.css">
+    <title>(c)ypher</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/logo.png">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6W6TE59BSZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6W6TE59BSZ');
+</script>
+
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="./">
+            <img src="assets/images/logo.png" alt="Logo" class="logo">
+        </a>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul class="navbar-links" id="navbar-links">
+            <li><a href="./">Event</a></li>
+            <li class="dropdown">
+                <a href="#members">MEMBERS</a>
+                <ul class="dropdown-content">
+                    <li style="--delay: 0s;"><a href="./team">TEAM</a></li>
+                    <li style="--delay: 0.1s;"><a href="./alumni">ALUMNI</a></li>
+                    <li style="--delay: 0.2s;"><a href="./faculty">FACULTY</a></li>
+                </ul>
+            </li>
+            <li><a href="./contact">CONTACT</a></li>
+        </ul>
+    </nav>
+    <script>
+        function toggleMenu() {
+            document.getElementById('navbar-links').classList.toggle('show');
+            document.querySelector('.hamburger').classList.toggle('active');
+        }
+        </script>
+    
+    <h1>Thank you for registering!</h1>
+    <h2>See you in cync v10</h2>
+        
+    
+    <!-- Include GSAP library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/TextPlugin.min.js"></script>
+    <script src="scripts/scrambler_team.js"></script>
+    <div id="blob"></div>
+    <div class="cursor-container">
+        <div class="cursor-dot" data-cursor-dot></div>
+        <div class="cursor-outline" data-cursor-outline></div>
+    </div>
+    <script src="scripts/blob.js"></script>
+    <script src="scripts/cursor.js"></script>
+    
+</body>
+</html>

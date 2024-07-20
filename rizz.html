@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <link rel="stylesheet" href="../css/navbar.css">
-    <link rel="stylesheet" href="../css/cursor.css">
-    <link rel="stylesheet" href="../css/welcome.css">
-    <title>(c)ypher</title>
-    <link rel="icon" type="image/x-icon" href="../assets/images/logo.png">
-<!-- Google tag (gtag.js) -->
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/cursor.css">
+    <link rel="stylesheet" href="css/rizz.css">
+    <title>ciphaer</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/logo.png">
+    <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6W6TE59BSZ"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -18,13 +18,13 @@
 
   gtag('config', 'G-6W6TE59BSZ');
 </script>
-
 </head>
 
 <body>
-    <nav class="navbar">
-        <a href="../index.html">
-            <img src="../assets/images/logo.png" alt="Logo" class="logo">
+    <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnh4aGZkOXZocjRiZmU0NWF2bGVsYXIwNGd6NGJ1OHh1cW5tZDgyayZlcD13MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MDJ9IbxxvDUQM/giphy.gif" class="cat">
+    <nav class="navbar" style="position: absolute;">
+        <a href="./">
+            <img src="assets/images/logo.png" alt="Logo" class="logo">
         </a>
         <div class="hamburger" onclick="toggleMenu()">
             <div></div>
@@ -32,16 +32,16 @@
             <div></div>
         </div>
         <ul class="navbar-links" id="navbar-links">
-            <li><a href="../index.html">Event</a></li>
+            <li><a href="./">EEPY-VENT</a></li>
             <li class="dropdown">
-                <a href="#members">MEMBERS</a>
+                <a href="#members">MOOMBERS</a>
                 <ul class="dropdown-content">
-                    <li style="--delay: 0s;"><a href="team.html">TEAM</a></li>
-                    <li style="--delay: 0.1s;"><a href="alumni.html">ALUMNI</a></li>
-                    <li style="--delay: 0.2s;"><a href="faculty.html">FACULTY</a></li>
+                    <li style="--delay: 0s;"><a href="./team">TEAM</a></li>
+                    <li style="--delay: 0.1s;"><a href="./alumni">ALUMNI</a></li>
+                    <li style="--delay: 0.2s;"><a href="./faculty">FACULTY</a></li>
                 </ul>
             </li>
-            <li><a href="contact.html">CONTACT</a></li>
+            <li><a href="./contact"></a></li>
         </ul>
     </nav>
     <script>
@@ -49,23 +49,20 @@
             document.getElementById('navbar-links').classList.toggle('show');
             document.querySelector('.hamburger').classList.toggle('active');
         }
-        </script>
-    
-    <h1>Thank you for registering!</h1>
-    <h2>See you in cync v10</h2>
+        </script>       
         
     
     <!-- Include GSAP library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/TextPlugin.min.js"></script>
-    <script src="../scripts/scrambler_team.js"></script>
+    <script src="scripts/scrambler_team.js"></script>
     <div id="blob"></div>
     <div class="cursor-container">
         <div class="cursor-dot" data-cursor-dot></div>
         <div class="cursor-outline" data-cursor-outline></div>
     </div>
-    <script src="../scripts/blob.js"></script>
-    <script src="../scripts/cursor.js"></script>
+    <script src="scripts/blob.js"></script>
+    <script src="scripts/cursor.js"></script>
     
 </body>
 </html>
