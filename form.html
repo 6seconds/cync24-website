@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>(c)ync registration</title>
-    <link rel="icon" type="image/x-icon" href="assets/images/logo.png">
-    <link rel="stylesheet" href="css/form.css">
-    <link rel="stylesheet" href="css/navbar.css">
-    <link rel="stylesheet" href="css/cursor.css">
+    <link rel="icon" type="image/x-icon" href="../assets/images/logo.png">
+    <link rel="stylesheet" href="../css/form.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/cursor.css">
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6W6TE59BSZ"></script>
 <script>
@@ -23,8 +23,8 @@
     <h1 class="register-title" id="register_title">REGISTER</h1>
     <div class="line" id="divider"></div>
     <nav class="navbar" style="position: absolute;">
-        <a href="./">
-            <img src="assets/images/logo.png" alt="Logo" class="logo">
+        <a href="../index.html">
+            <img src="../assets/images/logo.png" alt="Logo" class="logo">
         </a>
         <div class="hamburger" onclick="toggleMenu()">
             <div></div>
@@ -32,16 +32,16 @@
             <div></div>
         </div>
         <ul class="navbar-links" id="navbar-links">
-            <li><a href="./">Event</a></li>
+            <li><a href="../index.html">Event</a></li>
             <li class="dropdown">
                 <a href="#members">MEMBERS</a>
                 <ul class="dropdown-content">
-                    <li style="--delay: 0s;"><a href="./team">TEAM</a></li>
-                    <li style="--delay: 0.1s;"><a href="./alumni">ALUMNI</a></li>
-                    <li style="--delay: 0.2s;"><a href="./faculty">FACULTY</a></li>
+                    <li style="--delay: 0s;"><a href="team.html">TEAM</a></li>
+                    <li style="--delay: 0.1s;"><a href="alumni.html">ALUMNI</a></li>
+                    <li style="--delay: 0.2s;"><a href="faculty.html">FACULTY</a></li>
                 </ul>
             </li>
-            <li><a href="./contact">CONTACT</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
         </ul>
     </nav>
     <script>
@@ -61,9 +61,8 @@
         <form action="https://sheetdb.io/api/v1/mggyainc2nvie" method="post" id="sheetdb-form" >
             <!-- Step 1 -->
             <div class="step active" id="step1">
+                <label class="warning">For any issues, contact us at 8871505785</label>
 
-                <label class="warning">For any issues, contact us at 8871505785 or 8966014814</label>
-                
                 <label for="x1">Name of School:</label>
                 <input type="text" name="data[school_name]" required><br><br>
                 
@@ -353,6 +352,7 @@
             </div>
         </form>
     </div>
+    
     <div class="progress-bar">
         <div class="progress-bar-fill" id="progressBarFill"></div>
     </div>
@@ -363,10 +363,8 @@
         <div class="cursor-outline" data-cursor-outline></div>
     </div>
 
-
-
-    <script src="scripts/blob.js"></script>
-    <script src="scripts/cursor.js"></script>
+    <script src="../scripts/blob.js"></script>
+    <script src="../scripts/cursor.js"></script>
     <script>
         var form = document.getElementById("sheetdb-form");
 
