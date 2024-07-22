@@ -116,6 +116,7 @@ body {
     letter-spacing: 3px;
     line-spacing:3px;
     font-family: 'Quicksand';
+    opacity: 0.5 !important;
 }
 
 #contact_number{
