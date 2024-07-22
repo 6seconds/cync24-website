@@ -114,6 +114,7 @@ body {
 .warning{
     padding-bottom: 10%;
     letter-spacing: 3px;
+    line-spacing:3px
     font-family: 'Quicksand';
 }
 
