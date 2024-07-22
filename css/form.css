@@ -114,6 +114,10 @@ body {
 
 }
 
+.warning{
+    padding-bottom: 60px;
+}
+
 .register-title {
     position: absolute;
     font-family: 'DREAMS';
