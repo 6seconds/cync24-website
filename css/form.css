@@ -24,6 +24,8 @@
 
 
 
+
+
 body, * {
     cursor: none;
 }
@@ -114,7 +116,6 @@ body {
     letter-spacing: 3px;
     font-family: "Quicksand";
 }
-
 
 #contact_number{
     padding-bottom: 10%;
