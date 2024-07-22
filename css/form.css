@@ -111,7 +111,10 @@ body {
 
 .warning{
     padding-bottom: 10%;
+    letter-spacing: 3px;
+    font-family: "Quicksand";
 }
+
 
 #contact_number{
     padding-bottom: 10%;
