@@ -109,13 +109,13 @@ body {
     opacity: 0;
 }
 
+.warning{
+    padding-bottom: 60px;
+}
+
 #contact_number{
     padding-bottom: 10%;
 
-}
-
-.warning{
-    padding-bottom: 60px;
 }
 
 .register-title {
