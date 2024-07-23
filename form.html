@@ -61,20 +61,21 @@
         <form action="https://sheetdb.io/api/v1/mggyainc2nvie" method="post" id="sheetdb-form" >
             <!-- Step 1 -->
             <div class="step active" id="step1">
-                <label class="warning">For any issues, contact us at 8871505785</label>
+                <label class="warning">For any issues, contact us at 8871505785 <br><br>[If you do not wish to participate in a specific event, leave its entries blank]
+                </label>
 
                 <label for="x1">Name of School:</label>
-                <input type="text" name="data[school_name]" required><br><br>
+                <input type="text" name="data[school_name]" placeholder= "Required" required><br><br>
                 
 
                 <label for="y1">Email Address:</label>
-                <input type="text" name="data[email_address]" required><br><br>
+                <input type="text" name="data[email_address]" placeholder= "Required" required><br><br>
 
                 <label for="z1">Name of Teacher:</label>
-                <input type="text"  name="data[teacher_name]" required><br><br>
+                <input type="text"  name="data[teacher_name]" placeholder= "Required" required><br><br>
 
                 <label for="z2">Contact Number of Teacher:</label>
-                <input type="text"  name="data[teacher_contact]" required><br><br>
+                <input type="text"  name="data[teacher_contact]" placeholder= "Required" required><br><br>
 
                 <button type="button" class="button" onclick="nextStep()">></button>
             </div>
