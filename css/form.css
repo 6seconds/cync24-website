@@ -158,7 +158,7 @@ body {
     position: relative; /* Position relative to its containing block */
     top: 40%; /* Center vertically */
     left: 50%; /* Center horizontally */
-    transform: translate(-50%, 20%); /* Center the active step */
+    transform: translate(-50%, 10%); /* Center the active step */
     display: block;
     flex-direction: column;
     align-items: flex-start;
