@@ -621,7 +621,6 @@ h2 {
 @media (max-width: 480px) {
     body {
         height:100vh;
-        overflow-y: scroll;
         font-size: 14px;
     }
 
