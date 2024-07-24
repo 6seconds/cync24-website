@@ -23,9 +23,6 @@
 }
 
 
-
-
-
 body, * {
     cursor: none;
 }
@@ -114,8 +111,7 @@ body {
 .warning{
     padding-bottom: 10%;
     letter-spacing: 3px;
-    line-spacing:3px;
-    font-family: 'Quicksand';
+    font-family: "Quicksand";
     opacity: 0.5 !important;
 }
 
@@ -621,6 +617,7 @@ h2 {
 @media (max-width: 480px) {
     body {
         height:100vh;
+ 
         font-size: 14px;
     }
 
