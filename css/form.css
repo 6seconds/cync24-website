@@ -100,7 +100,6 @@ body {
   }
 
 .container {
-    overflow:scroll;
     max-width: 600px;
     margin: 50px auto;
     padding: 20px;
@@ -627,6 +626,7 @@ h2 {
     }
 
     .container {
+        overflow:scroll;
         max-width: 95%;
         margin: 10px auto;
         padding: 5px;
